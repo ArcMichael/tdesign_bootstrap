@@ -15,7 +15,7 @@
     },
     "coverView": false,
     "postcss": false,
-    "minified": false,
+    "minified": true,
     "enhance": false,
     "showShadowRootInWxmlPanel": false,
     "ignoreUploadUnusedFiles": true,
@@ -42,5 +42,5 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wx15783b973ad62cd1"
+  "appid": "wxb17a84fda3f9ca52"
 }

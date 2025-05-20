@@ -8,8 +8,5 @@
   "license": "",
   "dependencies": {
     "tdesign-miniprogram": "^1.9.2"
-  },
-  "devDependencies": {
-    "miniprogram-api-typings": "^2.8.3-1"
   }
 }

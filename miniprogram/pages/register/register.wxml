@@ -1,3 +1,8 @@
-<view class="register">
- 
+<navigation-bar back="{{true}}" color="black"></navigation-bar>
+
+<view class="page-wrapper register">
+  <view class="processing-group">
+    <view class="processing reading"></view>
+    <view class="processing"></view>
+  </view>
 </view>

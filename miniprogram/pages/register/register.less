@@ -1,3 +1,5 @@
+@import "variables.less";
+
 page {
   height: 100vh;
   display: flex;
@@ -13,4 +15,23 @@ page {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.processing-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  .padding-sides();
+}
+
+.processing {
+  width: 170px;
+  height: 5px;
+  border-radius: 100;
+  background-color: #ccccd4;
+
+  &.reading {
+    background: linear-gradient(275deg, #fa87ac 1.61%, #fdbed2 97.56%);
+  }
 }

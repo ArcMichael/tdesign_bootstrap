@@ -11,4 +11,3 @@ components/**/package-lock.json
 package-lock.json
 yarn.lock
 .eslintcache
-.vscode/settings.json

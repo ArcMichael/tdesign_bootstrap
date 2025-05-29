@@ -1,3 +1,5 @@
+import { fetchItemList, searchCoupons } from "../../utils/api";
+
 Page({
   data: {
     form: {
@@ -67,5 +69,20 @@ Page({
     return wx.navigateTo({
       url: "/pages/registerNext/registerNext",
     });
+  },
+
+  async onShow() {
+    try {
+      // 1) 获取列表
+      const resp1 = await fetchItemList(1, 20);
+      this.setData({ items: resp1.list });
+
+      // 2) 搜索优惠券
+      const params = { keyword: "优惠" };
+      const resp2 = await searchCoupons(params, 1, 10);
+      this.setData({ coupons: resp2.data });
+    } catch (err) {
+      console.error("接口调用出错", err);
+    }
   },
 });

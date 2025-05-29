@@ -1,31 +1,181 @@
-// request.ts
+import * as env from "./env";
+import { checkAuthorization } from "./funcHelper";
 
-const BASE_URL = "https://pre.wx.meiweihuixiang.com/api"; // 预发布环境
+// 从 env 获取基础 API 地址
+const { apiHost } = env.getEnv();
 
-interface RequestOptions {
+/**
+ * 通用请求入参类型
+ */
+export interface RequestOptions {
   url: string;
-  method?: "GET" | "POST" | "PUT" | "DELETE";
-  data?: Record<string, any>;
-  headers?: Record<string, string>;
+  data?: any;
   contentType?: string;
-  baseType?: number;
+  method?: "GET" | "POST" | "PUT" | "DELETE";
+  headers?: Record<string, string>;
+  /**
+   * 显式重试次数，默认不重试
+   */
   retryCount?: number;
-  retryDelay?: number;
 }
 
+/**
+ * 构建请求头
+ */
 function buildHeaders(
-  contentType: string,
+  contentType: string = "application/json",
   customHeaders?: Record<string, string>
 ): Record<string, string> {
-  const headers: Record<string, string> = {
-    "Content-Type": contentType,
-  };
+  const header: Record<string, string> = { "Content-Type": contentType };
   const token = wx.getStorageSync("ACCESS_TOKEN") || "";
-  if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
-  }
-  if (customHeaders) {
-    Object.assign(headers, customHeaders);
-  }
-  return headers;
+  if (token) header.Authorization = `Bearer ${token}`;
+  if (customHeaders) Object.assign(header, customHeaders);
+  return header;
 }
+
+/**
+ * 基础 request 方法，支持 retryCount
+ */
+export function request<T = any>(options: RequestOptions): Promise<T> {
+  const {
+    url,
+    data = {},
+    contentType = "application/json",
+    method = "GET",
+    headers,
+    retryCount = 0,
+  } = options;
+  const finalUrl = `${apiHost}${url}`;
+
+  return new Promise((resolve, reject) => {
+    const attempt = (retriesLeft: number) => {
+      wx.request({
+        url: finalUrl,
+        data,
+        method,
+        header: buildHeaders(contentType, headers),
+        success: (res) => {
+          const { statusCode, data: resData } = res;
+          if (statusCode === 200) {
+            if (
+              resData &&
+              typeof resData === "object" &&
+              (resData as any).code === 401
+            ) {
+              checkAuthorization({ needRedirect: true }).finally(() => {
+                reject(new Error("Unauthorized"));
+              });
+            } else {
+              resolve(resData as T);
+            }
+          } else if (statusCode === 401) {
+            // 未授权自动跳转登录
+            checkAuthorization({ needRedirect: true }).finally(() => {
+              reject(new Error("Unauthorized"));
+            });
+          } else if (retriesLeft > 0) {
+            attempt(retriesLeft - 1);
+          } else {
+            reject(new Error(`请求失败：${statusCode}`));
+          }
+        },
+        fail: (err) => {
+          if (retriesLeft > 0) {
+            attempt(retriesLeft - 1);
+          } else {
+            wx.showToast({
+              title: "网络异常，请检查后重试",
+              icon: "none",
+              duration: 2000,
+            });
+            reject(err.errMsg || err);
+          }
+        },
+      });
+    };
+    attempt(retryCount);
+  });
+}
+
+/**
+ * 2.0: 通用带重试、超时和延迟机制的请求封装
+ * @param requestConfig - 同 RequestOptions
+ * @param options.maxRetries - 最大重试次数，默认 3
+ * @param options.timeout - 单次请求超时时间 ms，默认 5000
+ * @param options.delay - 重试等待时间 ms，默认 1000
+ * @param options.mockApi - 若提供，将直接返回 mockApi
+ */
+export async function requestWithRetry<T = any>(
+  requestConfig: RequestOptions,
+  options: {
+    maxRetries?: number;
+    timeout?: number;
+    delay?: number;
+    mockApi?: T;
+  } = {}
+): Promise<T> {
+  const {
+    maxRetries = 3,
+    timeout = 5000,
+    delay = 1000,
+    mockApi = null,
+  } = options;
+  if (mockApi != null) return mockApi;
+
+  // 超时包装
+  const timeoutPromise = (p: Promise<any>) =>
+    new Promise<any>((resolve, reject) => {
+      const timer = setTimeout(
+        () => reject(new Error("Request timed out")),
+        timeout
+      );
+      p.then((res) => {
+        clearTimeout(timer);
+        resolve(res);
+      }).catch((err) => {
+        clearTimeout(timer);
+        reject(err);
+      });
+    });
+
+  let lastError: any;
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      const res = await timeoutPromise(
+        request<T>({ ...requestConfig, retryCount: 0 })
+      );
+      return res;
+    } catch (error: any) {
+      lastError = error;
+      // 检测 401 未授权
+      if (error.message === "Unauthorized") {
+        await checkAuthorization({ needRedirect: true });
+        throw error;
+      }
+      if (attempt < maxRetries - 1) {
+        await new Promise((r) => setTimeout(r, delay));
+      }
+    }
+  }
+  throw lastError;
+}
+
+/**
+ * 保持兼容：旧名称 http
+ */
+export const http = request;
+
+// ========== 使用示例 ==========
+// 1) 简单 GET 请求
+// request<{ list: any[] }>({ url: '/items', method: 'GET' })
+//   .then(res => console.log('列表数据：', res.list))
+//   .catch(err => console.error('请求失败：', err));
+
+// 2) 带重试和超时的 POST 请求
+// const searchParams = { keyword: '示例' };//
+// requestWithRetry<{ data: any[] }>(
+//   { url: `/msh/coupon/search?pageNum=1&pageSize=10`, method: 'POST', data: searchParams },
+//   { maxRetries: 3, timeout: 5000, delay: 1000 }
+// )
+//   .then(res => console.log('搜索结果：', res.data))
+//   .catch(err => console.error('搜索失败：', err));

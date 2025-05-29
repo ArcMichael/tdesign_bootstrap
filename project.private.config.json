@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/registerNext/registerNext",
+          "pathName": "pages/registerNext/registerNext",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/register/register",
           "pathName": "pages/register/register",
           "query": "",

@@ -3,7 +3,7 @@
     <image class="home_logo" src="http://swik7nyin.hd-bkt.clouddn.com/home_logo.png" mode="aspectFit|aspectFill|widthFix" />
   </view>
   <view class="home_function">
-    <view class="login" bind:tap="onRegister">注册</view>
+    <view class="login" bind:tap="onLogin">注册</view>
     <view class="guest_login">
       游客访问
       <t-icon name="chevron-right-s" size="48rpx" bind:click="onIconTap" />

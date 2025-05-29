@@ -5,4 +5,97 @@
     <view class="processing reading"></view>
     <view class="processing"></view>
   </view>
+  <view class="register-form">
+
+    <!-- 昵称 -->
+    <view class="form-item">
+      <text class="label">昵称</text>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="请输入昵称"
+        value="{{form.nickname}}"
+        bindinput="onNicknameInput"
+      />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+    <view
+      class="form-item"
+      bindtap="onHandlePicker"
+      data-field="gender"
+    >
+      <text class="label">性别<text class="disabled">*</text></text>
+      <input
+        type="text"
+        class="form-input"
+        value="{{form.gender && form.gender.label}}"
+        placeholder="请选择性别"
+        disabled
+      />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">出生日期</text>
+      <input type="text" class="form-input" placeholder="请选择出生日期" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">身高</text>
+      <input type="text" class="form-input" placeholder="请选择身高" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">Mbit</text>
+      <input type="text" class="form-input" placeholder="请选择Mbit" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+
+    <view class="form-item">
+      <text class="label">学校</text>
+      <input type="text" class="form-input" placeholder="请选择学校" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">家乡</text>
+      <input type="text" class="form-input" placeholder="请选择家乡" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">现居地</text>
+      <input type="text" class="form-input" placeholder="请选择现居地" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>   
+    
+    <view class="form-item">
+      <text class="label">职业</text>
+      <input type="text" class="form-input" placeholder="请选择职业" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+    <view class="form-item last-form-item">
+      <text class="label">年收入</text>
+      <input type="text" class="form-input" placeholder="请选择年收入" />
+      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+    </view>
+
+  </view>
+
+  <view class="form-submit" bindtap="onNavigationToNextStep">下一步</view>
 </view>
+
+<picker-overlay
+  visible="{{picker.visible}}"
+  title="{{picker.title}}"
+  field-key="{{picker.field}}"
+  options="{{picker.options}}"
+  current-value="{{form[picker.field]}}"
+  bind:confirm="onPickerConfirm"
+  bind:cancel="onPickerCancel"
+/>

@@ -21,8 +21,8 @@ page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
   .padding-sides();
+  margin-bottom: 19px;
 }
 
 .processing {
@@ -34,4 +34,74 @@ page {
   &.reading {
     background: linear-gradient(275deg, #fa87ac 1.61%, #fdbed2 97.56%);
   }
+}
+
+.register-form {
+  .padding-sides();
+  --td-input-bg-color: none;
+  --td-input-vertical-padding: 0px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+
+  &.last-form-item {
+    border-width: 0px;
+  }
+  .form-input {
+    padding: 6px 0;
+  }
+
+  .form-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d1d1d1;
+  }
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+  .disabled {
+    color: #9196a3;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.input {
+  font-size: 16px;
+  color: #333;
+  text-align: right;
+}
+
+.picker-value {
+  font-size: 16px;
+  color: #666;
+}
+
+.form-submit {
+  border-radius: 12px;
+  background: linear-gradient(269deg, #ffaac6 0.6%, #a6c3ff 98.92%);
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+
+  .margin-sides();
+
+  height: 58px;
+  text-align: center;
+  line-height: 58px;
+
+  margin-bottom: @safe-bottom;
 }

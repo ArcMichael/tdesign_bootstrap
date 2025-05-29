@@ -1,0 +1,16 @@
+<view>
+  <t-picker
+    visible="{{visible}}"
+    value="{{currentValue}}"
+    data-key="{{fieldKey}}"
+    title="{{title}}"
+    cancelBtn="取消"
+    confirmBtn="确认"
+    usingCustomNavbar
+    bindchange="onConfirm"
+    bindpick="onColumnChange"
+    bindcancel="onCancel"
+  >
+    <t-picker-item options="{{options}}"></t-picker-item>
+  </t-picker>
+</view>

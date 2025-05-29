@@ -1,0 +1,201 @@
+@import "variables.less";
+
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("http://swik7nyin.hd-bkt.clouddn.com/background_top.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #fff;
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.processing-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .padding-sides();
+  margin-bottom: 19px;
+}
+
+.processing {
+  width: 170px;
+  height: 5px;
+  border-radius: 100;
+  background-color: #ccccd4;
+
+  &.reading {
+    background: linear-gradient(275deg, #fa87ac 1.61%, #fdbed2 97.56%);
+  }
+}
+
+.register-form {
+  .padding-sides();
+
+  .title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .title-head {
+      color: var(--4, #212121);
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .title-remark {
+      color: var(--5, #9196a3);
+      text-align: right;
+      font-size: 12px;
+      font-weight: 400;
+      margin-left: auto;
+    }
+  }
+
+  .picture-wall {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+
+    .picture-left {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .picture-bottom {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+    }
+    .picture-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .picture-main {
+      width: 226px;
+      height: 226px;
+      border: 2px solid var(--6, #ccccd4);
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      gap: 11px;
+
+      image {
+        width: 32.4px;
+        height: 30px;
+      }
+
+      text {
+        color: #a7a7a7;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    .picture-public {
+      width: 106px;
+      height: 106px;
+      border-radius: 12px;
+      border: 2px solid var(--6, #ccccd4);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      gap: 10px;
+
+      image {
+        width: 32.4px;
+        height: 30px;
+      }
+
+      text {
+        color: #a7a7a7;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.form-reject {
+  .padding-sides();
+  padding-top: 20px;
+
+  .title-container {
+    color: var(--4, #212121);
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .reject-items {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    margin-top: 13px;
+    .item {
+      width: 80px;
+      position: relative;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+
+      > image {
+        width: 80px;
+        height: 80px;
+      }
+      > text {
+        color: #212121;
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 6px;
+      }
+      > .error {
+        position: absolute;
+        background: url("http://swik7nyin.hd-bkt.clouddn.com/icon_error.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        right: -3px;
+        top: -3px;
+      }
+    }
+  }
+}
+
+.form-submit {
+  border-radius: 12px;
+  background: linear-gradient(269deg, #ffaac6 0.6%, #a6c3ff 98.92%);
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+
+  .margin-sides();
+
+  height: 58px;
+  text-align: center;
+  line-height: 58px;
+
+  margin-bottom: @safe-bottom;
+  margin-top: 33px;
+}

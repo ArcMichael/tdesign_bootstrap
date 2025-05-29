@@ -6,3 +6,9 @@ interface IAppOption {
   };
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }
+
+declare interface Option {
+  label: string;
+  value: string;
+}
+declare type PickerOptionsMap = Record<string, Option[]>;

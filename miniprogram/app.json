@@ -7,6 +7,14 @@
     "pages/index/index",
     "pages/logs/logs"
   ],
+  "subPackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/profileVerification/profileVerification"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"

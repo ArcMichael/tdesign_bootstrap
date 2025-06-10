@@ -23,12 +23,12 @@ page {
   flex-direction: row;
   justify-content: space-between;
   .padding-sides();
-  margin-bottom: 19px;
+  .px2rpx(margin-bottom,19);
 }
 
 .processing {
-  width: 170px;
-  height: 5px;
+  .px2rpx(width,170);
+  .px2rpx(height,5);
   border-radius: 100;
   background-color: #ccccd4;
 
@@ -40,7 +40,7 @@ page {
 .register-form {
   .padding-sides();
   --td-input-bg-color: none;
-  --td-input-vertical-padding: 0px;
+  --td-input-vertical-padding: 0rpx;
 }
 
 .form-item {
@@ -48,20 +48,22 @@ page {
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  .padding(10,0,10,0);
+
+  .border-bottom(1, solid, #EEE);
+
   position: relative;
 
   &.last-form-item {
-    border-width: 0px;
+    .px2rpx(border-width,0);
   }
   .form-input {
-    padding: 6px 0;
+    .padding(6,0,6,0);
   }
 
   .form-arrow {
     position: absolute;
-    right: 10px;
+    .px2rpx(right,10);
     top: 50%;
     transform: translateY(-50%);
     color: #d1d1d1;
@@ -69,40 +71,42 @@ page {
 }
 
 .label {
-  font-size: 16px;
-  font-weight: 600;
+  .font-group(16,600);
   color: #212121;
   .disabled {
     color: #9196a3;
-    font-size: 16px;
-    font-weight: 400;
+    .font-group(16,400);
   }
 }
 
 .input {
-  font-size: 16px;
+  .font-group(16);
   color: #333;
   text-align: right;
 }
 
 .picker-value {
-  font-size: 16px;
+  .font-group(16);
   color: #666;
 }
 
 .form-submit {
-  border-radius: 12px;
   background: linear-gradient(269deg, #ffaac6 0.6%, #a6c3ff 98.92%);
 
-  font-size: 18px;
-  font-weight: 600;
+  .px2rpx(border-radius, 12);
+
+  .font-group(18,600);
+
   color: #fff;
 
   .margin-sides();
 
-  height: 58px;
+  
   text-align: center;
-  line-height: 58px;
+  
+  .px2rpx(height,58);
+  .px2rpx(line-height,58);
 
-  margin-bottom: @safe-bottom;
+  .px2rpx(margin-bottom, @safe-bottom);
+
 }

@@ -1,0 +1,11 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">资料认证</view>
+</navigation-bar>
+
+<view class="page-wrapper profile-verify">
+  <view class="verify-group">
+    <view class="verify-card biometric"></view>
+    <view class="verify-card picture"></view>
+    <view class="verify-card student"></view>
+  </view>
+</view>

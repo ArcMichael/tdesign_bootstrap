@@ -6,7 +6,7 @@ Component({
   properties: {
     activeIndex: {
       type: Number,
-      value: 0,
+      value: 1,
     },
   },
 
@@ -26,6 +26,7 @@ Component({
       this.setData({
         active: this.properties.activeIndex,
       });
+      console.log(this);
     },
   },
 

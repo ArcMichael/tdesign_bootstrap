@@ -1,5 +1,8 @@
+import { AreaChangeDetail } from "../register/register";
+
 Page({
   data: {
+    position: "通州",
     recommend: {
       options: {
         indicatorDots: false,
@@ -41,6 +44,31 @@ Page({
       ],
     },
   },
+  showRegionPicker(
+    e: WechatMiniprogram.CustomEvent<{
+      currentTarget: { dataset: { field: string } };
+    }>
+  ) {
+    const field = e.currentTarget.dataset.field;
+
+    this.selectComponent("#areaPicker").onAreaPicker(field);
+  },
+
+  onPositionChange(e: WechatMiniprogram.CustomEvent<AreaChangeDetail>) {
+    const { text, value } = e.detail;
+
+    const positionOptions: Option = {
+      label: text.join("-"),
+      value: value.join("-"),
+    };
+
+    console.log(positionOptions);
+
+    this.setData({
+      position: text[2],
+    });
+  },
+
   onTabChange(e: any) {
     const idx = e.detail.index;
     console.log(idx);

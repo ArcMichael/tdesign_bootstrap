@@ -47,12 +47,13 @@ page {
 
     .title-head {
       color: var(--4, #212121);
-      .font-group(18,600)
+      .font-group(18, 600)
     }
+
     .title-remark {
       color: var(--5, #9196a3);
       text-align: right;
-      .font-group(12,400);
+      .font-group(12, 400);
       margin-left: auto;
     }
   }
@@ -60,36 +61,37 @@ page {
   .picture-wall {
     display: flex;
     flex-direction: row;
-    .px2rpx(gap,10);
-    .px2rpx(margin-top,20);
+    .px2rpx(gap, 10);
+    .px2rpx(margin-top, 20);
 
     .picture-left {
       flex: 2;
       display: flex;
       flex-direction: column;
-      .px2rpx(gap,10);
+      .px2rpx(gap, 10);
+
       .picture-bottom {
         flex: 1;
         display: flex;
         flex-direction: row;
-        .px2rpx(gap,10);
+        .px2rpx(gap, 10);
       }
 
-      > .picture-main {
-        .px2rpx(width,226);
-        .px2rpx(height,226);
-      
+      >.picture-main {
+        .px2rpx(width, 226);
+        .px2rpx(height, 226);
+
         .border-group(2, solid, var(--6, #ccccd4));
 
-        .px2rpx(border-radius,12);
-      
+        .px2rpx(border-radius, 12);
+
 
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
 
-        .px2rpx(gap,10);
+        .px2rpx(gap, 10);
 
         position: relative;
 
@@ -100,34 +102,29 @@ page {
 
         text {
           color: #a7a7a7;
-          .font-group(14,400)
+          .font-group(14, 400)
         }
       }
     }
+
     .picture-right {
       flex: 1;
       display: flex;
       flex-direction: column;
-      .px2rpx(gap,10);
+      .px2rpx(gap, 10);
     }
 
     .picture-public {
-
       .px2rpx(width, 106);
       .px2rpx(height, 106);
-
       .px2rpx(border-radius, 12);
       .border-group(2, solid, var(--6, #ccccd4));
-
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-
-      .px2rpx(gap,10);
-
+      .px2rpx(gap, 10);
       position: relative;
-
       overflow: hidden;
 
       image {
@@ -137,31 +134,32 @@ page {
 
       text {
         color: #a7a7a7;
-        .font-group(13,400);
+        .font-group(13, 400);
       }
     }
 
     .picture-placeholder {
-      transform: translateX(calc(136rpx * @target-width / @design-width) );
+      transform: translateX(calc(136rpx * @target-width / @design-width));
     }
   }
 }
 
 .form-reject {
   .padding-sides();
-  .px2rpx(padding-top,20);
+  .px2rpx(padding-top, 20);
 
   .title-container {
     color: var(--4, #212121);
-    .font-group(18,600);
+    .font-group(18, 600);
   }
 
   .reject-items {
     display: flex;
     flex-direction: row;
-    
+
     .px2rpx(gap, 9);
     .px2rpx(margin-top, 13);
+
     .item {
       .px2rpx(width, 80);
       position: relative;
@@ -170,16 +168,18 @@ page {
       flex-direction: column;
       align-items: center;
 
-      > image {
+      >image {
         .px2rpx(width, 80);
         .px2rpx(height, 80);
       }
-      > text {
+
+      >text {
         color: #212121;
-        .font-group(14,400);
+        .font-group(14, 400);
         .px2rpx(margin-top, 6);
       }
-      > .error {
+
+      >.error {
         position: absolute;
         background: url("http://swik7nyin.hd-bkt.clouddn.com/icon_error.png");
         background-repeat: no-repeat;
@@ -194,11 +194,11 @@ page {
 }
 
 .form-submit {
-  
+
   .px2rpx(border-radius, 12);
   background: linear-gradient(269deg, #ffaac6 0.6%, #a6c3ff 98.92%);
 
-  .font-group(18,600);
+  .font-group(18, 600);
 
   color: #fff;
 
@@ -209,25 +209,26 @@ page {
   .px2rpx(line-height, 58);
 
   .px2rpx(margin-bottom, @safe-bottom);
-  
+
   .px2rpx(margin-top, 33);
 }
 
 .placeholder-main {
-  .px2rpx(width,88);
-  .px2rpx(height,88);
+  .px2rpx(width, 88);
+  .px2rpx(height, 88);
   display: flex;
   flex-direction: column;
-  .px2rpx(gap,11);
+  .px2rpx(gap, 11);
   align-items: center;
   justify-content: center;
 
-  > image {
+  >image {
     .px2rpx(width, 32.432);
     .px2rpx(height, 30);
   }
-  > text {
+
+  >text {
     color: #a7a7a7;
-    .font-group(13,400);
+    .font-group(13, 400);
   }
 }

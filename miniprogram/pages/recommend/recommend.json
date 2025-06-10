@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar",
-    "footer-bar": "/components/footer-bar/footer-bar"
+    "footer-bar": "/components/footer-bar/footer-bar",
+    "region-picker": "/components/region-picker/region-picker"
   }
 }

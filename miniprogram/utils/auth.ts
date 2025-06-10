@@ -1,6 +1,4 @@
-const ACCESS_TOKEN_KEY = "ACCESS_TOKEN";
-const OPENID_ID_KEY = "OpenID";
-const USER_ID_KEY = "UserID";
+import { ACCESS_TOKEN_KEY, OPENID_ID_KEY, USER_ID_KEY } from "./constants";
 
 export interface SocialLogin {
   accessToken: string;

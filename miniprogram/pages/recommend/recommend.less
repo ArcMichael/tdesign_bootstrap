@@ -11,24 +11,25 @@ page {
 }
 
 .recommend {
+  // height: calc(100vh - 85px);
+  // height: calc(100% - 93px);
   height: 100vh;
-  padding-top: 5px;
+  .px2rpx(padding-top, 5);
+  .px2rpx(padding-bottom, 85);
   position: relative;
 
   .recommend_active {
-    width: 50px;
-    height: 130px;
+    .px2rpx(width, 50);
+    .px2rpx(height, 130);
     position: absolute;
     z-index: 10;
-
-    right: 20px;
-    bottom: 188px;
-
-    bottom: 273px;
+    
+    .px2rpx(right, 20);
+    .px2rpx(bottom, 273);
 
     .recommend_pink {
-      width: 50px;
-      height: 50px;
+      .px2rpx(width, 50);
+      .px2rpx(height, 50);
       background-image: url(http://swik7nyin.hd-bkt.clouddn.com/recommend_pink.png);
       background-repeat: no-repeat;
       background-position: top;
@@ -38,8 +39,8 @@ page {
       top: 0;
     }
     .recommend_reject {
-      width: 50px;
-      height: 50px;
+      .px2rpx(width, 50);
+      .px2rpx(height, 50);
       background-image: url(http://swik7nyin.hd-bkt.clouddn.com/recommend_reject.png);
       background-repeat: no-repeat;
       background-position: top;
@@ -54,14 +55,13 @@ page {
 .slot-title {
   color: var(--4, #212121);
   text-align: center;
-  font-size: 18px;
-  font-weight: 500;
+  .font-group(18, 500);
 
   background: url("http://swik7nyin.hd-bkt.clouddn.com/header_title_curve.png");
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-size: 90%;
-  padding-bottom: 4px;
+  .px2rpx(padding-bottom, 4);
   background-position-x: center;
 }
 
@@ -71,29 +71,30 @@ page {
   align-items: center;
 
   .slot-header-location {
-    width: 17.324px;
-    height: 20px;
+    
+    .px2rpx(width, 17.324);
+    .px2rpx(height, 20);
   }
   .slot-header-filter {
-    width: 20px;
-    height: 20px;
+    .px2rpx(width, 20);
+    .px2rpx(height, 20);
   }
   .slot-header-text {
     color: #212121;
-    font-size: 14px;
-    font-weight: 500;
+    .font-group(14, 500);
 
     white-space: nowrap;
 
-    margin-left: 4px;
-    margin-right: 9px;
+    .px2rpx(margin-left, 4);
+    .px2rpx(margin-right, 9);
   }
 }
 
 .swiper {
   width: 100%;
-  height: 100vh;
-  padding-bottom: 180px;
+  height: 100%;
+  // height: calc(100vh - 182rpx);
+  // .px2rpx(padding-bottom, 180);
 }
 
 .swiper-item {

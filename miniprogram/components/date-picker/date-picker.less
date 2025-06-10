@@ -1,3 +1,6 @@
+@import "styles/_variables.less";
+@import "styles/_mixins.less";
+
 /* date-picker.wxss */
 
 .wrapper {
@@ -9,9 +12,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 88rpx; /* 可以根据你的实际高度调整 */
-  padding: 0 24rpx;
-  border-bottom: 1rpx solid #ececec;
+  .px2rpx(height, 88);
+  .padding(0, 24, 0, 24);
+  .border-bottom(1, solid #ececec);
   background-color: #fff;
 }
 

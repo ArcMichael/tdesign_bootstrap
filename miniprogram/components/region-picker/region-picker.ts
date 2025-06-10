@@ -287,6 +287,9 @@ Component({
       if (field === "location") {
         this.triggerEvent("locationChange", detail);
       }
+      if (field === "position") {
+        this.triggerEvent("positionChange", detail);
+      }
     },
 
     onPickerCancel(e: WechatMiniprogram.PickerCancel): void {

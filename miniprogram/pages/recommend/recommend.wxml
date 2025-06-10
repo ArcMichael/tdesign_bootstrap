@@ -1,7 +1,12 @@
 <navigation-bar back="{{false}}" color="black" >
-  <view slot="left" class="slot-left">
+  <view 
+    slot="left" 
+    class="slot-left" 
+    bindtap="showRegionPicker"
+    data-field="position"
+  >
     <image class="slot-header-location" src="http://swik7nyin.hd-bkt.clouddn.com/header_icon_locaion.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-    <text class="slot-header-text">北京市</text>
+    <text class="slot-header-text">{{position}}</text>
     <image class="slot-header-filter" src="http://swik7nyin.hd-bkt.clouddn.com/header_icon_filter.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
   </view>
   <view slot="center" class="slot-title">推荐</view>
@@ -31,3 +36,9 @@
 </view>
 
 <footer-bar activeIndex="{{0}}" bind:tabChange="onTabChange" />
+
+<region-picker
+  title="选择地区"
+  id="areaPicker"
+  bind:positionChange="onPositionChange"
+/>

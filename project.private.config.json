@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "packageA/pages/profileVerification/profileVerification",
+          "pathName": "packageA/pages/profileVerification/profileVerification",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/recommend/recommend",
           "pathName": "pages/recommend/recommend",
           "query": "",

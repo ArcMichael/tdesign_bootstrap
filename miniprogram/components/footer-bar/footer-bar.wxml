@@ -1,0 +1,18 @@
+<view class="footer-bar">
+  <view class="tab-item {{active === 0 ? 'active' : ''}}" bindtap="onTapHome">
+    <image class="icon" src="{{ active === 0 ? 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-home-active.png' : 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-home.png' }}" />
+    <text class="label">首页</text>
+  </view>
+  <view class="tab-item {{active === 1 ? 'active' : ''}}" bindtap="onTapCampaign">
+    <image class="icon" src="{{ active === 1 ? 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-campaign-active.png' : 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-campaign.png' }}" />
+    <text class="label">活动</text>
+  </view>
+  <view class="tab-item {{active === 2 ? 'active' : ''}}" bindtap="onTapMessage">
+    <image class="icon" src="{{ active === 2 ? 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-message-active.png' : 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-message.png' }}" />
+    <text class="label">消息</text>
+  </view>
+  <view class="tab-item {{active === 3 ? 'active' : ''}}" bindtap="onTapAccount">
+    <image class="icon" src="{{ active === 3 ? 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-account-active.png' : 'http://swik7nyin.hd-bkt.clouddn.com/footer-bar-account.png' }}" />
+    <text class="label">我的</text>
+  </view>
+</view>

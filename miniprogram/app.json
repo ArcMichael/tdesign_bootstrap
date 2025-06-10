@@ -3,6 +3,7 @@
     "pages/home/home",
     "pages/register/register",
     "pages/registerNext/registerNext",
+    "pages/recommend/recommend",
     "pages/index/index",
     "pages/logs/logs"
   ],

@@ -1,0 +1,20 @@
+<view>
+  <t-date-time-picker
+    auto-close
+    title="{{title}}"
+    showWeek="{{showWeek}}"
+    visible="{{pickerVisible}}"
+    mode="{{mode}}"
+    default-value="{{internalDate}}"
+    format="{{format}}"
+    filter="{{filter}}"
+    formatter="{{formatter}}"
+    popup-props="{{popupProps}}"
+    start="{{start}}"
+    end="{{end}}"
+    bindchange="__onConfirm"
+    bindpick="__onColumnChange"
+    bindcancel="__hidePicker"
+    bindclose="__hidePicker"
+  />
+</view>

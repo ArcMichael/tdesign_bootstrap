@@ -1,0 +1,16 @@
+<view class="wrapper">
+  <t-upload
+    remove-btn="{{true}}"
+    mediaType="{{['image']}}"
+    max="{{1}}"
+    files="{{fileList}}"
+    bind:add="handleAdd"
+    bind:remove="handleRemove"
+  >
+
+    <view slot="add-content" class="add-content">
+      <slot name="placeholder"></slot>
+    </view>
+
+  </t-upload>
+</view>

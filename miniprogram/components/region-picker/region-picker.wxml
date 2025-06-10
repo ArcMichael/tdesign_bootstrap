@@ -1,0 +1,17 @@
+<view>
+  <t-picker
+    visible="{{areaVisible}}"
+    value="{{areaValue}}"
+    title="{{title}}"
+    cancelBtn="取消"
+    confirmBtn="确认"
+    usingCustomNavbar
+    bindchange="onPickerChange"
+    bindpick="onColumnChange"
+    bindcancel="onPickerCancel"
+  >
+    <t-picker-item options="{{provinces}}"></t-picker-item>
+    <t-picker-item options="{{cities}}"></t-picker-item>
+    <t-picker-item options="{{counties}}"></t-picker-item>
+  </t-picker>
+</view>

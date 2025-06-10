@@ -1,0 +1,109 @@
+page {
+  background-image: url(http://swik7nyin.hd-bkt.clouddn.com/background_top.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommend {
+  height: 100vh;
+  padding-top: 5px;
+  position: relative;
+
+  .recommend_active {
+    width: 50px;
+    height: 130px;
+    position: absolute;
+    z-index: 10;
+
+    right: 20px;
+    bottom: 188px;
+
+    bottom: 273px;
+
+    .recommend_pink {
+      width: 50px;
+      height: 50px;
+      background-image: url(http://swik7nyin.hd-bkt.clouddn.com/recommend_pink.png);
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: contain;
+
+      position: absolute;
+      top: 0;
+    }
+    .recommend_reject {
+      width: 50px;
+      height: 50px;
+      background-image: url(http://swik7nyin.hd-bkt.clouddn.com/recommend_reject.png);
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: contain;
+
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.slot-title {
+  color: var(--4, #212121);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+
+  background: url("http://swik7nyin.hd-bkt.clouddn.com/header_title_curve.png");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: 90%;
+  padding-bottom: 4px;
+  background-position-x: center;
+}
+
+.slot-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .slot-header-location {
+    width: 17.324px;
+    height: 20px;
+  }
+  .slot-header-filter {
+    width: 20px;
+    height: 20px;
+  }
+  .slot-header-text {
+    color: #212121;
+    font-size: 14px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    margin-left: 4px;
+    margin-right: 9px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 180px;
+}
+
+.swiper-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > image {
+    width: 100%;
+    height: 100%;
+  }
+}

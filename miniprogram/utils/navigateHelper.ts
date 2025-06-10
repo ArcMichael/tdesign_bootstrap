@@ -4,3 +4,9 @@ export const goLoginWithRedirect = () => {
     url: "/pages/home/home",
   });
 };
+
+export const goRegister = () => {
+  return wx.navigateTo({
+    url: "/pages/register/register",
+  });
+};

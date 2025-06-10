@@ -1,0 +1,40 @@
+/* date-picker.wxss */
+
+.wrapper {
+  width: 100%;
+}
+
+/* 点击区域 .picker-trigger */
+.picker-trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 88rpx; /* 可以根据你的实际高度调整 */
+  padding: 0 24rpx;
+  border-bottom: 1rpx solid #ececec;
+  background-color: #fff;
+}
+
+.picker-trigger .label {
+  flex: 0 0 auto;
+  width: 150rpx; /* 左侧 label 占位宽度 */
+  font-size: 28rpx;
+  color: #333;
+}
+
+.picker-trigger .value-input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #666;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.picker-trigger .arrow-icon {
+  flex: 0 0 auto;
+  color: #999;
+}
+
+/* 如果要和原来的表单项间距一致，可在外层父级给 margin-top/margin-bottom */

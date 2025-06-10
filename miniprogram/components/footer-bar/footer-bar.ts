@@ -1,0 +1,53 @@
+Component({
+  /**
+   * 组件的属性列表
+   * 可以外部传入 activeIndex，以便渲染不同的高亮状态
+   */
+  properties: {
+    activeIndex: {
+      type: Number,
+      value: 0,
+    },
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    active: 0,
+  },
+
+  /**
+   * 组件生命周期函数
+   */
+  lifetimes: {
+    attached() {
+      // 当组件被插入到页面节点树时，从属性同步 activeIndex 到 data
+      this.setData({
+        active: this.properties.activeIndex,
+      });
+    },
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    // 点击“首页”
+    onTapHome() {
+      this.triggerEvent("tabChange", { index: 0 });
+    },
+    // 点击“分类”
+    onTapCampaign() {
+      this.triggerEvent("tabChange", { index: 1 });
+    },
+    // 点击“购物车”
+    onTapMessage() {
+      this.triggerEvent("tabChange", { index: 2 });
+    },
+    // 点击“我的”
+    onTapAccount() {
+      this.triggerEvent("tabChange", { index: 3 });
+    },
+  },
+});

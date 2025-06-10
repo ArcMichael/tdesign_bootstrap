@@ -1,5 +1,18 @@
 // utils/api.ts
-import { request, requestWithRetry } from "./request";
+import { request, RequestOptions, requestWithRetry } from "./request";
+import { SocialLogin } from "./auth";
+
+export interface Res<T> {
+  code: number;
+  data: T;
+  msg: string;
+}
+
+interface fetchLoginRequestOptions {
+  type?: number;
+  code: string;
+  state?: string;
+}
 
 // 示例：获取首页列表
 export async function fetchItemList(pageNum = 1, pageSize = 20) {
@@ -23,3 +36,63 @@ export async function searchCoupons(
     { maxRetries: 3, timeout: 5000, delay: 1000 }
   );
 }
+
+// 授权
+export async function fetchLogin(
+  options: fetchLoginRequestOptions
+): Promise<Res<SocialLogin>> {
+  const { type = 1, code, state = "MNP" } = options;
+  const url = `/app-api/member/auth/social-login`;
+  const requestConfig: RequestOptions = {
+    url: "/app-api/member/auth/social-login",
+    method: "POST",
+    data: { type, code, state },
+  };
+  return request(requestConfig);
+}
+
+export interface AreaTree {
+  id: number;
+  name: string;
+  children: AreaTree[];
+}
+
+// 获取地区树
+export const fetchArea = async (): Promise<Res<AreaTree[]>> => {
+  const requestConfig: RequestOptions = {
+    url: `/app-api/system/area/tree`,
+    method: "GET",
+  };
+  return await request(requestConfig);
+};
+
+export interface DictDataProfession {
+  id: number;
+  label: string;
+  value: string;
+  dictType: string;
+}
+
+// 获取职业
+export const fetchProfession = async (): Promise<Res<DictDataProfession[]>> => {
+  const requestConfig: RequestOptions = {
+    url: "/app-api/system/dict-data/type?type=profession",
+  };
+  return await request(requestConfig);
+};
+
+export interface ResignedUrl {
+  configId: number;
+  path: string;
+  uploadUrl: string;
+  url: string;
+}
+
+// 上传图片 - 获取文件预签名地址
+export const getPresignedUrl = async (): Promise<Res<ResignedUrl>> => {
+  const requestConfig: RequestOptions = {
+    url: `/app-api/infra/file/presigned-url?name=test`,
+    method: "GET",
+  };
+  return await request(requestConfig);
+};

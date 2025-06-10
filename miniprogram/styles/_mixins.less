@@ -1,0 +1,30 @@
+@import "_variables.less";
+
+// === Conversion Functions === 通用工具 mixin
+.px2rpx(@prop, @n) {
+  @{prop}: (@n * @target-width / @design-width) * 1rpx;
+}
+// === Spacing Mixins ===
+.font-group(@font-px, @font-weight: normal) {
+  // 嵌套调用 px2rpx，将 font-size 从 px 转为 rpx
+  .px2rpx(font-size, @font-px);
+  // 直接设置 font-weight
+  font-weight: @font-weight;
+}
+
+.border-group(@border-width, @border-style: solid, @border-color: #fff ){
+  .px2rpx(border-width, @border-width);
+  border-style: @border-style;
+  border-color: @border-color;
+}
+
+.padding-sides(@size: 20) {
+  .px2rpx(padding-left, @size);
+  .px2rpx(padding-right, @size);
+}
+
+.margin-sides(@size: 20) {
+  .px2rpx(margin-left, @size);
+  .px2rpx(margin-right, @size);
+}
+

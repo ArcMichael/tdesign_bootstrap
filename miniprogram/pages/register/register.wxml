@@ -24,6 +24,7 @@
       class="form-item"
       bindtap="onHandlePicker"
       data-field="gender"
+      disabled
     >
       <text class="label">性别<text class="disabled">*</text></text>
       <input
@@ -36,52 +37,132 @@
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
-    <view class="form-item">
+    <view
+      class="form-item"
+      bindtap="showPicker"
+      data-field="birthday"
+      disabled
+    >
       <text class="label">出生日期</text>
-      <input type="text" class="form-input" placeholder="请选择出生日期" />
+      <input
+        type="text"
+        class="form-input"
+        value="{{form.birthday && form.birthday.label}}"
+        placeholder="请选择出生日期"
+        disabled
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
-    <view class="form-item">
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="height"
+       
+    >
       <text class="label">身高</text>
-      <input type="text" class="form-input" placeholder="请选择身高" />
+      <input 
+        type="text" 
+        class="form-input" 
+        value="{{form.height && form.height.label}}"
+        placeholder="请选择身高" 
+        disabled
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
-    <view class="form-item">
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="mbti"
+       
+    >
       <text class="label">Mbit</text>
-      <input type="text" class="form-input" placeholder="请选择Mbit" />
+      <input 
+        type="text" 
+        class="form-input" 
+        value="{{form.mbti && form.mbti.label}}"
+        placeholder="请选择Mbit" 
+        disabled
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
 
-    <view class="form-item">
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="school"
+    >
       <text class="label">学校</text>
-      <input type="text" class="form-input" placeholder="请选择学校" />
+      <input 
+        type="text" 
+        class="form-input" 
+        value="{{form.school && form.school.label}}"
+        placeholder="请选择学校" 
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
-    <view class="form-item">
+    <view 
+      class="form-item" 
+      bindtap="showRegionPicker"
+      data-field="hometown"
+    >
       <text class="label">家乡</text>
-      <input type="text" class="form-input" placeholder="请选择家乡" />
+      <input
+        type="text"
+        class="form-input"
+        value="{{form.hometown && form.hometown.label}}"
+        placeholder="请选择家乡"
+        disabled
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
-    <view class="form-item">
+    <view 
+      class="form-item" 
+      bindtap="showRegionPicker"
+      data-field="location"
+    >
       <text class="label">现居地</text>
-      <input type="text" class="form-input" placeholder="请选择现居地" />
+      <input 
+        type="text" 
+        class="form-input" 
+        value="{{form.location && form.location.label}}"
+        placeholder="请选择现居地" 
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>   
     
-    <view class="form-item">
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="career"
+      
+    >
       <text class="label">职业</text>
-      <input type="text" class="form-input" placeholder="请选择职业" />
+      <input 
+        type="text" 
+        class="form-input" 
+        value="{{form.career && form.career.label}}"
+        placeholder="请选择职业" 
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
-    <view class="form-item last-form-item">
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="income"
+    >
       <text class="label">年收入</text>
-      <input type="text" class="form-input" placeholder="请选择年收入" />
+      <input 
+        type="text" 
+        class="form-input" 
+        value="{{form.income && form.income.label}}"
+        placeholder="请选择年收入" 
+      />
       <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
     </view>
 
@@ -89,6 +170,21 @@
 
   <view class="form-submit" bindtap="onNavigationToNextStep">下一步</view>
 </view>
+
+<date-picker
+  id="birthdayPicker"
+  value="{{form.birthdate}}"
+  bind:confirm="onBirthdayConfirm"
+  showWeek="{{false}}"
+  format="YYYY-MM-DD"
+/>
+
+<region-picker
+  title="选择地区"
+  id="areaPicker"
+  bind:hometownChange="onHometownChange"
+  bind:locationChange="onLocationChange"
+/>
 
 <picker-overlay
   visible="{{picker.visible}}"

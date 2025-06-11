@@ -19,20 +19,24 @@
     .font-group(24);
   }
 
-  .tab-item.active {
-    color: var(--4, #212121);
-    text-align: center;
-    .font-group(12,600);
-  }
-
   .icon {
     .px2rpx(width, 24);
     .px2rpx(height, 24);
   }
 
   .label{
+    color: var(--5, #9196A3);
+    text-align: center;
+    .font-group(12,600);
+  }
+
+  .tab-item.active {
     color: var(--4, #212121);
     text-align: center;
     .font-group(12,600);
+
+    .label{
+      color: var(--4, #212121);
+    }
   }
 }

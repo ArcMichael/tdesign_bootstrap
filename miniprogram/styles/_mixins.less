@@ -74,3 +74,10 @@
   background-color: @v-color-danger-background;
   color: @v-color-danger-font;
 }
+
+.ellipsis-single(@width) {
+  .px2rpx(max-width, @width);
+  overflow: hidden;        
+  white-space: nowrap;     
+  text-overflow: ellipsis; 
+}

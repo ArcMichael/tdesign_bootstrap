@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/home/home",
+    "pages/events/events",
+    "pages/message/message",
+    "pages/profile/profile",
     "pages/register/register",
     "pages/registerNext/registerNext",
-    "pages/recommend/recommend",
     "pages/index/index",
     "pages/logs/logs"
   ],

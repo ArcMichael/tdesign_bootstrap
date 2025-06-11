@@ -1,17 +1,42 @@
-<view class="home">
-  <view class="home_sign">
-    <image class="home_logo" src="http://swik7nyin.hd-bkt.clouddn.com/home_logo.png" mode="aspectFit|aspectFill|widthFix" />
+<navigation-bar back="{{false}}" color="black" >
+  <view 
+    slot="left" 
+    class="slot-left" 
+    bindtap="showRegionPicker"
+    data-field="position"
+  >
+    <image class="slot-header-location" src="http://swik7nyin.hd-bkt.clouddn.com/header_icon_locaion.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    <text class="slot-header-text">{{position}}</text>
+    <image class="slot-header-filter" src="http://swik7nyin.hd-bkt.clouddn.com/header_icon_filter.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
   </view>
-  <view class="home_function">
-    <view class="login" bind:tap="onLogin">注册</view>
-    <view class="guest_login">
-      游客访问
-      <t-icon name="chevron-right-s" size="48rpx" bind:click="onIconTap" />
+  <view slot="center" class="slot-title">推荐</view>
+</navigation-bar>
+
+<view class="page-wrapper home">
+  <swiper class="swiper" indicator-dots="{{home.options.indicatorDots}}"
+        autoplay="{{home.options.autoplay}}" 
+        interval="{{home.options.interval}}" 
+        duration="{{home.options.duration}}" 
+        vertical="{{home.options.vertical}}">
+     <block wx:for="{{home.items}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item swiper-item-{{item.info.id}}">
+            <image class="" src="{{item.path}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+            <view class="swiper-info" hover-class="none" hover-stop-propagation="false"></view>
+          </view>
+        </swiper-item>
+     </block>
+    </swiper>
+    <view class="home_active">
+      <view class="home_pink"></view>
+      <view class="home_reject"></view>
     </view>
-    <view class="agreement">
-      <image class="check" src="http://swik7nyin.hd-bkt.clouddn.com/icon_check.png" mode="aspectFit|aspectFill|widthFix" /> 我已阅读并同意
-      <text class="pink" bind:tap="onUserAgreementTap">《用户使用协议》</text>与
-      <text class="pink" bind:tap="onPrivacyAgreementTap">《隐私协议》</text>
-    </view>
-  </view>
 </view>
+
+<footer-bar activeIndex="{{0}}" bind:tabChange="onTabChange" />
+
+<region-picker
+  title="选择地区"
+  id="areaPicker"
+  bind:positionChange="onPositionChange"
+/>

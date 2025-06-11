@@ -9,15 +9,36 @@
     "miniprogram": {
       "list": [
         {
-          "name": "packageA/pages/profileVerification/profileVerification",
-          "pathName": "packageA/pages/profileVerification/profileVerification",
+          "name": "pages/profile/profile",
+          "pathName": "pages/profile/profile",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
-          "name": "pages/recommend/recommend",
-          "pathName": "pages/recommend/recommend",
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/events/events",
+          "pathName": "pages/events/events",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/profileVerification/profileVerification",
+          "pathName": "packageA/pages/profileVerification/profileVerification",
           "query": "",
           "launchMode": "default",
           "scene": null

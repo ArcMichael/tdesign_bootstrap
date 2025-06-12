@@ -1,0 +1,51 @@
+<navigation-bar back="{{true}}" color="black" ></navigation-bar>
+
+<view class="page-wrapper profile">
+  
+  <view class="profile-group">
+
+    <view class="profile-container info">
+
+      <view class="info-avator">
+        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_avator.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        <view class="info-edit-icon">
+          <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_edit_avator.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        </view>
+      </view>
+
+      <view class="info-more">
+        <view class="info-nickname">空白K</view>
+        <view class="info-edit">
+          <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_edit.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        </view>
+        <view class="info-tags">
+          <view class="approved">
+            <text>已认证</text>
+            <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_tags_approved.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+          </view>
+        </view>
+      </view>
+
+      <view class="info-point">
+        <view class="info-point-item">
+          <view class="point">{{profile.mylikes}}</view>
+          <view class="text">我喜欢的</view>
+        </view>
+        <view class="info-point-item">
+          <view class="point">{{profile.likesme}}</view>
+          <view class="text">喜欢我的</view>
+        </view>
+      </view>
+
+      <view class="notes-login">立即注册
+        <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      </view>
+
+    </view>
+
+    <view class="profile-container events"></view>
+    <view class="profile-container function"></view>
+  </view>
+</view>
+
+<footer-bar activeIndex="{{3}}" bind:tabChange="onTabChange" />

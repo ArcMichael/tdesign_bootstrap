@@ -1,0 +1,13 @@
+<navigation-bar back="{{false}}" color="black">
+  <view 
+    slot="left" 
+    class="slot-left" 
+  >
+  <view class="slot-left-text">活动列表</view>
+  <view class="slot-left-line"></view>
+</view>
+</navigation-bar>
+
+<view class="page-wrapper events"></view>
+
+<footer-bar activeIndex="{{1}}" bind:tabChange="onTabChange" />

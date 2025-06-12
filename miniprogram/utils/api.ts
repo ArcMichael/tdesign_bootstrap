@@ -1,6 +1,8 @@
 // utils/api.ts
 import { request, RequestOptions, requestWithRetry } from "./request";
 import { SocialLogin } from "./auth";
+import { getAreaList, setAreaList } from "./storage";
+import { AREA_LIST_STORAGE_LEY } from "./constants";
 
 export interface Res<T> {
   code: number;
@@ -59,11 +61,21 @@ export interface AreaTree {
 
 // 获取地区树
 export const fetchArea = async (): Promise<Res<AreaTree[]>> => {
+  // 性能优化 添加 wx.storage
+
+  const areaList = getAreaList();
+  if (areaList) return JSON.parse(areaList);
+
   const requestConfig: RequestOptions = {
     url: `/app-api/system/area/tree`,
     method: "GET",
   };
-  return await request(requestConfig);
+
+  const response = await request(requestConfig);
+
+  setAreaList(JSON.stringify(response));
+
+  return response;
 };
 
 export interface DictDataProfession {

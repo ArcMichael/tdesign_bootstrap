@@ -1,8 +1,11 @@
+@import "styles/_variables.less";
+@import "styles/_mixins.less";
+
 .footer-bar {
   position: fixed; /* 固定在底部 */
+  .px2rpx(height, @footer-height);
   bottom: 0;
   width: 100%;
-  height: 85px; /* 根据设计稿调整高度 */
   display: flex;
   background-color: #fff; /* 背景色 */
 
@@ -13,19 +16,27 @@
     align-items: center;
     justify-content: center;
     color: #888888; /* 未选中时文字颜色 */
-    font-size: 24rpx;
+    .font-group(24);
+  }
+
+  .icon {
+    .px2rpx(width, 24);
+    .px2rpx(height, 24);
+  }
+
+  .label{
+    color: var(--5, #9196A3);
+    text-align: center;
+    .font-group(12,600);
   }
 
   .tab-item.active {
     color: var(--4, #212121);
     text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-  }
+    .font-group(12,600);
 
-  .icon {
-    width: 48rpx;
-    height: 48rpx;
-    margin-bottom: 4rpx;
+    .label{
+      color: var(--4, #212121);
+    }
   }
 }

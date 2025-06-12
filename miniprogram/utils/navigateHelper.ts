@@ -10,3 +10,27 @@ export const goRegister = () => {
     url: "/pages/register/register",
   });
 };
+
+export const goHome = () => {
+  return wx.redirectTo({
+    url: "/pages/home/home",
+  });
+};
+
+export const goEvents = () => {
+  return wx.redirectTo({
+    url: "/pages/events/events",
+  });
+};
+
+export const goMessage = () => {
+  return wx.redirectTo({
+    url: "/pages/message/message",
+  });
+};
+
+export const goProfile = () => {
+  return wx.redirectTo({
+    url: "/pages/profile/profile",
+  });
+};

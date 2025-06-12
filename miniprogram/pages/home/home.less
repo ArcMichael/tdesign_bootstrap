@@ -1,3 +1,6 @@
+@import "styles/_variables.less";
+@import "styles/_mixins.less";
+
 page {
   background-image: url(http://swik7nyin.hd-bkt.clouddn.com/background_top.png);
   background-repeat: no-repeat;
@@ -11,8 +14,6 @@ page {
 }
 
 .home {
-  // height: calc(100vh - 85px);
-  // height: calc(100% - 93px);
   height: 100vh;
   .px2rpx(padding-top, 5);
   .px2rpx(padding-bottom, 85);
@@ -53,16 +54,31 @@ page {
 }
 
 .slot-title {
+  position: relative;
   color: var(--4, #212121);
   text-align: center;
-  .font-group(18, 500);
-
-  background: url("http://swik7nyin.hd-bkt.clouddn.com/header_title_curve.png");
-  background-repeat: no-repeat;
-  background-position-y: bottom;
-  background-size: 90%;
   .px2rpx(padding-bottom, 4);
-  background-position-x: center;
+
+  .slot-title-text{
+    .font-group(18, 500);
+    .px2rpx(width, 37);
+    .px2rpx(height, 25);
+  }
+  .slot-title-line{
+    .px2rpx(width, 26);
+    .px2rpx(height, 4);
+
+    background: url("http://swik7nyin.hd-bkt.clouddn.com/header_title_curve.png");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: 100%;
+    background-position-x: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
 }
 
 .slot-left {
@@ -92,8 +108,6 @@ page {
 .swiper {
   width: 100%;
   height: 100%;
-  // height: calc(100vh - 182rpx);
-  // .px2rpx(padding-bottom, 180);
 }
 
 .swiper-item {

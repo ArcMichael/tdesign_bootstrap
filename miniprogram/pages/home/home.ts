@@ -1,4 +1,5 @@
 import { AreaChangeDetail } from "../register/register";
+import { items } from "./home.config";
 
 Page({
   data: {
@@ -11,37 +12,7 @@ Page({
         interval: 2000,
         duration: 500,
       },
-      items: [
-        {
-          path: "http://swik7nyin.hd-bkt.clouddn.com/swiper-item.jpg",
-          info: {
-            id: 0,
-            name: "甜七七1",
-          },
-          activity: {
-            name: "南山飞盘暴汗局1",
-            status: 1,
-          },
-        },
-        {
-          path: "http://swik7nyin.hd-bkt.clouddn.com/swiper-item.jpg",
-          info: {
-            id: 1,
-            name: "甜七七2",
-          },
-          activity: {
-            name: "南山飞盘暴汗局2",
-            status: 0,
-          },
-        },
-        {
-          path: "http://swik7nyin.hd-bkt.clouddn.com/swiper-item.jpg",
-          info: {
-            id: 2,
-            name: "甜七七3",
-          },
-        },
-      ],
+      items: items,
     },
   },
   showRegionPicker(
@@ -65,7 +36,7 @@ Page({
     console.log(positionOptions);
 
     this.setData({
-      position: text[2],
+      position: text[text.length - 1],
     });
   },
 

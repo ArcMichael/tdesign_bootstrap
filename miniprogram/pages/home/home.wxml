@@ -9,7 +9,10 @@
     <view class="slot-header-text">{{position}}</view>
     <image class="slot-header-filter" src="http://swik7nyin.hd-bkt.clouddn.com/header_icon_filter.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
   </view>
-  <view slot="center" class="slot-title">推荐</view>
+  <view slot="center" class="slot-title">
+    <view class="slot-title-text">推荐</view>
+    <view class="slot-title-line"></view>
+  </view>
 </navigation-bar>
 
 <view class="page-wrapper home">

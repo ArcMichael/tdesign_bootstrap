@@ -1,3 +1,10 @@
+import {
+  goHome,
+  goEvents,
+  goMessage,
+  goProfile,
+} from "../../utils/navigateHelper";
+
 Component({
   /**
    * 组件的属性列表
@@ -26,7 +33,6 @@ Component({
       this.setData({
         active: this.properties.activeIndex,
       });
-      console.log(this);
     },
   },
 
@@ -34,21 +40,21 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    // 点击“首页”
+    // 点击“主页”
     onTapHome() {
-      this.triggerEvent("tabChange", { index: 0 });
+      return goHome();
     },
-    // 点击“分类”
-    onTapCampaign() {
-      this.triggerEvent("tabChange", { index: 1 });
+    // 点击“活动”
+    onTapEvents() {
+      return goEvents();
     },
-    // 点击“购物车”
+    // 点击“消息”
     onTapMessage() {
-      this.triggerEvent("tabChange", { index: 2 });
+      return goMessage();
     },
     // 点击“我的”
-    onTapAccount() {
-      this.triggerEvent("tabChange", { index: 3 });
+    onTapProfile() {
+      return goProfile();
     },
   },
 });

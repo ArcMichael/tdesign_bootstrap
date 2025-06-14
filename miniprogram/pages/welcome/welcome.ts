@@ -1,6 +1,6 @@
 import { fetchLogin } from "../../utils/api";
 import { setToken, setOpenID, setUserID } from "../../utils/auth";
-import { goRegister } from "../../utils/navigateHelper";
+import * as navigateHelper from "../../utils/navigateHelper";
 
 Page({
   async onLogin() {
@@ -22,7 +22,7 @@ Page({
               setUserID(response.data.userId);
             }
 
-            return goRegister();
+            return navigateHelper.goPersonalInfo();
           } catch (err) {
             console.error("登录请求失败：", err);
           }
@@ -32,5 +32,8 @@ Page({
         console.error("wx.login 调用失败", err);
       },
     });
+  },
+  goHome() {
+    return navigateHelper.goHome();
   },
 });

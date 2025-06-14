@@ -1,4 +1,5 @@
 import { DictDataProfession, fetchProfession } from "../../utils/api";
+import * as navigateHelper from "../../utils/navigateHelper";
 
 export interface PickerOption {
   label: string;
@@ -165,11 +166,9 @@ Page({
     this.setData({ "picker.visible": false });
   },
 
-  onNavigationToNextStep() {
+  onPhotoUpload() {
     console.log("nav");
-    return wx.navigateTo({
-      url: "/pages/registerNext/registerNext",
-    });
+    return navigateHelper.goPhotoUpload();
   },
 
   async initHeightOptions() {

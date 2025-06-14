@@ -43,8 +43,42 @@
 
     </view>
 
-    <view class="profile-container events"></view>
-    <view class="profile-container function"></view>
+    <view class="profile-container events single">
+      <view class="profile-container-item">
+        <view class="icon ">
+          <image class="event" src="http://swik7nyin.hd-bkt.clouddn.com/icon_events.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        </view>
+        <view class="content">我的活动</view>
+        <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      </view>
+    </view>
+    <view class="profile-container function multi">
+      <view class="profile-container-item">
+        <view class="icon ">
+          <image class="identify" src="http://swik7nyin.hd-bkt.clouddn.com/icon_identify.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        </view>
+        <view class="content">身份认证</view>
+        <view class="damger">
+          <image class="" src="http://swik7nyin.hd-bkt.clouddn.com/icon_damger_angle_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+          实名认证
+        </view>
+        <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      </view>
+      <view class="profile-container-item">
+        <view class="icon ">
+          <image class="csr" src="http://swik7nyin.hd-bkt.clouddn.com/icon_csr.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        </view>
+        <view class="content">联系客服</view>
+        <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      </view>
+      <view class="profile-container-item">
+        <view class="icon ">
+          <image class="settings" src="http://swik7nyin.hd-bkt.clouddn.com/icon_settings.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        </view>
+        <view class="content">设置</view>
+        <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      </view>
+    </view>
   </view>
 </view>
 

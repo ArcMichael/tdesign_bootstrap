@@ -5,8 +5,8 @@
     "pages/events/events",
     "pages/message/message",
     "pages/profile/profile",
-    "pages/register/register",
-    "pages/registerNext/registerNext",
+    "pages/personal-info/personal-info",
+    "pages/photo-upload/photo-upload",
     "pages/index/index",
     "pages/logs/logs"
   ],

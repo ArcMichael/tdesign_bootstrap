@@ -1,3 +1,26 @@
-<navigation-bar back="{{false}}" color="black" ></navigation-bar>
+<navigation-bar back="{{false}}" color="black">
+  <view 
+    slot="left" 
+    class="slot-left" 
+  >
+  <view class="slot-left-text">消息<view class="slot-left-bubble"></view></view>
+  <view class="slot-left-line"></view>
+</view>
+</navigation-bar>
+
+<view class="page-wrapper message">
+  <view class="message-group">
+    <view class="message-card system">
+      <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_bell_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <view class="ctx">系统消息</view>
+      <view class="number">3</view>
+    </view>
+    <view class="message-card social">
+      <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_social_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <view class="ctx">互动消息</view>
+      <view class="number">5</view>
+    </view>
+  </view>
+</view>
 
 <footer-bar activeIndex="{{2}}" bind:tabChange="onTabChange" />

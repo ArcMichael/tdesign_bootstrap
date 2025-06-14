@@ -26,8 +26,105 @@ page {
     .card-container();
     flex-direction: column;
     .px2rpx(padding-left, 20);
-    .px2rpx(padding-right, 20);
+    .px2rpx(padding-right, 20); 
+
+    &.events{
+
+      .px2rpx(padding-top, 4);
+      .px2rpx(padding-bottom, 4);
+    }
+    &.function{
+      .px2rpx(padding-top, 4);
+      .px2rpx(padding-bottom, 4);
+    }
+
+    .profile-container-item{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      .border-bottom(1, solid, #F3F3F3);
+      position: relative;
+
+      &:last-child{
+        border-bottom: none;
+      }
+
+      .icon{
+        .px2rpx(width, 33);
+        display: flex;
+
+        image.event{
+          .px2rpx(width, 20.81);
+          .px2rpx(height, 17);
+        }
+        image.identify{
+          .px2rpx(width, 20);
+          .px2rpx(height, 18);
+        }
+        image.csr{
+          .px2rpx(width, 18.13);
+          .px2rpx(height, 18);
+        }
+        image.settings{
+          .px2rpx(width, 16.6);
+          .px2rpx(height, 18);
+        }
+      }
+      .content{
+        color: var(--4, #212121);
+        .font-group(14, 500);
+        
+      }
+
+      .arrow_right{
+        .px2rpx(width, 5);
+        .px2rpx(height, 10);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .damger{
+        background-color: @v-color-danger-background;
+        color: @v-color-danger-font;
+
+        .px2rpx(width, 76);
+        .px2rpx(height, 25);
+        .font-group(10, 500);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .px2rpx(gap, 5);
+        .px2rpx(border-radius, 4);
+
+        margin-left: auto;
+        .px2rpx(margin-right, 20);
+
+
+        > image{
+          .px2rpx(width, 13.4);
+          .px2rpx(height, 12);
+        }
+      }
+    }
   } 
+
+  .profile-container{
+    &.single {
+      .profile-container-item{
+        .px2rpx(height, 50);
+      }
+    }
+
+    &.multi {
+      .profile-container-item{
+        .px2rpx(height, 50);
+      }
+    }
+  }
 
   .info{
     .px2rpx(height, 159);
@@ -183,11 +280,5 @@ page {
 
     }
 
-  }
-  .events{
-    .px2rpx(height, 59);
-  }
-  .function{
-    .px2rpx(height, 159);
   }
 }

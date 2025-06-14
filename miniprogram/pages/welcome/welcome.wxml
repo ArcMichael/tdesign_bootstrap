@@ -4,7 +4,7 @@
   </view>
   <view class="welcome_function">
     <view class="login" bind:tap="onLogin">注册</view>
-    <view class="guest_login">
+    <view class="guest_visit" bindtap="goHome">
       游客访问
       <t-icon name="chevron-right-s" size="48rpx" bind:click="onIconTap" />
     </view>

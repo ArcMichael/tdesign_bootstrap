@@ -48,11 +48,17 @@ page {
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  .padding(10,0,10,0);
+  // .padding(10,0,10,0);
+  .px2rpx(height, 85);
 
   .border-bottom(1, solid, #EEE);
 
   position: relative;
+
+  > .label-group{
+    display: flex;
+    flex-direction: column;
+  }
 
   &.last-form-item {
     .px2rpx(border-width,0);

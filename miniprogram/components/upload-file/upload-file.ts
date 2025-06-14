@@ -1,11 +1,16 @@
 import { getPresignedUrl, ResignedUrl } from "../../utils/api";
 
+type FileItem = WechatMiniprogram.UploadFileOption & {
+  status?: "loading" | "done" | "error";
+  percent?: number;
+};
+
 Component({
   options: {
     multipleSlots: true, // 在组件定义时的选项中启用多slot支持
   },
   data: {
-    fileList: [],
+    fileList: [] as FileItem[],
   },
   methods: {
     async preUploadFile() {
@@ -26,7 +31,7 @@ Component({
       // 方法2：每次选择图片都上传，展示每次上传图片的进度
       // files.forEach(file => this.uploadFile(file))
     },
-    onUpload(file) {
+    onUpload(file: WechatMiniprogram.UploadFileOption) {
       const { fileList } = this.data;
 
       this.setData({
@@ -51,7 +56,7 @@ Component({
         });
       });
     },
-    handleRemove(e) {
+    handleRemove(e: WechatMiniprogram.CustomEvent<{ index: number }>) {
       const { index } = e.detail;
       const { fileList } = this.data;
 

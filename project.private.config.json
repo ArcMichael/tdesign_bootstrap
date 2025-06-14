@@ -3,11 +3,26 @@
   "projectname": "tdesign_template",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false
+    "urlCheck": false,
+    "skylineRenderEnable": true
   },
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "pages/photo-upload/photo-upload",
+          "pathName": "pages/photo-upload/photo-upload",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/personal-info/personal-info",
+          "pathName": "pages/personal-info/personal-info",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "pages/profile/profile",
           "pathName": "pages/profile/profile",
@@ -39,20 +54,6 @@
         {
           "name": "packageA/pages/profileVerification/profileVerification",
           "pathName": "packageA/pages/profileVerification/profileVerification",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/registerNext/registerNext",
-          "pathName": "pages/registerNext/registerNext",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/register/register",
-          "pathName": "pages/register/register",
           "query": "",
           "launchMode": "default",
           "scene": null

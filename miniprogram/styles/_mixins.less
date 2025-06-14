@@ -12,13 +12,18 @@
   font-weight: @font-weight;
 }
 
+// === BOX { width, height } ===
+.size(@width, @height) {
+  .px2rpx(width, @width);
+  .px2rpx(height, @height);
+}
+
 // === border ===
 
 .border-group(@border-width, @border-style: solid, @border-color: #fff ){
   .px2rpx(border-width, @border-width);
   border-style: @border-style;
   border-color: @border-color;
-  
 }
 
 // === border-* ===
@@ -113,4 +118,10 @@
     .px2rpx(width, 24);
     .px2rpx(height, 25);
   }
+}
+
+// === TAGS SIGNING { 报名中 } ===
+.events-signing(){
+  background-color: @e-status-background;
+  .px2rpx(border-radius, 4);
 }

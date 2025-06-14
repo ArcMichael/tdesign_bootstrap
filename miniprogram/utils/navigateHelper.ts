@@ -5,9 +5,15 @@ export const goLoginWithRedirect = () => {
   });
 };
 
-export const goRegister = () => {
+export const goPersonalInfo = () => {
   return wx.navigateTo({
-    url: "/pages/register/register",
+    url: "/pages/personal-info/personal-info",
+  });
+};
+
+export const goPhotoUpload = () => {
+  return wx.navigateTo({
+    url: "/pages/photo-upload/photo-upload",
   });
 };
 

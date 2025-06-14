@@ -1,5 +1,6 @@
 import { AreaChangeDetail } from "../register/register";
 import { items } from "./home.config";
+import Message from "tdesign-miniprogram/message/index";
 
 Page({
   data: {
@@ -11,9 +12,29 @@ Page({
         autoplay: false,
         interval: 2000,
         duration: 500,
+        easingFunction: "easeInOutCubic",
       },
       items: items,
     },
+  },
+  bindanimationfinish(
+    e: WechatMiniprogram.CustomEvent<{
+      current: number;
+    }>
+  ) {
+    const length = this.data.home.items.length - 1;
+    const current = e.detail.current;
+    if (length === current) {
+      Message.info({
+        context: this,
+        offset: [107, 38.4615],
+        duration: 3000,
+        icon: false,
+        // single: false, // 打开注释体验多个消息叠加效果
+        content: "当前的推荐已经到底啦",
+        align: "center",
+      });
+    }
   },
   showRegionPicker(
     e: WechatMiniprogram.CustomEvent<{
@@ -38,29 +59,5 @@ Page({
     this.setData({
       position: text[text.length - 1],
     });
-  },
-
-  onTabChange(e: any) {
-    const idx = e.detail.index;
-    console.log(idx);
-    switch (idx) {
-      case 0:
-        console.log(idx);
-        // 已经在首页，可以不做任何处理，或者直接 reLaunch 保证回到根
-        // wx.reLaunch({ url: "/pages/index/index" });
-        break;
-      case 1:
-        console.log(idx);
-        // wx.reLaunch({ url: "/pages/category/category" });
-        break;
-      case 2:
-        console.log(idx);
-        // wx.reLaunch({ url: "/pages/cart/cart" });
-        break;
-      case 3:
-        console.log(idx);
-        // wx.reLaunch({ url: "/pages/profile/profile" });
-        break;
-    }
   },
 });

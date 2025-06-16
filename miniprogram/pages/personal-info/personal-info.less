@@ -45,7 +45,7 @@ page {
 
 .form-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: left;
   // .padding(10,0,10,0);
@@ -53,28 +53,49 @@ page {
 
   .border-bottom(1, solid, #EEE);
 
-  position: relative;
+  align-items: center;
 
-  > .label-group{
+  .label-group{
     display: flex;
     flex-direction: column;
+    .px2rpx(padding-top, 8);
+    .px2rpx(padding-bottom, 8);
+
+    > .label{
+      .px2rpx(height, 34);
+      .px2rpx(line-height, 34);
+    }
+    > .placeholder{
+      .px2rpx(height, 34);
+      .px2rpx(line-height, 34);
+      color: #9196A3;
+      .font-group(18, 400);
+    }
+  }
+
+  .label-result{
+    display: flex;
+    margin-left: auto;
+    .px2rpx(height, 34);
+
+    background-image: url("http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_personal_info.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-size: 15.3648rpx 26.9231rpx;
   }
 
   &.last-form-item {
     .px2rpx(border-width,0);
   }
   .form-input {
-    .padding(6,0,6,0);
-  }
-
-  .form-arrow {
-    position: absolute;
-    .px2rpx(right,10);
-    top: 50%;
-    transform: translateY(-50%);
-    color: #d1d1d1;
+    .padding(6,18,6,0);
+    text-align: right;
+    color: #9196A3;
   }
 }
+
+
 
 .label {
   .font-group(16,600);
@@ -82,6 +103,9 @@ page {
   .disabled {
     color: #9196a3;
     .font-group(16,400);
+    .adding{
+      .font-group(14, 400);
+    }
   }
 }
 

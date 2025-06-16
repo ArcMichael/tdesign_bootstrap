@@ -1,0 +1,7 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">喜欢我的</view>
+</navigation-bar>
+
+<view class="page-wrapper likes-me">
+  <likes-card items="{{items}}" />
+</view>

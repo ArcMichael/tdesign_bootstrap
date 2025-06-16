@@ -10,6 +10,55 @@
     "miniprogram": {
       "list": [
         {
+          "name": "packageA/pages/my-events/my-events",
+          "pathName": "packageA/pages/my-events/my-events",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/my-likes/my-likes",
+          "pathName": "packageA/pages/my-likes/my-likes",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/likes-me/likes-me",
+          "pathName": "packageA/pages/likes-me/likes-me",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/events-info/events-info",
+          "pathName": "packageA/pages/events-info/events-info",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/public-profile/public-profile",
+          "pathName": "packageA/pages/public-profile/public-profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/profile-verification/profile-verification",
+          "pathName": "packageA/pages/profile-verification/profile-verification",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/welcome/welcome",
+          "pathName": "pages/welcome/welcome",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/photo-upload/photo-upload",
           "pathName": "pages/photo-upload/photo-upload",
           "query": "",
@@ -47,13 +96,6 @@
         {
           "name": "pages/home/home",
           "pathName": "pages/home/home",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "packageA/pages/profileVerification/profileVerification",
-          "pathName": "packageA/pages/profileVerification/profileVerification",
           "query": "",
           "launchMode": "default",
           "scene": null

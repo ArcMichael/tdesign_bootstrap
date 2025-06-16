@@ -1,5 +1,8 @@
 @import "_variables.less";
 
+// @design-width: 390; // 设计稿基准宽度
+// @target-width: 750; // 微信小程序 rpx 参照宽度
+
 // === Conversion Functions === 通用工具 mixin
 .px2rpx(@prop, @n) {
   @{prop}: (@n * @target-width / @design-width) * 1rpx;

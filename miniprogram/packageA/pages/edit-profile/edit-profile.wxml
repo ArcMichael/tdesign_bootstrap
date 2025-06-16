@@ -1,0 +1,3 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">编辑资料</view>
+</navigation-bar>

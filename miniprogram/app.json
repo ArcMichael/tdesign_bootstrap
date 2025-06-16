@@ -14,7 +14,15 @@
     {
       "root": "packageA",
       "pages": [
-        "pages/profileVerification/profileVerification"
+        "pages/profile-verification/profile-verification",
+        "pages/public-profile/public-profile",
+        "pages/events-info/events-info",
+        "pages/likes-me/likes-me",
+        "pages/my-likes/my-likes",
+        "pages/settings/settings",
+        "pages/my-events/my-events",
+        "pages/edit-profile/edit-profile",
+        "pages/edit-private/edit-private"
       ]
     }
   ],

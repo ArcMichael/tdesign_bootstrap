@@ -14,20 +14,16 @@
     >
       <view class="label-group">
         <view class="label">昵称</view>
-        <view class="text">请输入昵称</view>
+        <view wx:if="{{ !form.nickname }}" class="placeholder">请输入昵称</view>
       </view>
       <view class="label-result">
-        <view class="value">
-          <input
-            type="text"
-            class="form-input"
-            placeholder="请输入昵称"
-            value="{{form.nickname}}"
-            bindinput="onNicknameInput"
-          />
-        </view>
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.nickname}}"
+          bindinput="onNicknameInput"
+        />
       </view>
-      <!-- <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" /> -->
     </view>
 
     <view
@@ -36,15 +32,18 @@
       data-field="gender"
       disabled
     >
-      <text class="label">性别<text class="disabled">*</text></text>
-      <input
-        type="text"
-        class="form-input"
-        value="{{form.gender && form.gender.label}}"
-        placeholder="请选择性别"
-        disabled
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">性别<text class="disabled"> *<text class="adding">无法修改</text></text></text>
+        <view wx:if="{{ !form.gender }}" class="placeholder">请输入昵称</view>
+      </view>
+      <view class="label-result">
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.gender && form.gender.label}}"
+          disabled
+        />
+      </view>
     </view>
 
     <view
@@ -53,15 +52,18 @@
       data-field="birthday"
       disabled
     >
-      <text class="label">出生日期</text>
-      <input
-        type="text"
-        class="form-input"
-        value="{{form.birthday && form.birthday.label}}"
-        placeholder="请选择出生日期"
-        disabled
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">出生日期</text>
+        <view wx:if="{{ !form.birthday }}" class="placeholder">请选择出生日期</view>
+      </view>
+      <view class="label-result">
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.birthday && form.birthday.label}}"
+          disabled
+        />
+      </view>
     </view>
 
     <view 
@@ -70,15 +72,18 @@
       data-field="height"
        
     >
-      <text class="label">身高</text>
-      <input 
-        type="text" 
-        class="form-input" 
-        value="{{form.height && form.height.label}}"
-        placeholder="请选择身高" 
-        disabled
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">身高</text>
+        <view wx:if="{{ !form.height }}" class="placeholder">请选择身高</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.height && form.height.label}}"
+          disabled
+        />
+      </view>
     </view>
 
     <view 
@@ -87,15 +92,18 @@
       data-field="mbti"
        
     >
-      <text class="label">Mbit</text>
-      <input 
-        type="text" 
-        class="form-input" 
-        value="{{form.mbti && form.mbti.label}}"
-        placeholder="请选择Mbit" 
-        disabled
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">Mbit</text>
+        <view wx:if="{{ !form.mbti }}" class="placeholder">请选择Mbit</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.mbti && form.mbti.label}}"
+          disabled
+        />
+      </view>
     </view>
 
 
@@ -104,14 +112,18 @@
       bindtap="onHandlePicker" 
       data-field="school"
     >
-      <text class="label">学校</text>
-      <input 
-        type="text" 
-        class="form-input" 
-        value="{{form.school && form.school.label}}"
-        placeholder="请选择学校" 
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">学校</text>
+        <view wx:if="{{ !form.school }}" class="placeholder">请选择学校</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.school && form.school.label}}"
+          placeholder="" 
+        />
+      </view>
     </view>
 
     <view 
@@ -119,15 +131,18 @@
       bindtap="showRegionPicker"
       data-field="hometown"
     >
-      <text class="label">家乡</text>
-      <input
-        type="text"
-        class="form-input"
-        value="{{form.hometown && form.hometown.label}}"
-        placeholder="请选择家乡"
-        disabled
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">家乡</text>
+        <view wx:if="{{ !form.hometown }}" class="placeholder">请选择家乡</view>
+      </view>
+      <view class="label-result">
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.hometown && form.hometown.label}}"
+          disabled
+        />
+      </view>
     </view>
 
     <view 
@@ -135,14 +150,18 @@
       bindtap="showRegionPicker"
       data-field="location"
     >
-      <text class="label">现居地</text>
-      <input 
-        type="text" 
-        class="form-input" 
-        value="{{form.location && form.location.label}}"
-        placeholder="请选择现居地" 
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">现居地</text>
+        <view wx:if="{{ !form.location }}" class="placeholder">请选择现居地</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.location && form.location.label}}"
+          disabled
+        />
+      </view>
     </view>   
     
     <view 
@@ -151,14 +170,18 @@
       data-field="career"
       
     >
-      <text class="label">职业</text>
-      <input 
-        type="text" 
-        class="form-input" 
-        value="{{form.career && form.career.label}}"
-        placeholder="请选择职业" 
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">职业</text>
+        <view wx:if="{{ !form.career }}" class="placeholder">请选择职业</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.career && form.career.label}}"
+          disabled
+        />
+      </view>
     </view>
 
     <view 
@@ -166,14 +189,18 @@
       bindtap="onHandlePicker" 
       data-field="income"
     >
-      <text class="label">年收入</text>
-      <input 
-        type="text" 
-        class="form-input" 
-        value="{{form.income && form.income.label}}"
-        placeholder="请选择年收入" 
-      />
-      <t-icon name="chevron-right-s" class="form-arrow" size="48rpx" />
+      <view class="label-group">
+        <text class="label">年收入</text>
+        <view wx:if="{{ !form.career }}" class="placeholder">请选择年收入</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.income && form.income.label}}"
+          disabled
+        />
+      </view>
     </view>
 
   </view>

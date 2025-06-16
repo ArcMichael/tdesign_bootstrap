@@ -1,0 +1,3 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">Ta主页</view>
+</navigation-bar>

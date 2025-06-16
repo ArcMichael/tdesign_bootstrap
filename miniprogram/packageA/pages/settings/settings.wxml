@@ -1,0 +1,3 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">设置</view>
+</navigation-bar>

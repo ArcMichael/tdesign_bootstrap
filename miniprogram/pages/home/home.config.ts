@@ -1,7 +1,7 @@
 export interface Items {
   path: string;
   info: { id: number; name: string };
-  activity?: { name: string; status: number };
+  activity?: { name: string; status: number; id: number; opening: boolean };
 }
 
 const items: Items[] = [
@@ -13,7 +13,9 @@ const items: Items[] = [
     },
     activity: {
       name: "南山飞盘暴汗局1",
+      id: 0,
       status: 1,
+      opening: true,
     },
   },
   {
@@ -24,7 +26,9 @@ const items: Items[] = [
     },
     activity: {
       name: "南山飞盘暴汗局2",
+      id: 1,
       status: 0,
+      opening: false,
     },
   },
   {

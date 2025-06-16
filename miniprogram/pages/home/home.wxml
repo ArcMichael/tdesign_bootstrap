@@ -26,8 +26,17 @@
      <block wx:for="{{home.items}}" wx:key="*this">
         <swiper-item>
           <view class="swiper-item swiper-item-{{item.info.id}}">
-            <image class="" src="{{item.path}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-            <view class="swiper-info" hover-class="none" hover-stop-propagation="false"></view>
+            <image src="{{item.path}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+            <view class="swiper-info" hover-class="none" hover-stop-propagation="false">
+              
+              <view class="nickname">甜七七</view>
+              <view class="activity">
+                <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_horm_home.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+                <view class="act-user">她报名了</view>
+                <view class="act-info">#南山飞盘暴汗局</view>
+                <view class="act-status">活动还可<view class="highlight">报名</view>哦~</view>
+              </view>
+            </view>
           </view>
         </swiper-item>
      </block>

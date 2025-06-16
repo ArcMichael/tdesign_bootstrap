@@ -1,0 +1,19 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">我的活动</view>
+</navigation-bar>
+
+<view class="page-wrapper my-events">
+  
+  <view class="events-tabs-wrapper">
+    <view class="events-tabs"></view>
+    <view 
+      class="events-btn fl {{tab === 1 ? 'action' : ''}}"
+      data-index="1"
+      bindtap="onTabChange">可报名</view>
+    <view 
+      class="events-btn fr {{tab === 0 ? 'action' : ''}}"
+      data-index="0"
+      bindtap="onTabChange">已结束</view>
+  </view>
+
+</view>

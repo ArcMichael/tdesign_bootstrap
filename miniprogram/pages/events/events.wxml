@@ -12,56 +12,36 @@
 
   <view class="events-group">
 
-    <view class="events-container">
-      <view class="header">
-        <view class="title">20:30开始回南路温莎唱歌 | 4h</view>
-        <view class="sub-title"><view class="sub-title-status">报名中</view>周日04.27 21:58 | 12.9km 温莎KTV</view>
-      </view>
-      <view class="body">
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-      </view>
-      <view class="footer">
-        <view class="condition">25人已上车</view>
-        <view class="status registered">已报名</view>
-      </view>
-    </view>
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="registered"
+      statusText="已报名"
+      statusTagText="报名中"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+    />
 
-    <view class="events-container">
-      <view class="header">
-        <view class="title">20:30开始回南路温莎唱歌 | 4h</view>
-        <view class="sub-title">周日04.27 21:58 | 12.9km 温莎KTV</view>
-      </view>
-      <view class="body">
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-      </view>
-      <view class="footer">
-        <view class="condition">25人已上车</view>
-        <view class="status ended">已结束</view>
-      </view>
-    </view>
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="ended"
+      statusText="已结束"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+    />
 
-    <view class="events-container">
-      <view class="header">
-        <view class="title">20:30开始回南路温莎唱歌 | 4h</view>
-        <view class="sub-title">周日04.27 21:58 | 12.9km 温莎KTV</view>
-      </view>
-      <view class="body">
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/placeholder_event_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-      </view>
-      <view class="footer">
-        <view class="condition">25人已上车</view>
-        <view class="status interesting">上车</view>
-      </view>
-    </view>
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="interesting"
+      statusText="上车"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+    />
 
   </view>
 
 </view>
 
-<footer-bar activeIndex="{{1}}" bind:tabChange="onTabChange" />
+<footer-bar activeIndex="{{1}}" />

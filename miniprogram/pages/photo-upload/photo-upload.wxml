@@ -18,10 +18,10 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-main"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_main.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -39,7 +39,7 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-careful"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_careful.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -58,7 +58,7 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-confidence"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_confidence.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -80,7 +80,7 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-montain"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_montain.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -99,7 +99,7 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-life"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_life.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />

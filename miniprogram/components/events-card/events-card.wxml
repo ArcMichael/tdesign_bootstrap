@@ -1,0 +1,32 @@
+<view class="events-container">
+  <view class="header">
+    <view class="title">{{ title }}</view>
+    <view class="sub-title">
+      <view wx:if="{{ statusTagText }}" class="sub-title-status">{{ statusTagText }}</view>
+      {{ subtitle }}
+    </view>
+  </view>
+
+  <view class="body">
+    <image
+      wx:for="{{ images }}"
+      wx:key="index"
+      src="{{ item }}"
+      mode="aspectFit|aspectFill|widthFix"
+    />
+  </view>
+
+  <view class="footer">
+    <view class="condition">
+      <view class="avatar-stack">
+        <block wx:for="{{ avatars }}" wx:key="index">
+          <image class="avatar" src="{{ item }}" style="z-index: {{ 10 + index }}" />
+        </block>
+      </view>
+      {{ condition }}
+      </view>
+    <view wx:if="{{ status }}" class="status {{ status }}">
+      {{ statusText }}
+    </view>
+  </view>
+</view>

@@ -89,6 +89,25 @@
     <view 
       class="form-item" 
       bindtap="onHandlePicker" 
+      data-field="school"
+    >
+      <view class="label-group">
+        <text class="label">学校</text>
+        <view wx:if="{{ !form.school }}" class="placeholder">请选择学校</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.school && form.school.label}}"
+          placeholder="" 
+        />
+      </view>
+    </view>
+
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
       data-field="mbti"
        
     >
@@ -107,24 +126,6 @@
     </view>
 
 
-    <view 
-      class="form-item" 
-      bindtap="onHandlePicker" 
-      data-field="school"
-    >
-      <view class="label-group">
-        <text class="label">学校</text>
-        <view wx:if="{{ !form.school }}" class="placeholder">请选择学校</view>
-      </view>
-      <view class="label-result">
-        <input 
-          type="text" 
-          class="form-input" 
-          value="{{form.school && form.school.label}}"
-          placeholder="" 
-        />
-      </view>
-    </view>
 
     <view 
       class="form-item" 
@@ -179,25 +180,6 @@
           type="text" 
           class="form-input" 
           value="{{form.career && form.career.label}}"
-          disabled
-        />
-      </view>
-    </view>
-
-    <view 
-      class="form-item" 
-      bindtap="onHandlePicker" 
-      data-field="income"
-    >
-      <view class="label-group">
-        <text class="label">年收入</text>
-        <view wx:if="{{ !form.career }}" class="placeholder">请选择年收入</view>
-      </view>
-      <view class="label-result">
-        <input 
-          type="text" 
-          class="form-input" 
-          value="{{form.income && form.income.label}}"
           disabled
         />
       </view>

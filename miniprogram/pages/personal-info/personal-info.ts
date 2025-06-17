@@ -148,7 +148,6 @@ Page({
       hometown: "请选择家乡",
       location: "请选择现居地",
       career: "请选择职业",
-      income: "请选择年收入",
     };
     return labels[field] || "";
   },
@@ -230,20 +229,6 @@ Page({
     });
   },
 
-  async initIncomeOptions() {
-    const incomeOptions: Option[] = [
-      { label: "5 万以下", value: "<50000" },
-      { label: "5-10 万", value: "50000-100000" },
-      { label: "10-20 万", value: "100000-200000" },
-      { label: "20-50 万", value: "200000-500000" },
-      { label: "50-100 万", value: "500000-1000000" },
-      { label: "100 万以上", value: ">1000000" },
-    ];
-    this.setData({
-      "pickerOptionsMap.income": incomeOptions,
-    });
-  },
-
   async initSchoolOptions() {
     const schoolOptions: Option[] = [
       { label: "清华大学", value: "清华大学" },
@@ -295,8 +280,6 @@ Page({
     await this.initHeightOptions();
     await this.initMbitOptions();
     await this.initCareerOptions();
-    await this.initIncomeOptions();
     await this.initSchoolOptions();
-    // await this.initHometownAndLocationOptions();
   },
 });

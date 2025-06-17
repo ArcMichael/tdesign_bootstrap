@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "packageA/pages/settings/settings",
+          "pathName": "packageA/pages/settings/settings",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "packageA/pages/my-events/my-events",
           "pathName": "packageA/pages/my-events/my-events",
           "query": "",

@@ -1,4 +1,4 @@
-import { getPresignedUrl, ResignedUrl } from "../../utils/api";
+import { uploadFileWithProgress } from "../../utils/file";
 
 type FileItem = WechatMiniprogram.UploadFileOption & {
   status?: "loading" | "done" | "error";
@@ -13,68 +13,49 @@ Component({
     fileList: [] as FileItem[],
   },
   methods: {
-    async preUploadFile() {
-      // const response = await getPresignedUrl();
-      // console.log(response);
-    },
-
-    async upload(tempFilePath: string) {
-      console.log("upload");
-      return await wx.uploadFile({
-        url: "http://8.130.116.253:48080/admin-api/infra/file/upload", //仅为示例，非真实的接口地址
-        filePath: tempFilePath,
-        name: "123123",
-        header: {
-          Authorization: "Bearer " + wx.getStorageSync("ACCESS_TOKEN"),
-        },
-        success(res) {
-          const data = res.data;
-          //do something
-        },
-      });
-    },
-
-    async handleAdd(e: any) {
-      const _this = this;
-      await this.preUploadFile();
-      const { fileList } = this.data;
+    async handleAdd(e: WechatMiniprogram.CustomEvent<{ files: FileItem[] }>) {
       const { files } = e.detail;
 
-      // 方法1：选择完所有图片之后，统一上传，因此选择完就直接展示
-      this.setData({
-        fileList: [...fileList, ...files], // 此时设置了 fileList 之后才会展示选择的图片
-      });
-
-      // 方法2：每次选择图片都上传，展示每次上传图片的进度
-      files.forEach(async (file) => await _this.onUpload(file));
-    },
-    async onUpload(file: WechatMiniprogram.UploadFileOption) {
-      const { fileList } = this.data;
-
-      this.setData({
-        fileList: [...fileList, { ...file, status: "loading" }],
-      });
-      const { length } = fileList;
-
-      console.log(file);
-
-      const _this = this;
-
-      await wx.chooseImage({
-        async success(res) {
-          const tempFilePaths = res.tempFilePaths;
-          _this.upload(tempFilePaths[0]);
-        },
+      files.forEach(async (file: FileItem) => {
+        await this.uploadFile(file);
       });
     },
-    handleRemove(e: WechatMiniprogram.CustomEvent<{ index: number }>) {
-      const { index } = e.detail;
-      const { fileList } = this.data;
 
-      fileList.splice(index, 1);
+    async uploadFile(file: FileItem) {
+      const { fileList } = this.data;
+      const index = fileList.length;
+
+      // 加入 loading 状态
       this.setData({
-        fileList,
+        fileList: [...fileList, { ...file, status: "loading", percent: 0 }],
       });
+
+      try {
+        const url = await uploadFileWithProgress({
+          filePath: file.url,
+          onProgress: (percent) => {
+            this.setData({
+              [`fileList[${index}].percent`]: percent,
+            });
+          },
+        });
+
+        this.setData({
+          [`fileList[${index}].status`]: "done",
+          [`fileList[${index}].url`]: url, // 上传成功返回的地址
+        });
+
+        this.triggerEvent("uploadsuccess", {
+          index,
+          url,
+          file: this.data.fileList[index],
+        });
+      } catch (err) {
+        this.setData({
+          [`fileList[${index}].status`]: "error",
+        });
+        console.error("上传失败：", err);
+      }
     },
   },
 });

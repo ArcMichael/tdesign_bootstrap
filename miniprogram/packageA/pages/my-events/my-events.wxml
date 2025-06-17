@@ -7,13 +7,50 @@
   <view class="events-tabs-wrapper">
     <view class="events-tabs"></view>
     <view 
-      class="events-btn fl {{tab === 1 ? 'action' : ''}}"
+      class="events-btn fl {{config.tab === 1 ? 'action' : ''}}"
       data-index="1"
       bindtap="onTabChange">可报名</view>
     <view 
-      class="events-btn fr {{tab === 0 ? 'action' : ''}}"
+      class="events-btn fr {{config.tab === 0 ? 'action' : ''}}"
       data-index="0"
       bindtap="onTabChange">已结束</view>
+  </view>
+
+  <view class="my-events-group">
+
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="registered"
+      statusText="已报名"
+      statusTagText="报名中"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+      avatars="{{ avatarImaes }}"
+    />
+
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="ended"
+      statusText="已结束"
+      statusTagText="报名中"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+      avatars="{{ avatarImaes }}"
+    />
+
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="signing"
+      statusText="报名中"
+      statusTagText="报名中"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+      avatars="{{ avatarImaes }}"
+    />
+
   </view>
 
 </view>

@@ -11,12 +11,12 @@
 <view class="page-wrapper message">
   <view class="message-group">
     <view class="message-card system">
-      <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_bell_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <image src="https://qiniustatic.womenshike.top/icon_bell_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
       <view class="ctx">系统消息</view>
       <view class="number">3</view>
     </view>
     <view class="message-card social">
-      <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_social_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <image src="https://qiniustatic.womenshike.top/icon_social_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
       <view class="ctx">互动消息</view>
       <view class="number">5</view>
     </view>

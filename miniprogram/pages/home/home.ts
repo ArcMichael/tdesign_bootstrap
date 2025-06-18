@@ -1,4 +1,4 @@
-import { AreaChangeDetail } from "../register/register";
+import { AreaChangeDetail } from "../personal-info/personal-info";
 import { items } from "./home.config";
 import Message from "tdesign-miniprogram/message/index";
 
@@ -27,7 +27,7 @@ Page({
     if (length === current) {
       Message.info({
         context: this,
-        offset: [107, 38.4615],
+        offset: [120, 38.4615],
         duration: 3000,
         icon: false,
         // single: false, // 打开注释体验多个消息叠加效果

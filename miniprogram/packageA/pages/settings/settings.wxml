@@ -10,22 +10,22 @@
     </view>
     <view class="settings-container-item">
       <view class="content">用户协议</view>
-      <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     </view>
     <view class="settings-container-item" bindtap="onSettings">
       <view class="content">隐私协议</view>
-      <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     </view>
     <view class="settings-container-item" bindtap="onSettings">
       <view class="content">关于我们</view>
-      <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     </view>
     <view class="settings-container-item" bindtap="onSettings">
       <view class="content highlight">注销账号</view>
       <view class="care">
         慎重选择
       </view>
-      <image class="arrow_right" src="http://swik7nyin.hd-bkt.clouddn.com/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     </view>
   </view>
 </view>

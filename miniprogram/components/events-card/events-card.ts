@@ -1,3 +1,5 @@
+import * as navigateHelper from "../../utils/navigateHelper";
+
 Component({
   properties: {
     title: String,
@@ -16,6 +18,11 @@ Component({
     avatars: {
       type: Array,
       value: [],
+    },
+  },
+  methods: {
+    onPublicProfile() {
+      return navigateHelper.goPublicProfile();
     },
   },
 });

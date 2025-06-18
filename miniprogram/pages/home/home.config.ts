@@ -6,7 +6,7 @@ export interface Items {
 
 const items: Items[] = [
   {
-    path: "http://swik7nyin.hd-bkt.clouddn.com/swiper-item.jpg",
+    path: "https://qiniustatic.womenshike.top/swiper-item.jpg",
     info: {
       id: 0,
       name: "甜七七1",
@@ -19,7 +19,7 @@ const items: Items[] = [
     },
   },
   {
-    path: "http://swik7nyin.hd-bkt.clouddn.com/swiper-item.jpg",
+    path: "https://qiniustatic.womenshike.top/swiper-item.jpg",
     info: {
       id: 1,
       name: "甜七七2",
@@ -32,7 +32,7 @@ const items: Items[] = [
     },
   },
   {
-    path: "http://swik7nyin.hd-bkt.clouddn.com/swiper-item.jpg",
+    path: "https://qiniustatic.womenshike.top/swiper-item.jpg",
     info: {
       id: 2,
       name: "甜七七3",

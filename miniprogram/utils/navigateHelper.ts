@@ -82,3 +82,9 @@ export const goEditPrivate = () => {
     url: "/packageA/pages/edit-private/edit-private",
   });
 };
+
+export const goPublicProfile = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/public-profile/public-profile",
+  });
+};

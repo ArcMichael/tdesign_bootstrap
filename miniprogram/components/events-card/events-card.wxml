@@ -20,7 +20,7 @@
     <view class="condition">
       <view class="avatar-stack">
         <block wx:for="{{ avatars }}" wx:key="index">
-          <image class="avatar" src="{{ item }}" style="z-index: {{ 10 + index }}" />
+          <image class="avatar" src="{{ item }}" style="z-index: {{ 10 + index }}" bindtap="onPublicProfile" />
         </block>
       </view>
       {{ condition }}

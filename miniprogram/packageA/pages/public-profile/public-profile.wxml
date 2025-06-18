@@ -1,3 +1,38 @@
 <navigation-bar back="{{true}}" color="black">
   <view slot="center" class="slot-title">Ta主页</view>
 </navigation-bar>
+
+<view class="page-wrapper public-profile">
+
+  <swiper 
+    class="swiper" 
+    indicator-dots="{{publicProfile.options.indicatorDots}}"
+    autoplay="{{publicProfile.options.autoplay}}" 
+    interval="{{publicProfile.options.interval}}" 
+    duration="{{publicProfile.options.duration}}" 
+    vertical="{{publicProfile.options.vertical}}"
+    indicator-color="rgba(255,255,255,0.5)"
+    indicator-active-color="#FFF"
+    indicator-spacing="6"
+    indicator-width="{{38}}" 
+    easing-function="{{publicProfile.options.easingFunction}}"
+    bindanimationfinish="bindanimationfinish"
+  >
+    <block wx:for="{{publicProfile.items}}" wx:key="*this">
+      <swiper-item>
+        <view class="swiper-item swiper-item-{{item.info.id}}">
+          <image src="{{item.path}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="public-profile-group">
+    <view class="public-profile-info"></view>
+    <view class="public-profile-info"></view>
+    <view class="public-profile-info"></view>
+  </view>
+
+  
+
+</view>

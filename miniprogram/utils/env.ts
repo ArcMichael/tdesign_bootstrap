@@ -33,10 +33,10 @@ function initEnv(overrideEnv?: EnvVersion): EnvConfig {
       apiHost = "http://8.130.116.253:48080";
       break;
     case "trial":
-      apiHost = "http://8.130.116.253:48080";
+      apiHost = "https://www.womenshike.top";
       break;
     case "release":
-      apiHost = "http://8.130.116.253:48080";
+      apiHost = "https://www.womenshike.top";
       break;
   }
 

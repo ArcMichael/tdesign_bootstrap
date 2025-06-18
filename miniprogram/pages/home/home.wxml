@@ -5,9 +5,9 @@
     bindtap="showRegionPicker"
     data-field="position"
   >
-    <image class="slot-header-location" src="http://swik7nyin.hd-bkt.clouddn.com/header_icon_locaion.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    <image class="slot-header-location" src="https://qiniustatic.womenshike.top/header_icon_locaion.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     <view class="slot-header-text">{{position}}</view>
-    <image class="slot-header-filter" src="http://swik7nyin.hd-bkt.clouddn.com/header_icon_filter.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    <image class="slot-header-filter" src="https://qiniustatic.womenshike.top/header_icon_filter.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
   </view>
   <view slot="center" class="slot-title">
     <view class="slot-title-text">推荐</view>
@@ -20,12 +20,23 @@
         autoplay="{{home.options.autoplay}}" 
         interval="{{home.options.interval}}" 
         duration="{{home.options.duration}}" 
-        vertical="{{home.options.vertical}}">
+        vertical="{{home.options.vertical}}"
+        easing-function="{{home.options.easingFunction}}"
+        bindanimationfinish="bindanimationfinish">
      <block wx:for="{{home.items}}" wx:key="*this">
         <swiper-item>
           <view class="swiper-item swiper-item-{{item.info.id}}">
-            <image class="" src="{{item.path}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-            <view class="swiper-info" hover-class="none" hover-stop-propagation="false"></view>
+            <image src="{{item.path}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+            <view class="swiper-info" hover-class="none" hover-stop-propagation="false">
+              
+              <view class="nickname">甜七七</view>
+              <view class="activity">
+                <image src="https://qiniustatic.womenshike.top/icon_horm_home.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+                <view class="act-user">她报名了</view>
+                <view class="act-info">#南山飞盘暴汗局</view>
+                <view class="act-status">活动还可<view class="highlight">报名</view>哦~</view>
+              </view>
+            </view>
           </view>
         </swiper-item>
      </block>
@@ -36,10 +47,13 @@
     </view>
 </view>
 
-<footer-bar activeIndex="{{0}}" bind:tabChange="onTabChange" />
+<footer-bar activeIndex="{{0}}" />
 
 <region-picker
   title="选择地区"
   id="areaPicker"
   bind:positionChange="onPositionChange"
 />
+
+
+<t-message id="t-message"></t-message>

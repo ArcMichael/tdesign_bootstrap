@@ -2,7 +2,6 @@
 import { request, RequestOptions, requestWithRetry } from "./request";
 import { SocialLogin } from "./auth";
 import { getAreaList, setAreaList } from "./storage";
-import { AREA_LIST_STORAGE_LEY } from "./constants";
 
 export interface Res<T> {
   code: number;
@@ -105,6 +104,16 @@ export const getPresignedUrl = async (): Promise<Res<ResignedUrl>> => {
   const requestConfig: RequestOptions = {
     url: `/app-api/infra/file/presigned-url?name=test`,
     method: "GET",
+  };
+  return await request(requestConfig);
+};
+
+export const postUpload = async (): Promise<Res<string>> => {
+  const formData = new FormData();
+
+  const requestConfig: RequestOptions = {
+    url: `/app-api/infra/file/upload`,
+    method: "POST",
   };
   return await request(requestConfig);
 };

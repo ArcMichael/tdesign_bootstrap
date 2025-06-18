@@ -1,0 +1,34 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">设置</view>
+</navigation-bar>
+
+<view class="page-wrapper settings">
+  <view class="settings-container function multi">
+    <view class="settings-container-item between" bindtap="onsettingsVerification">
+      <view class="content">手机号绑定</view>
+      <view class="phonenumber_right">135****0505</view>
+    </view>
+    <view class="settings-container-item">
+      <view class="content">用户协议</view>
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    </view>
+    <view class="settings-container-item" bindtap="onSettings">
+      <view class="content">隐私协议</view>
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    </view>
+    <view class="settings-container-item" bindtap="onSettings">
+      <view class="content">关于我们</view>
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    </view>
+    <view class="settings-container-item" bindtap="onSettings">
+      <view class="content highlight">注销账号</view>
+      <view class="care">
+        慎重选择
+      </view>
+      <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    </view>
+  </view>
+</view>
+
+<view class="footer-button">退出登录</view>
+

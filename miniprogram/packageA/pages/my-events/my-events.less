@@ -1,0 +1,66 @@
+@import "styles/_variables.less";
+@import "styles/_mixins.less";
+
+page {
+  background-image: url(https://qiniustatic.womenshike.top/background_top.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-events{
+  .px2rpx(margin-top, 5);
+  .padding-sides();
+  align-items: center;
+
+  .events-tabs-wrapper {
+    position: relative;
+    .size(195, 34);
+  }
+
+  .events-tabs {
+    .size(187, 26);
+    .px2rpx(border-radius, 19);
+    background-color: rgba(212, 219, 237, 0.8);
+    mix-blend-mode: luminosity;
+    .padding(4, 4, 4, 4);
+  }
+
+  .events-btn {
+    position: absolute;
+    .px2rpx(top, 4);
+    
+    .size(93, 26);
+    .px2rpx(line-height, 26);
+    .px2rpx(border-radius, 15);
+    
+    z-index: 1;
+    .font-group(14, 500);
+    color: #FFF;
+    text-align: center;
+
+    &.fl{
+      .px2rpx(left, 4);
+    }
+    &.fr{
+      .px2rpx(right, 4);
+    }
+    &.action{
+      background: linear-gradient(275deg, #A9C5FF 1.61%, #C6D9FF 97.56%);
+    }
+  }
+
+  .my-events-group{
+    display: flex;
+    flex-direction: column;
+    .padding-sides();
+    .px2rpx(margin-top, 15);
+    .px2rpx(margin-bottom, 15);
+    .px2rpx(gap, 10);
+  }
+}

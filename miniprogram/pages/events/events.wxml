@@ -8,6 +8,40 @@
 </view>
 </navigation-bar>
 
-<view class="page-wrapper events"></view>
+<view class="page-wrapper events">
 
-<footer-bar activeIndex="{{1}}" bind:tabChange="onTabChange" />
+  <view class="events-group">
+
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="registered"
+      statusText="已报名"
+      statusTagText="报名中"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+    />
+
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="ended"
+      statusText="已结束"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+    />
+
+    <events-card
+      title="20:30开始回南路温莎唱歌 | 4h"
+      subtitle="周日04.27 21:58 | 12.9km 温莎KTV"
+      status="interesting"
+      statusText="上车"
+      condition="25人已上车"
+      images="{{ eventImages }}"
+    />
+
+  </view>
+
+</view>
+
+<footer-bar activeIndex="{{1}}" />

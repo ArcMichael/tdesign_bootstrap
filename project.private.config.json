@@ -3,11 +3,82 @@
   "projectname": "tdesign_template",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false
+    "urlCheck": false,
+    "skylineRenderEnable": true
   },
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "packageA/pages/settings/settings",
+          "pathName": "packageA/pages/settings/settings",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/my-events/my-events",
+          "pathName": "packageA/pages/my-events/my-events",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/my-likes/my-likes",
+          "pathName": "packageA/pages/my-likes/my-likes",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/likes-me/likes-me",
+          "pathName": "packageA/pages/likes-me/likes-me",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/events-info/events-info",
+          "pathName": "packageA/pages/events-info/events-info",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/public-profile/public-profile",
+          "pathName": "packageA/pages/public-profile/public-profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/profile-verification/profile-verification",
+          "pathName": "packageA/pages/profile-verification/profile-verification",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/welcome/welcome",
+          "pathName": "pages/welcome/welcome",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/photo-upload/photo-upload",
+          "pathName": "pages/photo-upload/photo-upload",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/personal-info/personal-info",
+          "pathName": "pages/personal-info/personal-info",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "pages/profile/profile",
           "pathName": "pages/profile/profile",
@@ -32,27 +103,6 @@
         {
           "name": "pages/home/home",
           "pathName": "pages/home/home",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "packageA/pages/profileVerification/profileVerification",
-          "pathName": "packageA/pages/profileVerification/profileVerification",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/registerNext/registerNext",
-          "pathName": "pages/registerNext/registerNext",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/register/register",
-          "pathName": "pages/register/register",
           "query": "",
           "launchMode": "default",
           "scene": null

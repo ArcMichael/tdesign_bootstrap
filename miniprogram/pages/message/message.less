@@ -1,0 +1,135 @@
+@import "styles/_variables.less";
+@import "styles/_mixins.less";
+
+.slot-left {
+  position: relative;
+  color: var(--4, #212121);
+  text-align: center;
+  .px2rpx(padding-bottom, 4);
+  .slot-left-text{
+    .font-group(18, 500);
+    .px2rpx(width, 37);
+    .px2rpx(height, 25);
+    position: relative;
+
+    .slot-left-bubble{
+      .px2rpx(width, 8);
+      .px2rpx(height, 8);
+      background-color: @bubble-message;
+      border-radius: 100%;
+      position: absolute;
+      .px2rpx(right, -2);
+      .px2rpx(top, 0.5);
+    }
+  }
+  .slot-left-line{
+    .px2rpx(width, 26);
+    .px2rpx(height, 4);
+
+    background: url("https://qiniustatic.womenshike.top/header_title_curve.png");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: 100%;
+    background-position-x: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -2rpx);
+  }
+}
+
+page {
+  background-image: url(https://qiniustatic.womenshike.top/background_top.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  .px2rpx(height, 664);
+  .px2rpx(padding-top, 10);
+  .px2rpx(padding-bottom, @safe-bottom-with-footer);
+  position: relative;
+  .padding-sides();
+
+  .message-group{
+    display: flex;
+    flex-direction: row;
+    .px2rpx(gap, 10);
+    .message-card{
+      .size(170, 64);
+      .px2rpx(border-radius, 13);
+      position: relative;
+      .px2rpx(padding-left, 23);
+      display: flex;
+      align-items: center;
+
+      &.system{
+        background: url("https://qiniustatic.womenshike.top/background_bell_message.png"), linear-gradient(275deg, #72A0FF 1.61%, #BCD1FD 97.56%);
+        background-size: cover;
+        > image{
+          .size(24.0199, 28);
+          transform: translateY(2px);
+          .px2rpx(margin-right, 8);
+        }
+        > .ctx{
+          .size(64, 22);
+          color: #FFF;
+          .font-group(16, 600);
+        }
+        > .number{
+          background-color: @m-number-background;
+          .size(18, 18);
+          border-radius: 100%;
+          color: var(--7, #FFF);
+          .font-group(10, 400);
+          text-align: center;
+          .px2rpx(line-height, 18);
+          .px2rpx(margin-left, 4);
+        }
+      }
+      &.social{
+        background: url("https://qiniustatic.womenshike.top/background_social_message.png") no-repeat, linear-gradient(275deg, #FA87AC 1.61%, #FDBED2 97.56%);
+        background-size: cover;
+        > image{
+          .size(28, 28);
+          transform: translateY(2px);
+          .px2rpx(margin-right, 8);
+        }
+        > .ctx{
+          .size(64, 22);
+          color: #FFF;
+          .font-group(16, 600);
+        }
+        > .number{
+          background-color: @m-number-background;
+          .size(18, 18);
+          border-radius: 100%;
+          color: var(--7, #FFF);
+          .font-group(10, 400);
+          text-align: center;
+          .px2rpx(line-height, 18);
+          .px2rpx(margin-left, 4);
+        }
+      }
+    }
+  }
+}
+
+// color: #FFF;
+// font-family: "PingFang SC";
+// font-size: 16px;
+// font-style: normal;
+// font-weight: 600;
+// line-height: normal;
+
+
+  // <view class="message-group">
+  //   <view class="message-system"></view>
+  //   <view class="message-social"></view>
+  // </view>

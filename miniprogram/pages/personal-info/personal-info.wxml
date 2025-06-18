@@ -1,0 +1,216 @@
+<navigation-bar back="{{true}}" color="black"></navigation-bar>
+
+<view class="page-wrapper personal-info">
+  <view class="processing-group">
+    <view class="processing reading"></view>
+    <view class="processing"></view>
+  </view>
+  <view class="register-form">
+
+    <!-- 昵称 -->
+    <view 
+      class="form-item"
+      data-field="nickname"
+    >
+      <view class="label-group">
+        <view class="label">昵称</view>
+        <view wx:if="{{ !form.nickname }}" class="placeholder">请输入昵称</view>
+      </view>
+      <view class="label-result">
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.nickname}}"
+          bindinput="onNicknameInput"
+        />
+      </view>
+    </view>
+
+    <view
+      class="form-item"
+      bindtap="onHandlePicker"
+      data-field="gender"
+      disabled
+    >
+      <view class="label-group">
+        <text class="label">性别<text class="disabled"> *<text class="adding">无法修改</text></text></text>
+        <view wx:if="{{ !form.gender }}" class="placeholder">请输入昵称</view>
+      </view>
+      <view class="label-result">
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.gender && form.gender.label}}"
+          disabled
+        />
+      </view>
+    </view>
+
+    <view
+      class="form-item"
+      bindtap="showPicker"
+      data-field="birthday"
+      disabled
+    >
+      <view class="label-group">
+        <text class="label">出生日期</text>
+        <view wx:if="{{ !form.birthday }}" class="placeholder">请选择出生日期</view>
+      </view>
+      <view class="label-result">
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.birthday && form.birthday.label}}"
+          disabled
+        />
+      </view>
+    </view>
+
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="height"
+       
+    >
+      <view class="label-group">
+        <text class="label">身高</text>
+        <view wx:if="{{ !form.height }}" class="placeholder">请选择身高</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.height && form.height.label}}"
+          disabled
+        />
+      </view>
+    </view>
+
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="school"
+    >
+      <view class="label-group">
+        <text class="label">学校</text>
+        <view wx:if="{{ !form.school }}" class="placeholder">请选择学校</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.school && form.school.label}}"
+          placeholder="" 
+        />
+      </view>
+    </view>
+
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="mbti"
+       
+    >
+      <view class="label-group">
+        <text class="label">Mbit</text>
+        <view wx:if="{{ !form.mbti }}" class="placeholder">请选择Mbit</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.mbti && form.mbti.label}}"
+          disabled
+        />
+      </view>
+    </view>
+
+
+
+    <view 
+      class="form-item" 
+      bindtap="showRegionPicker"
+      data-field="hometown"
+    >
+      <view class="label-group">
+        <text class="label">家乡</text>
+        <view wx:if="{{ !form.hometown }}" class="placeholder">请选择家乡</view>
+      </view>
+      <view class="label-result">
+        <input
+          type="text"
+          class="form-input"
+          value="{{form.hometown && form.hometown.label}}"
+          disabled
+        />
+      </view>
+    </view>
+
+    <view 
+      class="form-item" 
+      bindtap="showRegionPicker"
+      data-field="location"
+    >
+      <view class="label-group">
+        <text class="label">现居地</text>
+        <view wx:if="{{ !form.location }}" class="placeholder">请选择现居地</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.location && form.location.label}}"
+          disabled
+        />
+      </view>
+    </view>   
+    
+    <view 
+      class="form-item" 
+      bindtap="onHandlePicker" 
+      data-field="career"
+      
+    >
+      <view class="label-group">
+        <text class="label">职业</text>
+        <view wx:if="{{ !form.career }}" class="placeholder">请选择职业</view>
+      </view>
+      <view class="label-result">
+        <input 
+          type="text" 
+          class="form-input" 
+          value="{{form.career && form.career.label}}"
+          disabled
+        />
+      </view>
+    </view>
+
+  </view>
+
+  <view class="form-submit" bindtap="onPhotoUpload">下一步</view>
+</view>
+
+<date-picker
+  id="birthdayPicker"
+  value="{{form.birthdate}}"
+  bind:confirm="onBirthdayConfirm"
+  showWeek="{{false}}"
+  format="YYYY-MM-DD"
+/>
+
+<region-picker
+  title="选择地区"
+  id="areaPicker"
+  bind:hometownChange="onHometownChange"
+  bind:locationChange="onLocationChange"
+/>
+
+<picker-overlay
+  visible="{{picker.visible}}"
+  title="{{picker.title}}"
+  field-key="{{picker.field}}"
+  options="{{picker.options}}"
+  current-value="{{form[picker.field]}}"
+  bind:confirm="onPickerConfirm"
+  bind:cancel="onPickerCancel"
+/>

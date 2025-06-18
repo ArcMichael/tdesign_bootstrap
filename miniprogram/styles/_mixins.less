@@ -1,5 +1,8 @@
 @import "_variables.less";
 
+// @design-width: 390; // 设计稿基准宽度
+// @target-width: 750; // 微信小程序 rpx 参照宽度
+
 // === Conversion Functions === 通用工具 mixin
 .px2rpx(@prop, @n) {
   @{prop}: (@n * @target-width / @design-width) * 1rpx;
@@ -12,13 +15,18 @@
   font-weight: @font-weight;
 }
 
+// === BOX { width, height } ===
+.size(@width, @height) {
+  .px2rpx(width, @width);
+  .px2rpx(height, @height);
+}
+
 // === border ===
 
 .border-group(@border-width, @border-style: solid, @border-color: #fff ){
   .px2rpx(border-width, @border-width);
   border-style: @border-style;
   border-color: @border-color;
-  
 }
 
 // === border-* ===
@@ -113,4 +121,10 @@
     .px2rpx(width, 24);
     .px2rpx(height, 25);
   }
+}
+
+// === TAGS SIGNING { 报名中 } ===
+.events-signing(){
+  background-color: @e-status-background;
+  .px2rpx(border-radius, 4);
 }

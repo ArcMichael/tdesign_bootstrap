@@ -3,7 +3,7 @@ Page({
     form: {},
   },
   async onShow() {},
-  onReciveFile(e) {
+  onReciveFile(e: any) {
     this.setData({
       images: e.detail,
     });

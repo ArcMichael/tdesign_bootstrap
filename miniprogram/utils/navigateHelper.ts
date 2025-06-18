@@ -5,9 +5,15 @@ export const goLoginWithRedirect = () => {
   });
 };
 
-export const goRegister = () => {
+export const goPersonalInfo = () => {
   return wx.navigateTo({
-    url: "/pages/register/register",
+    url: "/pages/personal-info/personal-info",
+  });
+};
+
+export const goPhotoUpload = () => {
+  return wx.navigateTo({
+    url: "/pages/photo-upload/photo-upload",
   });
 };
 
@@ -32,5 +38,53 @@ export const goMessage = () => {
 export const goProfile = () => {
   return wx.redirectTo({
     url: "/pages/profile/profile",
+  });
+};
+
+export const goLikesMe = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/likes-me/likes-me",
+  });
+};
+
+export const goMyLikes = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/my-likes/my-likes",
+  });
+};
+
+export const goProfileVerification = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/profile-verification/profile-verification",
+  });
+};
+
+export const goSettings = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/settings/settings",
+  });
+};
+
+export const goMyEvents = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/my-events/my-events",
+  });
+};
+
+export const goEditProfile = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/edit-profile/edit-profile",
+  });
+};
+
+export const goEditPrivate = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/edit-private/edit-private",
+  });
+};
+
+export const goPublicProfile = () => {
+  return wx.navigateTo({
+    url: "/packageA/pages/public-profile/public-profile",
   });
 };

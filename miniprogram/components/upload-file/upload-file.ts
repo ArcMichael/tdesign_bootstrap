@@ -1,64 +1,61 @@
-import { getPresignedUrl, ResignedUrl } from "../../utils/api";
+import { uploadFileWithProgress } from "../../utils/file";
+
+type FileItem = WechatMiniprogram.UploadFileOption & {
+  status?: "loading" | "done" | "error";
+  percent?: number;
+};
 
 Component({
   options: {
     multipleSlots: true, // 在组件定义时的选项中启用多slot支持
   },
   data: {
-    fileList: [],
+    fileList: [] as FileItem[],
   },
   methods: {
-    async preUploadFile() {
-      const response = await getPresignedUrl();
-      console.log(response);
-    },
-
-    async handleAdd(e: any) {
-      await this.preUploadFile();
-      const { fileList } = this.data;
+    async handleAdd(e: WechatMiniprogram.CustomEvent<{ files: FileItem[] }>) {
       const { files } = e.detail;
 
-      // 方法1：选择完所有图片之后，统一上传，因此选择完就直接展示
-      this.setData({
-        fileList: [...fileList, ...files], // 此时设置了 fileList 之后才会展示选择的图片
+      files.forEach(async (file: FileItem) => {
+        await this.uploadFile(file);
       });
-
-      // 方法2：每次选择图片都上传，展示每次上传图片的进度
-      // files.forEach(file => this.uploadFile(file))
     },
-    onUpload(file) {
+
+    async uploadFile(file: FileItem) {
       const { fileList } = this.data;
+      const index = fileList.length;
 
+      // 加入 loading 状态
       this.setData({
-        fileList: [...fileList, { ...file, status: "loading" }],
+        fileList: [...fileList, { ...file, status: "loading", percent: 0 }],
       });
-      const { length } = fileList;
 
-      const task = wx.uploadFile({
-        url: "https://example.weixin.qq.com/upload", // 仅为示例，非真实的接口地址
-        filePath: file.url,
-        name: "file",
-        formData: { user: "test" },
-        success: () => {
-          this.setData({
-            [`fileList[${length}].status`]: "done",
-          });
-        },
-      });
-      task.onProgressUpdate((res) => {
-        this.setData({
-          [`fileList[${length}].percent`]: res.progress,
+      try {
+        const url = await uploadFileWithProgress({
+          filePath: file.url,
+          onProgress: (percent) => {
+            this.setData({
+              [`fileList[${index}].percent`]: percent,
+            });
+          },
         });
-      });
-    },
-    handleRemove(e) {
-      const { index } = e.detail;
-      const { fileList } = this.data;
 
-      fileList.splice(index, 1);
-      this.setData({
-        fileList,
-      });
+        this.setData({
+          [`fileList[${index}].status`]: "done",
+          [`fileList[${index}].url`]: url, // 上传成功返回的地址
+        });
+
+        this.triggerEvent("uploadsuccess", {
+          index,
+          url,
+          file: this.data.fileList[index],
+        });
+      } catch (err) {
+        this.setData({
+          [`fileList[${index}].status`]: "error",
+        });
+        console.error("上传失败：", err);
+      }
     },
   },
 });

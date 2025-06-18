@@ -1,0 +1,146 @@
+@import "../../styles/_variables.less";
+@import "../../styles/_mixins.less";
+
+.events-container{
+  display: flex;
+  .card-container();
+  flex-direction: column;
+  .padding(10, 14, 10, 14);
+  .px2rpx(height, 200);
+
+  .header{
+    .px2rpx(height, 50);
+    display: flex;
+    flex-direction: column;
+    .px2rpx(gap, 2);
+    .title{
+      .px2rpx(height, 24);
+      color: var(--4, #212121);
+      .font-group(16, 600);
+      .px2rpx(line-height, 24);
+    }
+    .sub-title{
+      display: flex;
+      .px2rpx(height, 24);
+      color: #949494;
+      .font-group(12, 400);
+      .px2rpx(line-height, 24);
+      .px2rpx(gap, 8);
+      align-items: center;
+      .sub-title-status{
+        .events-signing();
+        .px2rpx(width, 46);
+        .px2rpx(height, 20);
+        color: #FFF;
+        .font-group(12, 400);
+        text-align: center;
+        .px2rpx(line-height, 20);
+      }
+    }
+  }
+  .body{
+    display: flex;
+    flex-direction: row;
+    .px2rpx(gap, 2);
+    .px2rpx(margin-top, 6);
+    .px2rpx(height, 94);
+    
+    border-radius: 20rpx;
+    > image{
+      .px2rpx(width, 106);
+      .px2rpx(height, 94);
+
+      &:first-child{
+        .px2rpx(border-top-left-radius, 12);
+        .px2rpx(border-bottom-left-radius, 12);
+      }
+      
+      &:last-child{
+        .px2rpx(border-top-right-radius, 12);
+        .px2rpx(border-bottom-right-radius, 12);
+      }
+    }
+  }
+
+  .footer{
+    display: flex;
+    flex-direction: row;
+    .px2rpx(margin-top, 10);
+    .condition{
+      display: flex;
+      flex: 1;
+      .px2rpx(width, 63);
+      .px2rpx(height, 24);
+
+      .font-group(12, 400);
+      color: #949494;
+
+      .px2rpx(margin-top, 6);
+
+      align-items: center;
+
+      .avatar-stack {
+        display: flex;
+        position: relative;
+
+      .px2rpx(margin-right, 8);
+
+        .avatar {
+          .size(28, 28);
+          .px2rpx(border-radius, 28);
+          .border-group(1, solid, #FFF);
+
+          position: relative;
+
+          &:not(:first-child) {
+            .px2rpx(margin-left, -4.67);
+          }
+
+          z-index: 10; // 默认堆叠层级
+        }
+
+        // 如果你想让后来的头像盖在上面，可使用 index 控制 z-index
+      }
+    }
+    .status{
+      display: flex;
+      margin-left: auto;
+
+      &.registered{
+        color: #72A0FF;
+        .font-group(16, 500);
+        .px2rpx(width, 48);
+        .px2rpx(height, 24);
+
+        .px2rpx(margin-top, 7);
+      }
+      &.ended{
+        color: #9F9F9F;
+        .font-group(16, 500);
+        .px2rpx(width, 48);
+        .px2rpx(height, 24);
+
+        .px2rpx(margin-top, 7);
+      }
+      &.signing{
+        color: #F2AD19;
+        .font-group(16, 500);
+        .px2rpx(width, 48);
+        .px2rpx(height, 24);
+
+        .px2rpx(margin-top, 7);
+      }
+      &.interesting{
+        color: #FFF;
+        .font-group(16, 500);
+        .px2rpx(width, 84);
+        .px2rpx(height, 36);
+        border-radius: 8px;
+        background: linear-gradient(269deg, #FFAAC6 0.6%, #A6C3FF 98.92%);
+
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

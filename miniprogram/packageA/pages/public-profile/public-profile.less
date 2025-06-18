@@ -1,0 +1,70 @@
+@import "styles/_variables.less";
+@import "styles/_mixins.less";
+
+page {
+  background-image: url(https://qiniustatic.womenshike.top/background_top.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.public-profile{
+  .px2rpx(margin-top, 5);
+  position: relative;
+}
+
+.swiper{
+  .size(390, 520);
+}
+
+.swiper-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+page .wx-swiper-dots{
+  position: absolute;
+  .px2rpx(bottom, 60);
+
+  .wx-swiper-dot {
+    .size(38, 4);
+    .margin(0, 3, 0, 3);
+    .px2rpx(border-radius, 100);
+    background: rgba(255, 255, 255, 0.50);
+
+    &.wx-swiper-dot-active {
+      background-color: #FFF; /* 与 indicator-active-color 保持一致 */
+    }
+  }
+}
+
+.public-profile-group{
+  .padding-sides();
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
+  .px2rpx(top, 493);
+  .px2rpx(gap, 10);
+  .px2rpx(padding-bottom, 40);
+
+  .public-profile-info{
+    .card-container();
+    .px2rpx(height, 218);
+    background-color: #fff;
+  }
+
+}

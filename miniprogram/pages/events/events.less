@@ -11,12 +11,13 @@
     .font-group(18, 500);
     .px2rpx(width, 74);
     .px2rpx(height, 25);
+    position: relative;
   }
   .slot-left-line{
     .px2rpx(width, 26);
     .px2rpx(height, 4);
 
-    background: url("http://swik7nyin.hd-bkt.clouddn.com/header_title_curve.png");
+    background: url("https://qiniustatic.womenshike.top/header_title_curve.png");
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 100%;
@@ -24,14 +25,12 @@
 
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -2rpx);
   }
 }
 
-
-
 page {
-  background-image: url(http://swik7nyin.hd-bkt.clouddn.com/background_top.png);
+  background-image: url(https://qiniustatic.womenshike.top/background_top.png);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
@@ -43,8 +42,17 @@ page {
 }
 
 .events {
-  height: 100vh;
+  // height: 100vh;
   .px2rpx(padding-top, 5);
-  .px2rpx(padding-bottom, 85);
+  .px2rpx(padding-bottom, @safe-bottom-with-footer);
   position: relative;
+
+  .events-group{
+    display: flex;
+    flex-direction: column;
+    .padding-sides();
+    .px2rpx(margin-top, 15);
+    .px2rpx(margin-bottom, 15);
+    .px2rpx(gap, 10);
+  }
 }

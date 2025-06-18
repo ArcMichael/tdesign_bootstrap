@@ -18,13 +18,13 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-main"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
-                <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_main.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+                <image src="https://qiniustatic.womenshike.top/icon_pic_main.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
                 <text>相册封面</text>
               </view>
             </upload-file>
@@ -39,10 +39,10 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-careful"
             >
               <view slot="placeholder" class="placeholder-main">
-                <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_careful.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+                <image src="https://qiniustatic.womenshike.top/icon_pic_careful.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
                 <text>认真凹造型</text>
               </view>
             </upload-file>
@@ -58,10 +58,10 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-confidence"
             >
               <view slot="placeholder" class="placeholder-main">
-                <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_confidence.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+                <image src="https://qiniustatic.womenshike.top/icon_pic_confidence.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
                 <text>自信的才艺</text>
               </view>
             </upload-file>
@@ -80,10 +80,10 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-montain"
             >
               <view slot="placeholder" class="placeholder-main">
-                <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_montain.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+                <image src="https://qiniustatic.womenshike.top/icon_pic_montain.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
                 <text>得意的旅行照</text>
               </view>
             </upload-file>
@@ -99,10 +99,10 @@
               remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-smile"
+              data-field="picture-life"
             >
               <view slot="placeholder" class="placeholder-main">
-                <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_life.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+                <image src="https://qiniustatic.womenshike.top/icon_pic_life.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
                 <text>生活中的样子</text>
               </view>
             </upload-file>
@@ -121,7 +121,7 @@
               data-field="picture-smile"
             >
               <view slot="placeholder" class="placeholder-main">
-                <image src="http://swik7nyin.hd-bkt.clouddn.com/icon_pic_smile.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />  
+                <image src="https://qiniustatic.womenshike.top/icon_pic_smile.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />  
                 <text>笑起来的样子</text>
               </view>
             </upload-file>
@@ -141,22 +141,22 @@
 
     <view class="reject-items">
       <view class="item">
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/reject_1.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        <image src="https://qiniustatic.womenshike.top/reject_1.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
         <text>他人照片</text>
         <view class="error"></view>
       </view>
       <view class="item">
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/reject_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        <image src="https://qiniustatic.womenshike.top/reject_2.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
         <view class="error"></view>
         <text>看不清脸</text>
       </view>
       <view class="item">
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/reject_3.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        <image src="https://qiniustatic.womenshike.top/reject_3.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
         <view class="error"></view>
         <text>P图过度</text>
       </view>
       <view class="item">
-        <image src="http://swik7nyin.hd-bkt.clouddn.com/reject_4.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+        <image src="https://qiniustatic.womenshike.top/reject_4.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
         <view class="error"></view>
         <text>非人物照</text>
       </view>

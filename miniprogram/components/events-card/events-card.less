@@ -1,25 +1,25 @@
-@import "../../styles/_variables.less";
-@import "../../styles/_mixins.less";
+@import '../../styles/_variables.less';
+@import '../../styles/_mixins.less';
 
-.events-container{
+.events-container {
   display: flex;
   .card-container();
   flex-direction: column;
   .padding(10, 14, 10, 14);
   .px2rpx(height, 200);
 
-  .header{
+  .header {
     .px2rpx(height, 50);
     display: flex;
     flex-direction: column;
     .px2rpx(gap, 2);
-    .title{
+    .title {
       .px2rpx(height, 24);
       color: var(--4, #212121);
       .font-group(16, 600);
       .px2rpx(line-height, 24);
     }
-    .sub-title{
+    .sub-title {
       display: flex;
       .px2rpx(height, 24);
       color: #949494;
@@ -27,46 +27,46 @@
       .px2rpx(line-height, 24);
       .px2rpx(gap, 8);
       align-items: center;
-      .sub-title-status{
+      .sub-title-status {
         .events-signing();
         .px2rpx(width, 46);
         .px2rpx(height, 20);
-        color: #FFF;
+        color: #fff;
         .font-group(12, 400);
         text-align: center;
         .px2rpx(line-height, 20);
       }
     }
   }
-  .body{
+  .body {
     display: flex;
     flex-direction: row;
     .px2rpx(gap, 2);
     .px2rpx(margin-top, 6);
     .px2rpx(height, 94);
-    
+
     border-radius: 20rpx;
-    > image{
+    > image {
       .px2rpx(width, 106);
       .px2rpx(height, 94);
 
-      &:first-child{
+      &:first-child {
         .px2rpx(border-top-left-radius, 12);
         .px2rpx(border-bottom-left-radius, 12);
       }
-      
-      &:last-child{
+
+      &:last-child {
         .px2rpx(border-top-right-radius, 12);
         .px2rpx(border-bottom-right-radius, 12);
       }
     }
   }
 
-  .footer{
+  .footer {
     display: flex;
     flex-direction: row;
     .px2rpx(margin-top, 10);
-    .condition{
+    .condition {
       display: flex;
       flex: 1;
       .px2rpx(width, 63);
@@ -83,7 +83,7 @@
         display: flex;
         position: relative;
 
-      .px2rpx(margin-right, 8);
+        .px2rpx(margin-right, 8);
 
         .avatar {
           .size(28, 28);
@@ -102,42 +102,41 @@
         // 如果你想让后来的头像盖在上面，可使用 index 控制 z-index
       }
     }
-    .status{
+    .status {
       display: flex;
       margin-left: auto;
 
-      &.registered{
-        color: #72A0FF;
+      &.registered {
+        color: #72a0ff;
         .font-group(16, 500);
         .px2rpx(width, 48);
         .px2rpx(height, 24);
 
         .px2rpx(margin-top, 7);
       }
-      &.ended{
-        color: #9F9F9F;
+      &.ended {
+        color: #9f9f9f;
         .font-group(16, 500);
         .px2rpx(width, 48);
         .px2rpx(height, 24);
 
         .px2rpx(margin-top, 7);
       }
-      &.signing{
-        color: #F2AD19;
+      &.signing {
+        color: #f2ad19;
         .font-group(16, 500);
         .px2rpx(width, 48);
         .px2rpx(height, 24);
 
         .px2rpx(margin-top, 7);
       }
-      &.interesting{
-        color: #FFF;
+      &.interesting {
+        color: #fff;
         .font-group(16, 500);
         .px2rpx(width, 84);
         .px2rpx(height, 36);
         border-radius: 8px;
-        background: linear-gradient(269deg, #FFAAC6 0.6%, #A6C3FF 98.92%);
-
+        .specially-button-style();
         align-items: center;
         justify-content: center;
       }

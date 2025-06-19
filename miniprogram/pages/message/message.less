@@ -1,18 +1,18 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 .slot-left {
   position: relative;
   color: var(--4, #212121);
   text-align: center;
   .px2rpx(padding-bottom, 4);
-  .slot-left-text{
+  .slot-left-text {
     .font-group(18, 500);
     .px2rpx(width, 37);
     .px2rpx(height, 25);
     position: relative;
 
-    .slot-left-bubble{
+    .slot-left-bubble {
       .px2rpx(width, 8);
       .px2rpx(height, 8);
       background-color: @bubble-message;
@@ -22,11 +22,11 @@
       .px2rpx(top, 0.5);
     }
   }
-  .slot-left-line{
+  .slot-left-line {
     .px2rpx(width, 26);
     .px2rpx(height, 4);
 
-    background: url("https://qiniustatic.womenshike.top/header_title_curve.png");
+    background: url('https://qiniustatic.womenshike.top/header_title_curve.png');
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 100%;
@@ -57,11 +57,11 @@ page {
   position: relative;
   .padding-sides();
 
-  .message-group{
+  .message-group {
     display: flex;
     flex-direction: row;
     .px2rpx(gap, 10);
-    .message-card{
+    .message-card {
       .size(170, 64);
       .px2rpx(border-radius, 13);
       position: relative;
@@ -69,48 +69,52 @@ page {
       display: flex;
       align-items: center;
 
-      &.system{
-        background: url("https://qiniustatic.womenshike.top/background_bell_message.png"), linear-gradient(275deg, #72A0FF 1.61%, #BCD1FD 97.56%);
+      &.system {
+        background:
+          url('https://qiniustatic.womenshike.top/background_bell_message.png'),
+          linear-gradient(275deg, #72a0ff 1.61%, #bcd1fd 97.56%);
         background-size: cover;
-        > image{
+        > image {
           .size(24.0199, 28);
           transform: translateY(2px);
           .px2rpx(margin-right, 8);
         }
-        > .ctx{
+        > .ctx {
           .size(64, 22);
-          color: #FFF;
+          color: #fff;
           .font-group(16, 600);
         }
-        > .number{
+        > .number {
           background-color: @m-number-background;
           .size(18, 18);
           border-radius: 100%;
-          color: var(--7, #FFF);
+          color: var(--7, #fff);
           .font-group(10, 400);
           text-align: center;
           .px2rpx(line-height, 18);
           .px2rpx(margin-left, 4);
         }
       }
-      &.social{
-        background: url("https://qiniustatic.womenshike.top/background_social_message.png") no-repeat, linear-gradient(275deg, #FA87AC 1.61%, #FDBED2 97.56%);
+      &.social {
+        background:
+          url('https://qiniustatic.womenshike.top/background_social_message.png') no-repeat,
+          linear-gradient(275deg, #fa87ac 1.61%, #fdbed2 97.56%);
         background-size: cover;
-        > image{
+        > image {
           .size(28, 28);
           transform: translateY(2px);
           .px2rpx(margin-right, 8);
         }
-        > .ctx{
+        > .ctx {
           .size(64, 22);
-          color: #FFF;
+          color: #fff;
           .font-group(16, 600);
         }
-        > .number{
+        > .number {
           background-color: @m-number-background;
           .size(18, 18);
           border-radius: 100%;
-          color: var(--7, #FFF);
+          color: var(--7, #fff);
           .font-group(10, 400);
           text-align: center;
           .px2rpx(line-height, 18);
@@ -128,8 +132,7 @@ page {
 // font-weight: 600;
 // line-height: normal;
 
-
-  // <view class="message-group">
-  //   <view class="message-system"></view>
-  //   <view class="message-social"></view>
-  // </view>
+// <view class="message-group">
+//   <view class="message-system"></view>
+//   <view class="message-social"></view>
+// </view>

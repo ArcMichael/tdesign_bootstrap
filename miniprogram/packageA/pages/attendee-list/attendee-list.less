@@ -1,5 +1,5 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
   background-image: url(https://qiniustatic.womenshike.top/background_top.png);
@@ -13,27 +13,27 @@ page {
   flex-direction: column;
 }
 
-.attendee-list{
+.attendee-list {
   .padding-sides();
 
-  .attendee-list__group{
+  .attendee-list__group {
     display: flex;
     flex-direction: column;
     .px2rpx(gap, 21);
 
-    .attendee-list__card{
+    .attendee-list__card {
       .px2rpx(height, 410);
       position: relative;
-      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 43.63%, rgba(0, 0, 0, 0.50) 88.73%);
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 43.63%, rgba(0, 0, 0, 0.5) 88.73%);
       .px2rpx(border-radius, 12);
 
-      .attendee-list__avatar{
+      .attendee-list__avatar {
         width: 100%;
         height: 100%;
         mix-blend-mode: multiply;
       }
 
-      .attendee-list__info{
+      .attendee-list__info {
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -42,25 +42,25 @@ page {
         .px2rpx(left, 20);
         .px2rpx(bottom, 22);
 
-        .attendee-list__name{
+        .attendee-list__name {
           .px2rpx(height, 31);
           .px2rpx(line-height, 31);
-          color: #FFF;
+          color: #fff;
           .font-group(22, 600);
         }
-        .attendee-list__school{
+        .attendee-list__school {
           .px2rpx(height, 20);
           .px2rpx(line-height, 20);
-          color: #C9C9C9;
+          color: #c9c9c9;
           .font-group(14, 400);
         }
       }
-      .attendee-list__like-icon{
+      .attendee-list__like-icon {
         position: absolute;
         .size(50, 50);
         .px2rpx(right, 20);
         .px2rpx(bottom, 20);
-        .attendee-list__like-image{
+        .attendee-list__like-image {
           .size(50, 50);
         }
       }

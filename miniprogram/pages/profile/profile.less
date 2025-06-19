@@ -1,8 +1,8 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
-  background-image: url("https://qiniustatic.womenshike.top/inner_background_top.png");
+  background-image: url('https://qiniustatic.womenshike.top/inner_background_top.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
@@ -13,7 +13,7 @@ page {
   flex-direction: column;
 }
 
-.profile-group{
+.profile-group {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,24 +21,23 @@ page {
   .px2rpx(margin-top, 44);
   .px2rpx(gap, 10);
 
-  .profile-container{
+  .profile-container {
     display: flex;
     .card-container();
     flex-direction: column;
     .px2rpx(padding-left, 20);
-    .px2rpx(padding-right, 20); 
+    .px2rpx(padding-right, 20);
 
-    &.events{
-
+    &.events {
       .px2rpx(padding-top, 4);
       .px2rpx(padding-bottom, 4);
     }
-    &.function{
+    &.function {
       .px2rpx(padding-top, 4);
       .px2rpx(padding-bottom, 4);
     }
 
-    .profile-container-item{
+    .profile-container-item {
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -46,38 +45,37 @@ page {
       .border-bottom(1, solid, #F3F3F3);
       position: relative;
 
-      &:last-child{
+      &:last-child {
         border-bottom: none;
       }
 
-      .icon{
+      .icon {
         .px2rpx(width, 33);
         display: flex;
 
-        image.event{
+        image.event {
           .px2rpx(width, 20.81);
           .px2rpx(height, 17);
         }
-        image.identify{
+        image.identify {
           .px2rpx(width, 20);
           .px2rpx(height, 18);
         }
-        image.csr{
+        image.csr {
           .px2rpx(width, 18.13);
           .px2rpx(height, 18);
         }
-        image.settings{
+        image.settings {
           .px2rpx(width, 16.6);
           .px2rpx(height, 18);
         }
       }
-      .content{
+      .content {
         color: var(--4, #212121);
         .font-group(14, 500);
-        
       }
 
-      .arrow_right{
+      .arrow_right {
         .px2rpx(width, 5);
         .px2rpx(height, 10);
         position: absolute;
@@ -86,7 +84,7 @@ page {
         transform: translateY(-50%);
       }
 
-      .damger{
+      .damger {
         background-color: @v-color-danger-background;
         color: @v-color-danger-font;
 
@@ -103,63 +101,61 @@ page {
         margin-left: auto;
         .px2rpx(margin-right, 20);
 
-
-        > image{
+        > image {
           .px2rpx(width, 13.4);
           .px2rpx(height, 12);
         }
       }
     }
-  } 
+  }
 
-  .profile-container{
+  .profile-container {
     &.single {
-      .profile-container-item{
+      .profile-container-item {
         .px2rpx(height, 50);
       }
     }
 
     &.multi {
-      .profile-container-item{
+      .profile-container-item {
         .px2rpx(height, 50);
       }
     }
   }
 
-  .info{
+  .info {
     .px2rpx(height, 159);
     position: relative;
 
-    .info-avator{
+    .info-avator {
       .px2rpx(height, 70);
       .px2rpx(width, 70);
       .px2rpx(border-radius, 70);
 
       position: absolute;
 
-      .border-group(3, solid, var(--3, #72A0FF));
+      .border-group(3, solid, var(--3, #72a0ff));
 
       .px2rpx(left, 20);
       .px2rpx(top, -29);
-      background-color: #EFF0F4;
+      background-color: #eff0f4;
 
-      background-image: url("https://qiniustatic.womenshike.top/icon_avator.png");
+      background-image: url('https://qiniustatic.womenshike.top/icon_avator.png');
       background-repeat: no-repeat;
       background-size: 50%;
       background-position: center;
 
-      > image{
+      > image {
         width: 100%;
         height: 100%;
         border-radius: 100%;
       }
 
-      .info-edit-icon{
-
+      .info-edit-icon {
         .px2rpx(height, 22);
         .px2rpx(width, 22);
 
-        background: linear-gradient(275deg, #72A0FF 1.61%, #BCD1FD 97.56%);
+        background: linear-gradient(275deg, #72a0ff 1.61%, #bcd1fd 97.56%);
 
         border-radius: 100%;
 
@@ -174,16 +170,14 @@ page {
         align-items: center;
         justify-content: center;
 
-        > image{
+        > image {
           .px2rpx(height, 12);
           .px2rpx(width, 12);
-
-          
         }
       }
     }
 
-    .info-more{
+    .info-more {
       .px2rpx(height, 23);
       .px2rpx(gap, 8);
 
@@ -194,21 +188,20 @@ page {
       flex-direction: row;
       align-items: center;
 
-      .info-nickname{
+      .info-nickname {
         color: var(--4, #212121);
         .font-group(18, 600);
       }
-      .info-edit{
-        > image{
+      .info-edit {
+        > image {
           .px2rpx(width, 16);
           .px2rpx(height, 16);
         }
       }
-      .info-tags{
-
-        > .approved{
+      .info-tags {
+        > .approved {
           border-radius: 20px;
-          background: var(--2, linear-gradient(275deg, #FCE38A 1.61%, #FFF3C6 97.56%));
+          background: var(--2, linear-gradient(275deg, #fce38a 1.61%, #fff3c6 97.56%));
           justify-content: center;
           .px2rpx(gap, 3);
           display: flex;
@@ -218,46 +211,44 @@ page {
           display: flex;
           align-items: center;
 
-          > text{
-            color: var(--5, #9196A3);
+          > text {
+            color: var(--5, #9196a3);
             .font-group(10, 500);
           }
 
-          > image{
+          > image {
             .px2rpx(width, 10.5);
             .px2rpx(height, 10.7);
           }
-
         }
       }
     }
 
-    .info-point{
+    .info-point {
       display: flex;
       .px2rpx(margin-top, 23);
       .px2rpx(gap,45);
-      .info-point-item{
+      .info-point-item {
         display: flex;
         .px2rpx(height, 41);
         flex-direction: column;
         align-items: center;
         .px2rpx(gap, 2);
 
-
-        .point{
+        .point {
           color: var(--4, #212121);
           .font-group(16, 600);
         }
-        .text{
-          color: var(--6, #CCCCD4);
+        .text {
+          color: var(--6, #ccccd4);
           .font-group(12, 400);
         }
       }
     }
 
-    .notes-login{
+    .notes-login {
       position: absolute;
-      background-color: #72A0FF;
+      background-color: #72a0ff;
       .px2rpx(width, 82);
       .px2rpx(height, 25);
       right: 0;
@@ -265,20 +256,18 @@ page {
       .px2rpx(border-top-left-radius, 100);
       .px2rpx(border-bottom-left-radius, 100);
 
-      color: #FFF;
-      
+      color: #fff;
+
       .font-group(12, 400);
       display: flex;
       align-items: center;
       justify-content: center;
 
-      > image{
+      > image {
         .px2rpx(width, 5.71);
         .px2rpx(height, 10);
         .px2rpx(margin-left, 3);
       }
-
     }
-
   }
 }

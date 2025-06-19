@@ -1,0 +1,148 @@
+/Users/michaelqiu/Documents/workspace/tdesign_template
+├── miniprogram
+|  ├── app.json
+|  ├── app.less
+|  ├── app.ts
+|  ├── components
+|  |  ├── date-picker
+|  |  |  ├── data-picker.config.ts
+|  |  |  ├── date-picker.json
+|  |  |  ├── date-picker.less
+|  |  |  ├── date-picker.ts
+|  |  |  └── date-picker.wxml
+|  |  ├── events-card
+|  |  |  ├── events-card.json
+|  |  |  ├── events-card.less
+|  |  |  ├── events-card.ts
+|  |  |  └── events-card.wxml
+|  |  ├── footer-bar
+|  |  |  ├── footer-bar.json
+|  |  |  ├── footer-bar.less
+|  |  |  ├── footer-bar.ts
+|  |  |  └── footer-bar.wxml
+|  |  ├── likes-card
+|  |  |  ├── likes-card.json
+|  |  |  ├── likes-card.less
+|  |  |  ├── likes-card.ts
+|  |  |  └── likes-card.wxml
+|  |  ├── navigation-bar
+|  |  |  ├── navigation-bar.json
+|  |  |  ├── navigation-bar.less
+|  |  |  ├── navigation-bar.ts
+|  |  |  └── navigation-bar.wxml
+|  |  ├── picker-overlay
+|  |  |  ├── picker-overlay.json
+|  |  |  ├── picker-overlay.less
+|  |  |  ├── picker-overlay.ts
+|  |  |  └── picker-overlay.wxml
+|  |  ├── region-picker
+|  |  |  ├── region-picker.json
+|  |  |  ├── region-picker.less
+|  |  |  ├── region-picker.ts
+|  |  |  └── region-picker.wxml
+|  |  └── upload-file
+|  |     ├── upload-file.json
+|  |     ├── upload-file.less
+|  |     ├── upload-file.ts
+|  |     └── upload-file.wxml
+|  ├── packageA
+|  |  └── pages
+|  |     ├── attendee-list
+|  |     ├── edit-private
+|  |     ├── edit-profile
+|  |     ├── events-info
+|  |     ├── likes-me
+|  |     ├── my-events
+|  |     ├── my-likes
+|  |     ├── profile-verification
+|  |     ├── public-profile
+|  |     └── settings
+|  ├── pages
+|  |  ├── events
+|  |  |  ├── events.config.ts
+|  |  |  ├── events.json
+|  |  |  ├── events.less
+|  |  |  ├── events.ts
+|  |  |  └── events.wxml
+|  |  ├── home
+|  |  |  ├── home.config.ts
+|  |  |  ├── home.json
+|  |  |  ├── home.less
+|  |  |  ├── home.ts
+|  |  |  └── home.wxml
+|  |  ├── index
+|  |  |  ├── index.json
+|  |  |  ├── index.less
+|  |  |  ├── index.ts
+|  |  |  └── index.wxml
+|  |  ├── login
+|  |  |  ├── home.json
+|  |  |  ├── home.less
+|  |  |  ├── home.ts
+|  |  |  └── home.wxml
+|  |  ├── logs
+|  |  |  ├── logs.json
+|  |  |  ├── logs.less
+|  |  |  ├── logs.ts
+|  |  |  └── logs.wxml
+|  |  ├── message
+|  |  |  ├── message.json
+|  |  |  ├── message.less
+|  |  |  ├── message.ts
+|  |  |  └── message.wxml
+|  |  ├── personal-info
+|  |  |  ├── personal-info.json
+|  |  |  ├── personal-info.less
+|  |  |  ├── personal-info.ts
+|  |  |  └── personal-info.wxml
+|  |  ├── photo-upload
+|  |  |  ├── photo-upload.json
+|  |  |  ├── photo-upload.less
+|  |  |  ├── photo-upload.ts
+|  |  |  └── photo-upload.wxml
+|  |  ├── profile
+|  |  |  ├── profile.json
+|  |  |  ├── profile.less
+|  |  |  ├── profile.ts
+|  |  |  └── profile.wxml
+|  |  └── welcome
+|  |     ├── welcome.json
+|  |     ├── welcome.less
+|  |     ├── welcome.ts
+|  |     └── welcome.wxml
+|  ├── sitemap.json
+|  ├── styles
+|  |  ├── _mixins.less
+|  |  └── _variables.less
+|  └── utils
+|     ├── api.ts
+|     ├── auth.ts
+|     ├── constants.ts
+|     ├── env.ts
+|     ├── file.ts
+|     ├── funcHelper.ts
+|     ├── navigateHelper.ts
+|     ├── permissions.ts
+|     ├── request.ts
+|     ├── storage.ts
+|     └── util.ts
+├── package.json
+├── pnpm-lock.yaml
+├── project.config.json
+├── project.private.config.json
+├── tree.txt
+├── tsconfig.json
+└── typings
+   ├── index.d.ts
+   └── types
+      ├── index.d.ts
+      └── wx
+         ├── index.d.ts
+         ├── lib.wx.api.d.ts
+         ├── lib.wx.app.d.ts
+         ├── lib.wx.behavior.d.ts
+         ├── lib.wx.cloud.d.ts
+         ├── lib.wx.component.d.ts
+         ├── lib.wx.event.d.ts
+         └── lib.wx.page.d.ts
+

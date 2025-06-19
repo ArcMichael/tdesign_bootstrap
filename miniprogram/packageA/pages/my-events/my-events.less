@@ -1,5 +1,5 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
   background-image: url(https://qiniustatic.womenshike.top/background_top.png);
@@ -13,7 +13,7 @@ page {
   flex-direction: column;
 }
 
-.my-events{
+.my-events {
   .px2rpx(margin-top, 5);
   .padding-sides();
   align-items: center;
@@ -34,28 +34,28 @@ page {
   .events-btn {
     position: absolute;
     .px2rpx(top, 4);
-    
+
     .size(93, 26);
     .px2rpx(line-height, 26);
     .px2rpx(border-radius, 15);
-    
+
     z-index: 1;
     .font-group(14, 500);
-    color: #FFF;
+    color: #fff;
     text-align: center;
 
-    &.fl{
+    &.fl {
       .px2rpx(left, 4);
     }
-    &.fr{
+    &.fr {
       .px2rpx(right, 4);
     }
-    &.action{
-      background: linear-gradient(275deg, #A9C5FF 1.61%, #C6D9FF 97.56%);
+    &.action {
+      background: linear-gradient(275deg, #a9c5ff 1.61%, #c6d9ff 97.56%);
     }
   }
 
-  .my-events-group{
+  .my-events-group {
     display: flex;
     flex-direction: column;
     .padding-sides();

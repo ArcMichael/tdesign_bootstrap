@@ -128,3 +128,12 @@
   background-color: @e-status-background;
   .px2rpx(border-radius, 4);
 }
+
+// === SPECIALLY BACKGROUND { 支付，关注等渐变按钮 } ===
+.gradient-background(@angle, @start-color, @end-color) {
+  background-image: linear-gradient(@angle, @start-color, @end-color);
+}
+
+.specially-button-style() {
+  .gradient-background(269deg, #FFAAC6 0.6%, #A6C3FF 98.92%);
+}

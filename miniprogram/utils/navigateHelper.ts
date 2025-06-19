@@ -88,3 +88,9 @@ export const goPublicProfile = () => {
     url: "/packageA/pages/public-profile/public-profile",
   });
 };
+
+export const goEventsInfo = () => {
+  return wx.navigateTo({
+    url: `/packageA/pages/events-info/events-info`,
+  });
+};

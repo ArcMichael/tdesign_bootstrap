@@ -27,12 +27,92 @@
     </block>
   </swiper>
 
-  <view class="public-profile-group">
-    <view class="public-profile-info"></view>
-    <view class="public-profile-info"></view>
-    <view class="public-profile-info"></view>
+  <view class="profile-card-list">
+    <view class="profile-card profile-card__info-container">
+      <view class="profile-card__header">
+        <view class="profile-card__name">秦小北</view>
+        <view class="profile-card__badges">
+          <view class="profile-card__badge profile-card__badge--verified">已认证<image src="https://qiniustatic.womenshike.top/icon_tags_approved.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" /></view>
+          <view class="profile-card__badge profile-card__badge--education">学历认证<image src="https://qiniustatic.womenshike.top/icon_tags_approved.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" /></view>
+        </view>
+      </view>
+
+      <view class="profile-card__info">
+        
+        <view class="profile-card__info-item">
+          <image src="https://qiniustatic.womenshike.top/profile-icon-birthday.png" mode="widthFix" lazy-load="false" />
+          <span class="profile-card__label">90年 · 巨蟹座</span>
+        </view>
+        <view class="profile-card__info-item">
+          <image src="https://qiniustatic.womenshike.top/profile-icon-height.png" mode="widthFix" lazy-load="false" />
+          <span class="profile-card__label">166cm</span>
+        </view>
+        <view class="profile-card__info-item">
+          <image src="https://qiniustatic.womenshike.top/profile-icon-education.png" mode="widthFix" lazy-load="false" />
+          <span class="profile-card__label">硕士 · 清华大学</span>
+        </view>
+        <view class="profile-card__info-item">
+          <image src="https://qiniustatic.womenshike.top/profile-icon-location.png" mode="widthFix" lazy-load="false" />
+          <span class="profile-card__label">居住地 上海</span>
+        </view>
+        <view class="profile-card__info-item">
+          <image src="https://qiniustatic.womenshike.top/profile-icon-mbti.png" mode="widthFix" lazy-load="false" />
+          <span class="profile-card__label">Mbti T</span>
+        </view>
+
+      </view>
+      
+      <view class="profile-card__actions">
+        <block wx:if="{{!isFollowed}}">
+          <view class="profile-card__button profile-card__button--follow" bindtap="handlePopup">＋关注</view>
+        </block>
+        <block wx:if="{{isFollowed}}">
+          <view class="profile-card__button profile-card__button--followed" bindtap="handlePopup">已关注<image src="https://qiniu.womenshike.top/icon_button_expand.png" mode="widthFix" lazy-load="false" /></view>
+          <view class="profile-card__button profile-card__button--message">私信</view>
+        </block>
+      </view>
+    </view>
+
+    <t-divider content="以下信息只对相互关注的好友展示" />
+
+    <view class="profile-card" wx:if="{{isFollowed}}">
+      <view class="profile-section__title">自我描述</view>
+      <textarea class="profile-section__content" value="{{ selfDesc }}" placeholder="" placeholder-style="" placeholder-class="textarea-placeholder" 
+        disabled="true" auto-focus="false" focus="false" auto-height="" 
+        bindinput="" bindfocus="" bindblur="" bindconfirm="" bindlinechange="%{15}"></textarea>
+    </view>
+
+    <view class="profile-card" wx:if="{{isFollowed}}">
+      <view class="profile-section__title">交友倾向</view>
+      <textarea class="profile-section__content" value="{{ friendPref }}" placeholder="" placeholder-style="" placeholder-class="textarea-placeholder" 
+        disabled="true" auto-focus="false" focus="false" auto-height="" 
+        bindinput="" bindfocus="" bindblur="" bindconfirm="" bindlinechange="%{15}"></textarea>
+    </view>
+
   </view>
 
   
 
 </view>
+
+<t-popup
+  visible="{{visible}}"
+  usingCustomNavbar
+  bind:visible-change="onVisibleChange"
+  placement="bottom"
+>
+  <view class="follow-modal">
+    <view class="follow-modal__content">
+        <view class="follow-modal__title">秦小北</view>
+        <view class="follow-modal__actions">
+          <block wx:if="{{isFollowed}}">
+            <view class="follow-modal__button follow-modal__button--primary">已关注</view>
+          </block>
+          <block wx:if="{{!isFollowed}}">
+            <view class="follow-modal__button follow-modal__button--primary" bindtap="followUser">关注</view>
+          </block>          
+          <view class="follow-modal__button follow-modal__button--danger" bindtap="unfollowUser">取消关注</view>
+        </view>
+    </view>
+  </view>
+</t-popup>

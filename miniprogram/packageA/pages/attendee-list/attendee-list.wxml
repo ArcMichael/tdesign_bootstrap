@@ -1,0 +1,20 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">已报名的人</view>
+</navigation-bar>
+
+<view class="page-wrapper attendee-list">
+  <view class="attendee-list__group">
+    <block wx:for="{{attendeeList.items}}" wx:key="id">
+      <view class="attendee-list__card" bindtap="toPublicProfile">
+        <image class="attendee-list__avatar" src="{{item.path}}" mode="aspectFill" />
+        <view class="attendee-list__info">
+          <view class="attendee-list__name">{{item.info.nickname}}</view>
+          <view class="attendee-list__school">{{item.info.school}}</view>
+        </view>
+        <view class="attendee-list__like-icon">
+          <image class="attendee-list__like-image" src="https://qiniustatic.womenshike.top/icon_home_pink.png" mode="widthFix" />
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

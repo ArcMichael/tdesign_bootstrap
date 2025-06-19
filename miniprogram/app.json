@@ -22,7 +22,8 @@
         "pages/settings/settings",
         "pages/my-events/my-events",
         "pages/edit-profile/edit-profile",
-        "pages/edit-private/edit-private"
+        "pages/edit-private/edit-private",
+        "pages/attendee-list/attendee-list"
       ]
     }
   ],

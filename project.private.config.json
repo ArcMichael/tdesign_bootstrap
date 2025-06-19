@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "packageA/pages/attendee-list/attendee-list",
+          "pathName": "packageA/pages/attendee-list/attendee-list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "packageA/pages/settings/settings",
           "pathName": "packageA/pages/settings/settings",
           "query": "",

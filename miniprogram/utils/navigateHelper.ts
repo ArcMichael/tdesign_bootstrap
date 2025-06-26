@@ -1,96 +1,108 @@
 export const goLoginWithRedirect = () => {
   // 重定向去登录
   return wx.redirectTo({
-    url: "/pages/welcome/welcome",
+    url: '/pages/welcome/welcome',
   });
 };
 
 export const goPersonalInfo = () => {
   return wx.navigateTo({
-    url: "/pages/personal-info/personal-info",
+    url: '/pages/personal-info/personal-info',
   });
 };
 
 export const goPhotoUpload = () => {
   return wx.navigateTo({
-    url: "/pages/photo-upload/photo-upload",
+    url: '/pages/photo-upload/photo-upload',
   });
 };
 
 export const goHome = () => {
   return wx.redirectTo({
-    url: "/pages/home/home",
+    url: '/pages/home/home',
   });
 };
 
 export const goEvents = () => {
   return wx.redirectTo({
-    url: "/pages/events/events",
+    url: '/pages/events/events',
   });
 };
 
 export const goMessage = () => {
   return wx.redirectTo({
-    url: "/pages/message/message",
+    url: '/pages/message/message',
   });
 };
 
 export const goProfile = () => {
   return wx.redirectTo({
-    url: "/pages/profile/profile",
+    url: '/pages/profile/profile',
   });
 };
 
 export const goLikesMe = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/likes-me/likes-me",
+    url: '/packageA/pages/likes-me/likes-me',
   });
 };
 
 export const goMyLikes = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/my-likes/my-likes",
+    url: '/packageA/pages/my-likes/my-likes',
   });
 };
 
 export const goProfileVerification = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/profile-verification/profile-verification",
+    url: '/packageA/pages/profile-verification/profile-verification',
   });
 };
 
 export const goSettings = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/settings/settings",
+    url: '/packageA/pages/settings/settings',
   });
 };
 
 export const goMyEvents = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/my-events/my-events",
+    url: '/packageA/pages/my-events/my-events',
   });
 };
 
 export const goEditProfile = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/edit-profile/edit-profile",
+    url: '/packageA/pages/edit-profile/edit-profile',
   });
 };
 
 export const goEditPrivate = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/edit-private/edit-private",
+    url: '/packageA/pages/edit-private/edit-private',
   });
 };
 
 export const goPublicProfile = () => {
   return wx.navigateTo({
-    url: "/packageA/pages/public-profile/public-profile",
+    url: '/packageA/pages/public-profile/public-profile',
   });
 };
 
 export const goEventsInfo = () => {
   return wx.navigateTo({
     url: `/packageA/pages/events-info/events-info`,
+  });
+};
+
+export const goChat = () => {
+  return wx.navigateTo({
+    url: `/packageA/pages/chat/chat`,
+  });
+};
+
+export const goAttendeeList = () => {
+  return wx.navigateTo({
+    url: `/packageA/pages/attendee-list/attendee-list`,
   });
 };

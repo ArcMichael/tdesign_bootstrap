@@ -137,3 +137,24 @@
 .specially-button-style() {
   .gradient-background(269deg, #FFAAC6 0.6%, #A6C3FF 98.92%);
 }
+
+// === COMPONENTS SLOT { TITLE } ===
+.components-slot-title {
+  color: var(--4, #212121);
+  .font-group(18, 500);
+}
+
+// === MESSAGE CONTAINER { ME, OTHER } ===
+.chat-message--me-card {
+  .px2rpx(border-top-left-radius, 16);
+  .px2rpx(border-top-right-radius, 0);
+  .px2rpx(border-bottom-right-radius, 16);
+  .px2rpx(border-bottom-left-radius, 16);
+}
+
+.chat-message--other-card {
+  .px2rpx(border-top-left-radius, 0);
+  .px2rpx(border-top-right-radius, 16);
+  .px2rpx(border-bottom-right-radius, 16);
+  .px2rpx(border-bottom-left-radius, 16);
+}

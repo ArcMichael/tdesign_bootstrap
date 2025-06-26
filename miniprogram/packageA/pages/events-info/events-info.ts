@@ -1,4 +1,5 @@
-import { avatars, images, info, swiper } from "./events-info.config";
+import { avatars, images, info, swiper } from './events-info.config';
+import * as navigateHelper from '../../../utils/navigateHelper';
 
 Page({
   data: {
@@ -10,13 +11,13 @@ Page({
         autoplay: false,
         interval: 2000,
         duration: 500,
-        easingFunction: "linear",
+        easingFunction: 'linear',
       },
       items: swiper.items,
       avatars: avatars.items,
       info: {
-        intro: [...new Set(info.intro.split("\n"))].join("\n"),
-        notice: [...new Set(info.notice.split("\n"))].join("\n"),
+        intro: [...new Set(info.intro.split('\n'))].join('\n'),
+        notice: [...new Set(info.notice.split('\n'))].join('\n'),
         images,
       },
     },
@@ -25,7 +26,10 @@ Page({
   onChange(e: WechatMiniprogram.CustomEvent<{ current: number }>) {
     const { current } = e.detail;
     this.setData({
-      "eventInfo.options.current": current,
+      'eventInfo.options.current': current,
     });
+  },
+  goAttendeeList() {
+    return navigateHelper.goAttendeeList();
   },
 });

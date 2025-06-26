@@ -1,26 +1,172 @@
 <navigation-bar back="{{false}}" color="black">
   <view 
     slot="left" 
-    class="slot-left" 
+    class="navigation-bar__left" 
   >
-  <view class="slot-left-text">消息<view class="slot-left-bubble"></view></view>
-  <view class="slot-left-line"></view>
+  <view class="navigation-bar__text">消息<view class="navigation-bar__bubble"></view></view>
+  <view class="navigation-bar__divider" />
 </view>
 </navigation-bar>
 
-<view class="page-wrapper message">
-  <view class="message-group">
-    <view class="message-card system">
-      <image src="https://qiniustatic.womenshike.top/icon_bell_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-      <view class="ctx">系统消息</view>
-      <view class="number">3</view>
+<view class="page-wrapper message-page">
+
+  <view class="message-page__group">
+    <view class="message-page__card message-page__card--system" data-type="system" bindtap="onMessageTabChange">
+      <image class="message-page__icon" src="https://qiniustatic.womenshike.top/icon_bell_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <view class="message-page__label">系统消息</view>
+      <view class="message-page__badge">3</view>
     </view>
-    <view class="message-card social">
-      <image src="https://qiniustatic.womenshike.top/icon_social_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
-      <view class="ctx">互动消息</view>
-      <view class="number">5</view>
+    <view class="message-page__card message-page__card--social" data-type="social" bindtap="onMessageTabChange">
+      <image class="message-page__icon" src="https://qiniustatic.womenshike.top/icon_social_message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <view class="message-page__label">互动消息</view>
+      <view class="message-page__badge">5</view>
     </view>
   </view>
+
+  <view class="message-tab__content">
+    <view wx:if="{{activeMessageTab === 'social'}}" class="message-tab__panel message-tab__panel--social">
+
+      <scroll-view 
+        class="message-tab__scroll"
+        scroll-y 
+        scroll-with-animation 
+        enable-flex
+      >
+      
+        <view class="message-item" bindtap="goChat">
+          <image class="message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="message-item__content">
+            <view class="message-item__name">小憨包</view>
+            <view class="message-item__preview">好的，谢谢姐～</view>
+          </view>
+          <view class="message-item__meta">
+            <view class="message-item__time">11:26</view>
+            <view class="message-item__badge">3</view>
+          </view>
+        </view>
+
+        <view class="message-item" bindtap="goChat">
+          <image class="message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="message-item__content">
+            <view class="message-item__name">小憨包</view>
+            <view class="message-item__preview">好的，谢谢姐～</view>
+          </view>
+          <view class="message-item__meta">
+            <view class="message-item__time">11:26</view>
+            <view class="message-item__badge">3</view>
+          </view>
+        </view>
+
+      </scroll-view>
+
+    </view>
+    <view wx:if="{{activeMessageTab === 'system'}}" class="message-tab__panel message-tab__panel--system">
+
+      <scroll-view 
+        class="message-tab__scroll"
+        scroll-y 
+        scroll-with-animation 
+        enable-flex
+      >
+
+        <view class="system-message-item system-message--activity">
+          <image class="system-message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="system-message-item__main">
+            <view class="system-message-item__text">
+              您关注的 <text class="system-message-item__highlight">秦小北</text> 参加了 <text class="system-message-item__tag">#南山飞盘暴汗局</text>
+            </view>
+            <view class="system-message-item__footer">
+              <view class="system-message-item__link">查看活动</view>
+              <view class="system-message-item__time">2025-4-18</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="system-message-item system-message--usercard">
+          <image class="system-message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="system-message-item__main">
+
+            <view class="system-message-item__usercard-title">TA关注了你</view>
+            <view class="system-message-item__usercard">
+              <image class="system-message-item__user-avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+              <view class="system-message-item__user-info">
+                <view class="system-message-item__user-name">甜七七</view>
+                <view class="system-message-item__user-birthday">出生日期：1995-10-23</view>
+              </view>
+            </view>
+            <view class="system-message-item__user-meta">
+              <text>身高：168</text>
+              <text>家乡：山东</text>
+            </view>
+
+            <view class="system-message-item__footer">
+              <view class="system-message-item__link">查看详情</view>
+              <view class="system-message-item__time">2025-4-18 12:32:21</view>
+            </view>
+          </view>
+        </view>
+        
+        <view class="system-message-item system-message--text">
+          <image class="system-message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="system-message-item__main">
+            <view class="system-message-item__text">您报名了夏日火辣派对活动，请带好你的装备一起体验夏日的激情</view>
+            <view class="system-message-item__footer">
+              <view class="system-message-item__link">查看活动</view>
+              <view class="system-message-item__time">2025-4-18</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="system-message-item system-message--text">
+          <image class="system-message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="system-message-item__main">
+            <view class="system-message-item__text">我的认证已经通过啦！～</view>
+            <view class="system-message-item__footer">
+              <view class="system-message-item__link">查看详情</view>
+              <view class="system-message-item__time">2025-4-18</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="system-message-item system-message--text">
+          <image class="system-message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="system-message-item__main">
+            <view class="system-message-item__text system-message-item__text--error">我的认证失败了</view>
+            <view class="system-message-item__footer">
+              <view class="system-message-item__link">查看详情</view>
+              <view class="system-message-item__time">2025-4-18</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="system-message-item system-message--text">
+          <image class="system-message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="system-message-item__main">
+            <view class="system-message-item__text">您的照片审核通过啦！～</view>
+            <view class="system-message-item__footer">
+              <view class="system-message-item__link">查看详情</view>
+              <view class="system-message-item__time">2025-4-18</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="system-message-item system-message--text">
+          <image class="system-message-item__avatar" src="https://qiniustatic.womenshike.top/icon-message-avatat-systems.png" />
+          <view class="system-message-item__main">
+            <view class="system-message-item__text">您的照片审核失败了</view>
+            <view class="system-message-item__reason">原因：图片过于模糊</view>
+            <view class="system-message-item__footer">
+              <view class="system-message-item__link">查看详情</view>
+              <view class="system-message-item__time">2025-4-18</view>
+            </view>
+          </view>
+        </view>
+      
+      </scroll-view>
+
+    </view>
+  </view>
+
 </view>
 
-<footer-bar activeIndex="{{2}}" bind:tabChange="onTabChange" />
+<footer-bar activeIndex="{{2}}" />

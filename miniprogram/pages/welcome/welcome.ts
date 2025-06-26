@@ -1,6 +1,6 @@
-import { fetchLogin } from "../../utils/api";
-import { setToken, setOpenID, setUserID } from "../../utils/auth";
-import * as navigateHelper from "../../utils/navigateHelper";
+import { fetchLogin } from '../../utils/api';
+import { setToken, setOpenID, setUserID } from '../../utils/auth';
+import * as navigateHelper from '../../utils/navigateHelper';
 
 Page({
   async onLogin() {
@@ -24,12 +24,14 @@ Page({
 
             return navigateHelper.goPersonalInfo();
           } catch (err) {
-            console.error("登录请求失败：", err);
+            console.error('登录请求失败：', err);
           }
         }
+        return navigateHelper.goPersonalInfo();
       },
       fail(err) {
-        console.error("wx.login 调用失败", err);
+        console.error('wx.login 调用失败', err);
+        return navigateHelper.goPersonalInfo();
       },
     });
   },

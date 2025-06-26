@@ -164,7 +164,7 @@
       
   </view>
 
-  <view class="form-submit">下一步</view>
+  <view class="form-submit" bindtap="goHome">下一步</view>
 </view>
 
 

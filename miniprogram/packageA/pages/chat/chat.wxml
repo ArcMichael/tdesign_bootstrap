@@ -1,0 +1,43 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="chat-page__title">甜七七</view>
+</navigation-bar>
+
+<view class="page-wrapper chat-page">
+  
+  <scroll-view 
+    class="chat-page__scroll" 
+    scroll-y 
+    scroll-with-animation 
+    scroll-into-view="{{scrollTo}}" 
+    enable-flex="true"
+  >
+    <block wx:for="{{messages}}" wx:key="id">
+      <view wx:if="{{item.showTimestamp}}" class="chat-message__timestamp">
+        {{item.timestampFormatted}}
+      </view>
+
+      <view 
+        id="msg-{{item.id}}"
+        class="chat-message {{item.isMe ? 'chat-message--me' : 'chat-message--other'}}"
+      >
+        <image class="chat-message__avatar" src="{{item.avatar}}" />
+        <view class="chat-message__bubble">
+          {{item.text}}
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+</view>
+
+<view class="chat-input__wrapper">
+  <view class="chat-input__inner">
+    <input class="chat-input__field" placeholder="请输入消息..." />
+    <view class="chat-input__icon chat-input__icon--emoji">
+      <image class="chat-input__icon--emoji-image" src="https://qiniustatic.womenshike.top/icon-chat-input-emoji.png" mode="widthFix" lazy-load="false" />
+    </view>
+  </view>
+  <view class="chat-input__icon chat-input__icon--plus">
+    <image class="chat-input__icon chat-input__icon--plus-image" src="https://qiniustatic.womenshike.top/icon-chat-input-plus.png" mode="widthFix" lazy-load="false" />
+  </view>
+</view>

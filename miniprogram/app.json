@@ -23,7 +23,8 @@
         "pages/my-events/my-events",
         "pages/edit-profile/edit-profile",
         "pages/edit-private/edit-private",
-        "pages/attendee-list/attendee-list"
+        "pages/attendee-list/attendee-list",
+        "pages/chat/chat"
       ]
     }
   ],

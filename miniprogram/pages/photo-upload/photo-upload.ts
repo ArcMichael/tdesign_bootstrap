@@ -1,3 +1,5 @@
+import * as navigateHelper from '../../utils/navigateHelper';
+
 Page({
   data: {
     form: {},
@@ -7,5 +9,8 @@ Page({
     this.setData({
       images: e.detail,
     });
+  },
+  goHome() {
+    return navigateHelper.goHome();
   },
 });

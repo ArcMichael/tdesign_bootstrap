@@ -49,7 +49,7 @@
         <image class="event-info__avatar" src="{{item.avatar}}" />
       </block>
     </view>
-     <view class="event-info__avatar-more">查看全部</view>
+     <view class="event-info__avatar-more" bindtap="goAttendeeList">查看全部</view>
   </view>
 
   <view class="event-info__conditions">
@@ -97,13 +97,14 @@
 
     <view class="event-info__footer {{authorization ? '' : 'fixed'}}">
       <view class="event-info__action">
-        <view class="event-info__action-item event-info__action-share">
-          <image class="event-info__action-icon" src="https://qiniustatic.womenshike.top/icon-event-hron.png" mode="heightFix" lazy-load="false" />
-          分享
-        </view>
         <view class="event-info__action-item event-info__action-my">
           <image class="event-info__action-icon" src="https://qiniustatic.womenshike.top/icon-event-turn-right.png" mode="heightFix" lazy-load="false" />
           我的活动
+        </view>
+        
+        <view class="event-info__action-item event-info__action-share">
+          <image class="event-info__action-icon" src="https://qiniustatic.womenshike.top/icon-event-hron.png" mode="heightFix" lazy-load="false" />
+          分享
         </view>
       </view>
       <view class="event-info__action-join">上车（¥79.00）</view>

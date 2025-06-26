@@ -9,7 +9,7 @@
   display: flex;
   background-color: #fff; /* 背景色 */
 
-  .tab-item {
+  .tab-item__item {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -18,20 +18,29 @@
     color: #888888; /* 未选中时文字颜色 */
     .px2rpx(padding-top, 14);
     .font-group(24);
+    position: relative;
+
+    .footer-bar__badge-dot {
+      position: absolute;
+      .size(10, 10);
+      background-color: #f38181;
+      border-radius: 50%;
+      .px2rpx(left, 55);
+    }
   }
 
-  .icon {
+  .footer-bar__icon {
     .px2rpx(width, 24);
     .px2rpx(height, 24);
   }
 
-  .label {
+  .footer-bar__label {
     color: var(--5, #9196a3);
     text-align: center;
     .font-group(12,600);
   }
 
-  .tab-item.active {
+  .tab-item__item.footer-bar__item--active {
     color: var(--4, #212121);
     text-align: center;
     .font-group(12,600);

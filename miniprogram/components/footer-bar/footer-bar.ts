@@ -1,9 +1,4 @@
-import {
-  goHome,
-  goEvents,
-  goMessage,
-  goProfile,
-} from "../../utils/navigateHelper";
+import { goHome, goEvents, goMessage, goProfile } from '../../utils/navigateHelper';
 
 Component({
   /**
@@ -22,6 +17,7 @@ Component({
    */
   data: {
     active: 0,
+    hasUnread: 10,
   },
 
   /**

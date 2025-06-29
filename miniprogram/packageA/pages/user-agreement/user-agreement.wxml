@@ -1,0 +1,7 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">用户服务协议</view>
+</navigation-bar>
+
+<view class="page-wrapper user-agreement">
+  
+</view>

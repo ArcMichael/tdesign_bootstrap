@@ -1,4 +1,11 @@
-export const goLoginWithRedirect = () => {
+export const goWelcomeWithRedirect = () => {
+  // 重定向去登录
+  return wx.redirectTo({
+    url: '/pages/welcome/welcome',
+  });
+};
+
+export const goWelcome = () => {
   // 重定向去登录
   return wx.redirectTo({
     url: '/pages/welcome/welcome',

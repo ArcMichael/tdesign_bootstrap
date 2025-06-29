@@ -3,39 +3,43 @@ import { request, RequestOptions, requestWithRetry } from './request';
 import { SocialLogin } from './auth';
 import { getAreaList, setAreaList } from './storage';
 
-export interface Res<T> {
+export type Res<T> = {
   code: number;
   data: T;
   msg: string;
-}
+};
 
-interface fetchLoginRequestOptions {
+type PostLoginRequestOptions = {
   type?: number;
   code: string;
   state?: string;
-}
+};
+
+// === EXAMPLE START ===
 
 // 示例：获取首页列表
-export async function fetchItemList(pageNum = 1, pageSize = 20) {
-  const url = `/items?pageNum=${pageNum}&pageSize=${pageSize}`;
-  return request<{ list: any[] }>({
-    url,
-    method: 'GET',
-    retryCount: 2, // 可选：失败后重试两次
-  });
-}
+// export async function fetchItemList(pageNum = 1, pageSize = 20) {
+//   const url = `/items?pageNum=${pageNum}&pageSize=${pageSize}`;
+//   return request<{ list: any[] }>({
+//     url,
+//     method: 'GET',
+//     retryCount: 2, // 可选：失败后重试两次
+//   });
+// }
 
 // 示例：带重试与超时的搜索接口
-export async function searchCoupons(params: Record<string, any>, pageNum = 1, pageSize = 10) {
-  const url = `/msh/coupon/search?pageNum=${pageNum}&pageSize=${pageSize}`;
-  return requestWithRetry<{ data: any[] }>(
-    { url, method: 'POST', data: params },
-    { maxRetries: 3, timeout: 5000, delay: 1000 },
-  );
-}
+// export async function searchCoupons(params: Record<string, any>, pageNum = 1, pageSize = 10) {
+//   const url = `/msh/coupon/search?pageNum=${pageNum}&pageSize=${pageSize}`;
+//   return requestWithRetry<{ data: any[] }>(
+//     { url, method: 'POST', data: params },
+//     { maxRetries: 3, timeout: 5000, delay: 1000 },
+//   );
+// }
+
+// === EXAMPLE END ===
 
 // 授权
-export async function fetchLogin(options: fetchLoginRequestOptions): Promise<Res<SocialLogin>> {
+export async function postLogin(options: PostLoginRequestOptions): Promise<Res<SocialLogin>> {
   const { type = 1, code, state = 'MNP' } = options;
   const requestConfig: RequestOptions = {
     url: '/app-api/member/auth/social-login',
@@ -45,16 +49,17 @@ export async function fetchLogin(options: fetchLoginRequestOptions): Promise<Res
   return request(requestConfig);
 }
 
-export interface AreaTree {
+export type AreaTree = {
   id: number;
   name: string;
   children: AreaTree[];
-}
+};
 
 // 获取地区树
-export const fetchArea = async (): Promise<Res<AreaTree[]>> => {
+export const getArea = async (): Promise<Res<AreaTree[]>> => {
   // 性能优化 添加 wx.storage
 
+  // === GET FORM LOCAL STORAGE
   const areaList = getAreaList();
   if (areaList) return JSON.parse(areaList);
 
@@ -63,26 +68,41 @@ export const fetchArea = async (): Promise<Res<AreaTree[]>> => {
     method: 'GET',
   };
 
-  const response = await request(requestConfig);
+  const response = await requestWithRetry(requestConfig);
 
+  // === SAVE TO LOCALSTORAGE
   setAreaList(JSON.stringify(response));
 
   return response;
 };
 
-export interface DictDataProfession {
+export type DictDataBase = {
   id: number;
   label: string;
   value: string;
   dictType: string;
-}
+};
+
+export type DictDataProfession = {} & DictDataBase;
+
+export type DictDataMbti = {} & DictDataBase;
 
 // 获取职业
-export const fetchProfession = async (): Promise<Res<DictDataProfession[]>> => {
+export const getProfession = async (): Promise<Res<DictDataProfession[]>> => {
   const requestConfig: RequestOptions = {
     url: '/app-api/system/dict-data/type?type=profession',
+    method: 'GET',
   };
-  return await request(requestConfig);
+  return await requestWithRetry(requestConfig);
+};
+
+// 获取MBTI
+export const getMbti = async (): Promise<Res<DictDataMbti[]>> => {
+  const requestConfig: RequestOptions = {
+    url: '/app-api/system/dict-data/type?type=mbit',
+    method: 'GET',
+  };
+  return await requestWithRetry(requestConfig);
 };
 
 export interface ResignedUrl {
@@ -98,7 +118,7 @@ export const getPresignedUrl = async (): Promise<Res<ResignedUrl>> => {
     url: `/app-api/infra/file/presigned-url?name=test`,
     method: 'GET',
   };
-  return await request(requestConfig);
+  return await requestWithRetry(requestConfig);
 };
 
 export const postUpload = async (): Promise<Res<string>> => {
@@ -108,3 +128,5 @@ export const postUpload = async (): Promise<Res<string>> => {
   };
   return await request(requestConfig);
 };
+
+// export const getDict;

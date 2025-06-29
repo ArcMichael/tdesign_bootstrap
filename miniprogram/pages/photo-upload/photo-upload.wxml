@@ -21,6 +21,7 @@
               class="upload-cover" 
               bind:change="onPictureChange"
               data-field="picture-main"
+              data-position="0"
               bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
@@ -36,10 +37,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
               data-field="picture-careful"
+              data-position="1"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_careful.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -55,10 +57,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
               data-field="picture-confidence"
+              data-position="2"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_confidence.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -77,10 +80,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
               data-field="picture-montain"
+              data-position="3"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_montain.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -96,10 +100,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
               data-field="picture-life"
+              data-position="4"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_life.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -115,10 +120,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
               data-field="picture-smile"
+              data-position="5"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_smile.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />  

@@ -24,7 +24,8 @@
         "pages/edit-profile/edit-profile",
         "pages/edit-private/edit-private",
         "pages/attendee-list/attendee-list",
-        "pages/chat/chat"
+        "pages/chat/chat",
+        "pages/user-agreement/user-agreement"
       ]
     }
   ],

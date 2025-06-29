@@ -1,0 +1,38 @@
+<!-- https://qiniustatic.womenshike.top/icon-action-popup-broadcast.png -->
+<!-- https://qiniustatic.womenshike.top/icon-action-popup-present.png -->
+<!-- https://qiniustatic.womenshike.top/icon-action-popup-register.png -->
+<!-- https://qiniustatic.womenshike.top/icon-movement-register.png -->
+<!-- https://qiniustatic.womenshike.top/icon-action-popup-identify.png -->
+
+<t-popup visible="{{visible}}" placement="center" custom-style="padding: 0;">
+  <view class="activity-popup__block">
+
+    <view class="activity-popup__block-close" bind:tap="onClose">
+      <image class="activity-popup__block-icon" src="https://qiniustatic.womenshike.top/icon-action-popup-close.png" mode="aspectFit|aspectFill|widthFix" />
+    </view>
+
+    <view class="activity-popup__icon">
+      <image class="activity-popup__icon-image" src="{{icon}}" mode="widthFix" lazy-load="false" />
+    </view>
+
+    <view class="activity-popup__message">
+      <view class="activity-popup__title">
+        <slot name="title" />
+      </view>
+
+      <view class="activity-popup__subtitle">
+        <slot name="subtitle" />
+      </view>
+    </view>
+
+    <view class="activity-popup__buttom" bind:tap="onConfirm">{{buttonText}}</view>
+
+  </view>
+</t-popup>
+
+
+<!-- 使用方式 1. -->
+<!-- <activity-popup>
+  <view slot="subtitle">您还没有注册</view>
+</activity-popup> -->
+<!-- <activity-popup free-count="1" /> -->

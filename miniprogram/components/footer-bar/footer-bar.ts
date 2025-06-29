@@ -1,4 +1,4 @@
-import { goHome, goEvents, goMessage, goProfile } from '../../utils/navigateHelper';
+import * as navigateHelper from '../../utils/navigateHelper';
 
 Component({
   /**
@@ -38,19 +38,19 @@ Component({
   methods: {
     // 点击“主页”
     onTapHome() {
-      return goHome();
+      return navigateHelper.goHome();
     },
     // 点击“活动”
     onTapEvents() {
-      return goEvents();
+      return navigateHelper.goEvents();
     },
     // 点击“消息”
     onTapMessage() {
-      return goMessage();
+      return navigateHelper.goMessage();
     },
     // 点击“我的”
     onTapProfile() {
-      return goProfile();
+      return navigateHelper.goProfile();
     },
   },
 });

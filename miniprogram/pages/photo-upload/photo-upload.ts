@@ -13,4 +13,7 @@ Page({
   goHome() {
     return navigateHelper.goHome();
   },
+  async onUploadSuccess(info) {
+    console.log(info);
+  },
 });

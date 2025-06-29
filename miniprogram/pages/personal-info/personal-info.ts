@@ -1,4 +1,4 @@
-import { DictDataProfession, fetchProfession } from '../../utils/api';
+import { DictDataProfession, getProfession, getMbti, DictDataMbti } from '../../utils/api';
 import * as navigateHelper from '../../utils/navigateHelper';
 
 export interface PickerOption {
@@ -133,7 +133,7 @@ Page({
     this.setData({
       'picker.visible': true,
       'picker.field': field,
-      'picker.title': this._getFieldLabel(field),
+      'picker.title': this._getFieldLabel(field) || '',
       'picker.options': opts,
     });
   },
@@ -143,7 +143,7 @@ Page({
       gender: '请选择性别',
       birthday: '请选择出生日期',
       height: '请选择身高',
-      mbit: '请选择 Mbit',
+      mbti: '请选择 Mbti',
       school: '请选择学校',
       hometown: '请选择家乡',
       location: '请选择现居地',
@@ -185,30 +185,18 @@ Page({
     });
   },
 
-  async initMbitOptions() {
-    const mbtiList = [
-      'ISTJ',
-      'ISFJ',
-      'INFJ',
-      'INTJ',
-      'ISTP',
-      'ISFP',
-      'INFP',
-      'INTP',
-      'ESTP',
-      'ESFP',
-      'ENFP',
-      'ENTP',
-      'ESTJ',
-      'ESFJ',
-      'ENFJ',
-      'ENTJ',
-    ];
-    // 生成对应的 Option 数组
-    const mbtiOptions: Option[] = mbtiList.map((type) => ({
-      label: type,
-      value: type,
+  async initMbtiOptions() {
+    const { data } = (await getMbti()) as { data: DictDataMbti[] };
+
+    // const { data } = (await getMbti()) as {
+    //   data: DictDataMbti[];
+    // };
+    const mbtiOptions: Option[] = data.map((type) => ({
+      label: type.label,
+      value: type.id.toString(),
     }));
+
+    // console.log(mbtiOptions);
 
     this.setData({
       'pickerOptionsMap.mbti': mbtiOptions,
@@ -216,7 +204,7 @@ Page({
   },
 
   async initCareerOptions() {
-    const { data } = (await fetchProfession()) as {
+    const { data } = (await getProfession()) as {
       data: DictDataProfession[];
     };
     const carrerOptions: Option[] = data.map((type) => ({
@@ -278,7 +266,7 @@ Page({
 
   async onShow() {
     await this.initHeightOptions();
-    await this.initMbitOptions();
+    await this.initMbtiOptions();
     await this.initCareerOptions();
     await this.initSchoolOptions();
   },

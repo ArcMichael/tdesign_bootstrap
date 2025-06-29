@@ -1,6 +1,6 @@
 <view class="wrapper">
   <t-upload
-    remove-btn="{{true}}"
+    remove-btn="{{false}}"
     mediaType="{{['image']}}"
     max="{{1}}"
     files="{{fileList}}"

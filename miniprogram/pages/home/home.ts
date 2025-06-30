@@ -5,7 +5,7 @@ import * as navigateHelper from '../../utils/navigateHelper';
 
 Page({
   data: {
-    showVisible: true,
+    showVisible: false,
     position: '通州',
     home: {
       options: {
@@ -67,6 +67,11 @@ Page({
       position: text[text.length - 1],
     });
   },
+  onPink() {
+    this.setData({
+      showVisible: true,
+    });
+  },
   onClose() {
     this.setData({
       showVisible: false,
@@ -75,4 +80,12 @@ Page({
   onConfirm() {
     return navigateHelper.goWelcome();
   },
+  onEventInfo() {
+    return navigateHelper.goEventsInfo();
+  },
+  goWelcome() {
+    return navigateHelper.goWelcome();
+  },
+  // onAddToFavorites
+  // packageA/pages/events-info/events-info
 });

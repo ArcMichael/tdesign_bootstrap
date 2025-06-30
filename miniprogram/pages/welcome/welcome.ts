@@ -4,7 +4,7 @@ import * as navigateHelper from '../../utils/navigateHelper';
 
 Page({
   data: {
-    agreement: false,
+    agreement: true,
   },
   async onLogin() {
     wx.login({
@@ -43,5 +43,11 @@ Page({
   },
   onAgreementToggle() {
     this.setData({ agreement: !this.data.agreement });
+  },
+  async onUserAgreementTap() {
+    return navigateHelper.goUserAgreement();
+  },
+  async onPrivacyAgreementTap() {
+    return navigateHelper.goPrivateAgreement();
   },
 });

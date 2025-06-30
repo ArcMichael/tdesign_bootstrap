@@ -25,7 +25,9 @@
       </view>
     </view>
 
-    <view class="activity-popup__buttom" bind:tap="onConfirm">{{buttonText}}</view>
+    <view class="activity-popup__buttom">
+      <slot name="buttom" />
+    </view>
 
   </view>
 </t-popup>

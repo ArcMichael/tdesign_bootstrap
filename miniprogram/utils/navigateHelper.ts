@@ -113,3 +113,15 @@ export const goAttendeeList = () => {
     url: `/packageA/pages/attendee-list/attendee-list`,
   });
 };
+
+export const goUserAgreement = () => {
+  return wx.navigateTo({
+    url: `/packageA/pages/user-agreement/user-agreement`,
+  });
+};
+
+export const goPrivateAgreement = () => {
+  return wx.navigateTo({
+    url: `/packageA/pages/private-agreement/private-agreement`,
+  });
+};

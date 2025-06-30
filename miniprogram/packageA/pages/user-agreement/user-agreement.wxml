@@ -3,5 +3,215 @@
 </navigation-bar>
 
 <view class="page-wrapper user-agreement">
-  
+
+  <view class="agreement-page__header">
+    <view class="agreement-page__paragraph">更新日期：2024年03月17日</view>
+    <view class="agreement-page__paragraph">生效日期：2024年03月17日</view>
+    <view class="agreement-page__paragraph">版本号：V1.0</view>
+  </view>
+
+  <view class="agreement-page__title">《我们时刻》用户协议</view>
+
+  <view class="agreement-page__content">
+
+    <view class="agreement-page__section">
+      <view class="agreement-page__section-title">重要提示</view>
+      <view class="agreement-page__paragraph">《我们时刻用户协议》（以下简称“用户协议”或“本协议”）由用户（以下或称“您”）与上海聚箴科技有限公司订立，用于明确在您使用《我们时刻》提供的产品或服务（以下简称“本服务”）时，双方之间的权利义务关系。</view>
+      <view class="agreement-page__paragraph">本协议适用于《我们时刻》运营的《我们时刻》网站、客户端、APP、小程序、公众号以及随技术发展出现的新形态等。</view>
+      <view class="agreement-page__paragraph">为了保障您的权益，您在使用《我们时刻》前，务必审慎阅读并同意接受用户协议的所有内容。</view>
+      <view class="agreement-page__paragraph">本协议一经订立，将在您与《我们时刻》之间具有合同上的法律效力。</view>
+    </view>
+
+    <view class="agreement-page__section">
+      <view class="agreement-page__section-title">一、服务说明</view>
+      <view class="agreement-page__list-item">1. 本服务的具体内容由本平台根据实际情况提供，包括授权用户通过其账号进行、自定义推荐、聊天、查看我关注的人、关注我的人、发布我的动态、编辑资料、学历认证等。本平台可以对其提供的服务予以变更，且本平台提供的服务内容可能随时变更，用户继续使用更新后服务时会收到版本更新通知。</view>
+      <view class="agreement-page__list-item">2. 《我们时刻》的具体功能将随着用户反馈、技术升级，或相关监管政策的变化不断迭代更新。</view>
+      <view class="agreement-page__list-item">3. 《我们时刻》目前不收费。未来我们可能根据实际情况调整产品收费政策，届时将对外公布收费标准和支付方式等相关信息。</view>
+      <view class="agreement-page__list-item">4. 《我们时刻》输出的内容可能包含第三方的信息、内容、服务、工具等。您在使用这些信息、内容、服务或工具时，请您遵守相应第三方的用户协议、使用规则、隐私政策等。</view>
+    </view>
+
+    <view class="agreement-page__section">
+      <view class="agreement-page__section-title">二、账户注册与管理</view>
+      <view class="agreement-page__list-item">1. 本平台仅面向具有完全民事行为能力，并能够独立承担民事责任的主体。</view>
+      <view class="agreement-page__list-item">2. 在使用《我们时刻》前，您可以根据页面提示注册账户，并按照要求提供真实、合法、完整、准确的信息。</view>
+      <view class="agreement-page__list-item">3. 您不得使用他人的信息注册账户或向《我们时刻》提供其他的虚假信息。</view>
+      <view class="agreement-page__list-item">4. 您必须是账号的实际拥有人，仅代表您自己接受本平台的各项服务。</view>
+      <view class="agreement-page__list-item">5. 本平台有权对您的提供的账号信息进行审查。</view>
+      <view class="agreement-page__list-item">6. 您在使用本服务前需要通过微信登录授权或手机号验证注册一个《我们时刻》账号。</view>
+      <view class="agreement-page__list-item">7. 为了维护良好的网络环境，我们有时需要了解您使用《我们时刻》的真实背景及目的。</view>
+      <view class="agreement-page__list-item">8. 《我们时刻》系基于地理位置的移动社交产品，将依赖用户提供的所在城市信息采集用户的地理位置信息。</view>
+      <view class="agreement-page__list-item">9. 鉴于《我们时刻》账号的绑定注册方式，您同意本平台在注册时将使用您提供的手机号码。</view>
+      <view class="agreement-page__list-item">10. 在用户注册及使用本服务时，本平台需要搜集能识别用户身份的个人信息以便联系。</view>
+      <view class="agreement-page__list-item">11. 依据《互联网用户账号信息管理规定》第八条的规定，用户注册、使用账号信息，不得有若干违法情形。
+      <view class="agreement-page__sublist">
+        <view class="agreement-page__sublist-item">（一）违反《网络信息内容生态治理规定》第六条、第七条规定；</view>
+        <view class="agreement-page__sublist-item">（二）假冒、仿冒、捏造政党、党政军机关、企事业单位、人民团体和社会组织的名称、标识等；</view>
+        <view class="agreement-page__sublist-item">（三）假冒、仿冒、捏造国家（地区）、国际组织的名称、标识等；</view>
+        <view class="agreement-page__sublist-item">（四）假冒、仿冒、捏造新闻网站、报刊社、广播电视机构、通讯社等新闻媒体的名称、标识等，或者擅自使用“新闻”、“报道”等具有新闻属性的名称、标识等； </view>
+        <view class="agreement-page__sublist-item">（五）假冒、仿冒、恶意关联国家行政区域、机构所在地、标志性建筑物等重要空间的地理名称、标识等；</view>
+        <view class="agreement-page__sublist-item">（六）以损害公共利益或者谋取不正当利益等为目的，故意夹带二维码、网址、邮箱、联系方式等，或者使用同音、谐音、相近的文字、数字、符号和字母等； </view>
+        <view class="agreement-page__sublist-item">（七）含有名不副实、夸大其词等可能使公众受骗或者产生误解的内容；</view>
+        <view class="agreement-page__sublist-item">（八）含有法律、行政法规和国家有关规定禁止的其他内容。</view>
+      </view>
+    </view>
+    <view class="agreement-page__list-item">12. 您理解并同意：如账号存在涉诈风险，本平台有权重新核验并采取必要措施。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">三、用户个人隐私信息保护</view>
+    <view class="agreement-page__list-item">1. 用户在注册账号或使用本服务的过程中，可能需要填写或提交一些必要的个人信息，如法律法规、规章规范性文件（以下称“法律法规”）规定的需要填写的身份信息。如用户提交的信息不完整或不符合法律法规的规定，则用户可能无法使用本服务或在使用本服务的过程中受到限制。 </view>
+    <view class="agreement-page__list-item">2. 用户个人信息包括：</view>
+      <view class="agreement-page__sublist">
+        <view class="agreement-page__sublist-item">1）用户自行提供的用户个人信息（认证中填写的姓名、学历信息、工作信息，使用服务时提供的共享信息）；</view>
+        <view class="agreement-page__sublist-item">2）其他方分享的用户个人信息；</view>
+        <view class="agreement-page__sublist-item">3）为提供服务而合法收集的用户必要个人信息（使用服务时系统自动采集的设备或产品信息，浏览历史信息，通讯时间信息，用户开启定位功能并使用服务时的地理位置信息）。 </view>
+      </view>
+    <view class="agreement-page__item-note">其中个人隐私信息是指涉及用户个人身份或个人隐私的信息，包括用户真实姓名、、手机号码、IP地址、用户聊天记录。非个人隐私信息是指用户对本服务的操作状态以及使用习惯等明确且客观反映在本平台服务器端的基本记录信息、个人隐私信息范围外的其它普通信息，以及用户同意公开的上述隐私信息。本平台保证在取得用户书面同意的情况下收集、使用或公开用户的个人隐私信息，用户同意本平台无需获得用户的另行确认与授权即可收集、使用或公开用户的非个人隐私信息。 </view>
+    <view class="agreement-page__list-item">3. 尊重用户个人信息的私有性是本平台的一贯制度，本平台将采取技术措施和其他必要措施，确保用户个人信息安全，防止在本服务中收集的用户个人信息泄露、毁损或丢失。在发生前述情形或者本平台发现存在发生前述情形的可能时，本平台将及时采取补救措施并告知用户，用户如发现存在前述情形亦需立即与本平台联系。</view>
+    <view class="agreement-page__list-item">4. 本平台未经用户同意不向任何第三方公开、 透露用户个人隐私信息。但以下特定情形除外：</view>
+    <view class="agreement-page__sublist">
+      <view class="agreement-page__sublist-item">(1) 根据法律法规规定或有权机关的指示提供用户的个人隐私信息；</view>
+      <view class="agreement-page__sublist-item">(2) 由于用户将其用户密码告知他人或与他人共享注册账户与密码，由此导致的任何个人信息的泄漏，或其他非因本平台原因导致的个人隐私信息的泄露； </view>
+      <view class="agreement-page__sublist-item">(3) 用户自行向第三方公开其个人隐私信息；</view>
+      <view class="agreement-page__sublist-item">(4) 用户与本平台及合作单位之间就用户个人隐私信息的使用公开达成约定，本平台因此向合作单位公开用户个人隐私信息； </view>
+      <view class="agreement-page__sublist-item">(5) 任何由于黑客攻击、电脑病毒侵入及其他不可抗力事件导致用户个人隐私信息的泄露；</view>
+      <view class="agreement-page__sublist-item">(6) 用户个人信息已经经过处理无法识别特定个人且不能复原。</view>
+    </view>
+    <view class="agreement-page__list-item">5. 用户同意本平台可在以下事项中使用用户的个人信息：</view>
+    <view class="agreement-page__sublist">
+      <view class="agreement-page__sublist-item">(1) 经用户明确同意让第三方共享资料；</view>
+      <view class="agreement-page__sublist-item">(2) 只有透露用户的个人信息，才能向用户提供用户所要求的产品及服务；</view>
+      <view class="agreement-page__sublist-item">(3) 为保护本平台、用户及社会公众的财产权利或人身权利；</view>
+      <view class="agreement-page__sublist-item">(4) 在提供本服务过程中将用户个人信息用于平台内嘉宾推荐的展示，任何登录/注册本平台的用户均可查看到推荐嘉宾的信息以及来自他人转发、分享的嘉宾信息； </view>
+      <view class="agreement-page__sublist-item">(5) 向用户及时发送重要通知，如产品更新、升级、产品验证本协议条款的变更；</view>
+      <view class="agreement-page__sublist-item">(6) 内部进行审计、数据分析和研究等，以改进产品、服务和与用户之间的沟通；</view>
+      <view class="agreement-page__sublist-item">(7) 依本协议约定，管理、审查用户信息及进行处理措施；</view>
+      <view class="agreement-page__sublist-item">(8) 受到黑客攻击、电脑病毒入侵导致用户个人信息泄漏的；</view>
+      <view class="agreement-page__sublist-item">(9) “我们时刻隐私政策”列出的各类情况；</view>
+      <view class="agreement-page__sublist-item">(10) 网络同步服务；</view>
+      <view class="agreement-page__sublist-item">(11) 提高会员的使用安全性并提供客户支持；</view>
+      <view class="agreement-page__sublist-item">(12) 被搜索引擎在搜索结果中显示；</view>
+      <view class="agreement-page__sublist-item">(13) 向用户发送平台内短信提醒。</view>
+      <view class="agreement-page__sublist-item">(14) 适用法律法规规定的其他事项。</view>
+    </view>
+    <view class="agreement-page__item-note">在上述事项下，本平台将用户的个人信息提供给第三方不需要获得用户事先同意。如因此给用户造成任何损害，用户同意免除本平台的相应法律责任。除上述事项外，如未取得用户事先同意，本平台不会将用户个人隐私信息使用于任何其他用途。 </view>
+    <view class="agreement-page__list-item">6. 为了改善本平台的技术和服务，向用户提供更好的服务体验，本平台或可会自行收集使用或向第三方提供用户的非个人隐私信息。 </view>
+    <view class="agreement-page__list-item">7. 本平台保证在合法、正当与必要的原则下收集、使用或者公开用户个人信息且不会收集与提供的服务无关的用户个人信息。 </view>
+  </view>  
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">四、使用规则</view>
+    <view class="agreement-page__list-item">1. 本条所述内容是指用户使用本服务过程中所制作、上载、复制、发布、传播的任何内容，包括但不限于账号头像、名称、个人信息、自我描述等注册信息及认证资料，或文字、语音、图片、视频、图文等发送、回复或自动回复消息和相关链接页面，以及其他使用账号或本服务所产生的内容。 </view>
+    <view class="agreement-page__list-item">2. 用户不得利用《我们时刻》账号或本服务制作、上载、复制、发布、传播如下法律、法规和政策禁止的违法内容：</view>
+    <view class="agreement-page__sublist">
+      <view class="agreement-page__sublist-item">(1) 反对宪法所确定的基本原则的；</view>
+      <view class="agreement-page__sublist-item">(2) 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</view>
+      <view class="agreement-page__sublist-item">(3) 损害国家荣誉和利益的；</view>
+      <view class="agreement-page__sublist-item">(4) 煽动民族仇恨、民族歧视，破坏民族团结的；</view>
+      <view class="agreement-page__sublist-item">(5) 破坏国家宗教政策，宣扬邪教和封建迷信的；</view>
+      <view class="agreement-page__sublist-item">(6) 散布谣言，扰乱社会秩序，破坏社会稳定的；</view>
+      <view class="agreement-page__sublist-item">(7) 散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</view>
+      <view class="agreement-page__sublist-item">(8) 侮辱或者诽谤他人，侵害他人合法权益的；</view>
+      <view class="agreement-page__sublist-item">(9) 不遵守法律法规底线、社会主义制度底线、国家利益底线、公民合法权益底线、社会公共秩序底线、道德风尚底线和信息真实性底线的“七条底线”要求的； </view>
+      <view class="agreement-page__sublist-item">(10) 含有法律、行政法规禁止的其他内容的信息。</view>
+    </view>
+    <view class="agreement-page__list-item">3. 用户不得利用《我们时刻》账号或本服务制作、上载、复制、发布、传播如下干扰《我们时刻》正常运营，以及侵犯其他用户或第三方合法权益的内容：</view>
+    <view class="agreement-page__sublist">
+      <view class="agreement-page__sublist-item">(1) 含有任何性或性暗示的；</view>
+      <view class="agreement-page__sublist-item">(2) 含有辱骂、恐吓、威胁内容的；</view>
+      <view class="agreement-page__sublist-item">(3) 含有骚扰、垃圾广告、恶意信息、诱骗信息的；</view>
+      <view class="agreement-page__sublist-item">(4) 涉及他人隐私、个人信息或资料的；</view>
+      <view class="agreement-page__sublist-item">(5) 侵害他人名誉权、肖像权、知识产权、商业秘密等合法权利的；</view>
+      <view class="agreement-page__sublist-item">(6) 含有其他干扰本服务正常运营和侵犯其他用户或第三方合法权益内容的信息。</view>
+    </view>
+    <view class="agreement-page__list-item">4. 用户应坚持社会主义核心价值观，坚持正确积极导向，遵守平台内容规范，对自己的行为负责。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">五、账户与服务安全</view>
+    <view class="agreement-page__list-item">1. 您应当妥善保管自己的账号、密码及其他有效识别信息。因您个人原因导致的账号、密码或其他有效识别信息泄露、丢失或账号和密码被窃取、篡改等导致的一切损失，由您自行承担。</view>
+    <view class="agreement-page__list-item">2. 如您发现账号、密码被他人冒用或盗用，请立即以有效方式通知XXX，要求XXX暂停服务。XXX在采取行动的合理期限内，不对您的损失承担任何责任。</view>
+    <view class="agreement-page__list-item">3. 您的账户是您登录及使用本服务的凭证，该账号仅限于您本人使用。除本协议另有约定，您不应将账号、密码以及账户转让、出售或出借予他人使用。通过您的账户编辑、发布的任何信息或作出的任何行为都将视为您本人的行为。若您授权他人使用账户，应对被授权人在该账户下发生所有行为负全部责任。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">六、账户注销</view>
+    <view class="agreement-page__list-item">1. 如用户账户存在以下情形，XXX有权要求您限期改正、删除相关信息、暂停使用、直至注销您的账户：
+      <view class="agreement-page__sublist">
+        <view class="agreement-page__sublist-item">（1）用户提交的注册信息不真实、准确、完整，经过XXX通知后仍不改正的；</view>    
+        <view class="agreement-page__sublist-item">（2）用户注册账户后，超过365日不使用账户；</view>    
+        <view class="agreement-page__sublist-item">（3）用户不具备完全民事行为能力，无法独立承担民事责任；</view>   
+        <view class="agreement-page__sublist-item">（4）用户未经XXX同意，转让、出售或出借予他人使用账户；</view>  
+        <view class="agreement-page__sublist-item">（5）用户利用XXX从事违反法律的活动；</view>   
+        <view class="agreement-page__sublist-item">（6）用户违反本协议及相关协议和规则中规定的条款；</view>   
+        <view class="agreement-page__sublist-item">（7）法律规定或有权机关的要求。</view>
+      </view>
+    </view>
+    <view class="agreement-page__list-item">2. 除前述情形外，您也可以随时自主注销您的账户并终止与我们的服务关系，但请您理解，即使您的账户已注销，您仍需对您注销前的账户使用行为承担相应法律责任。特别地，在您注销账户前，您应确保账户不存在未完结交易或其他未了结的权利义务，且不存在其他因注销可能引发纠纷或者导致已发生的纠纷难以解决的情况，包括但不限于您的账户被冻结、限制，您的注销是出于躲避调查取证的目的等。请注意，若我们发现您在使用我们的服务过程中存在违法行为，我们将依法保存该等记录。</view>
+    <view class="agreement-page__list-item">3. 用户已充分知晓并确认，账户注销后，用户将不再拥有账户相关的权益，包括但不限于：账户注销后，用户将无法再继续通过其账户使用XXX，无法再享受该账户中的相关权益，且不可恢复。账户注销后，我们将删除或匿名化处理您的数据，法律另有规定的除外。</view>
+    <view class="agreement-page__list-item">4. 因注销账户所带来的不便或不利后果，由用户自行承担。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">七、免责声明</view>
+    <view class="agreement-page__list-item">1. 本平台不保证其提供的服务一定能满足用户及会员的要求和期望，也不保证服务不会中断，对服务的及时性、安全性、准确性都不作保证。</view>
+    <view class="agreement-page__list-item">2. 对于用户通过本平台提供的服务传送的内容，本平台会尽合理努力按照国家有关规定严格审查，但无法完全控制经由本平台服务传送的内容，不保证内容的正确性、完整性或品质。因此用户在使用本平台服务时，可能会接触到令人不快、不适当或令人厌恶的内容。在任何情况下，本平台均不为用户经由本平台服务以自我描述展示、聊天或其它方式传送的任何内容负责。但本平台有权依法停止传输任何前述内容并采取相应行动，包括但不限于暂停用户使用本平台服务的全部或部分，保存有关记录，并根据国家法律法规、相关政策在必要时向有关机关报告并配合有关机关的行动。</view>
+    <view class="agreement-page__list-item">3. 对于用户上传的照片、资料（包括身高、所在地、家乡、学校、学历)、证件，本平台已采用相关措施并已尽合理努力进行审核，但不保证其内容的正确性、合法性或可靠性，相关责任由上传上述内容的用户负责。</view>
+    <view class="agreement-page__list-item">4. 用户以自己的独立判断从事与交友相关的行为，并独立承担可能产生的不利后果和责任。如果用户发现任何人违反本协议约定或以其他不当的方式使用本服务，以及用户或家长发现未成年人使用本平台服务，请立即在本平台内举报或投联系客服处理，举报或投诉邮箱：386961848@qq.com，本平台将依本协议约定进行处理。</view>
+    <view class="agreement-page__list-item">5. 是否使用本平台服务下载、浏览或取得任何资料应由用户自行考虑并自负风险，因任何资料的下载、浏览而导致的用户软件系统的任何损坏或数据丢失等后果，本平台不承担任何责任。</view>
+    <view class="agreement-page__list-item">6. 本平台对所有用户自发组织的活动、自发成立的组织不负责任。</view>
+    <view class="agreement-page__list-item">7. 对于本平台策划、发起、组织或是承办的任何用户活动（包括但不限于收取费用以及完全公益的活动），本平台会按照国家有关规定进行运营，但本平台不对上述活动的效果向用户作出任何保证或承诺，也不担保活动期间用户自身行为的合法性、合理性。</view>
+    <view class="agreement-page__list-item">8. 对于用户的投诉，本平台将尽合理努力认真核实，但不保证最终公之于众的投诉的真实性、合法性，对于投诉内容侵犯用户隐私权、名誉权等合法权利的，所有法律责任由投诉者承担，与本平台无关。</view>
+    <view class="agreement-page__list-item">9. 用户理解并同意，因业务发展需要，本平台保留单方面对本服务的全部或部分服务内容变更、暂停、终止或撤销的权利，用户需承担此风险。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">八、知识产权保护</view>
+    <view class="agreement-page__list-item">1. 《我们时刻》及向您提供服务过程中使用的所有内容，包括但不限于任何文字、图像、视频、图表、软件及其他材料均为《我们时刻》或其他特别注明的权利人所有。《我们时刻》及相应权利人并未通过本协议授予您对上述信息和内容的任何其他权利。除非经相应权利人事先书面同意，您不得以任何形式向任何第三方公开发表、传输、复制或以其他方式使用（包括但不限于通过任何机器人、爬虫等程序或设备监视、复制、传播、展示、镜像、上载、下载）《我们时刻》提供的全部或部分信息，不得更改、虚化或删除任何署名、商标、版权标识和/或其他权利声明。</view>
+    <view class="agreement-page__list-item">2. 尊重知识产权是您应尽的义务，如您有违反，造成《我们时刻》或相应权利人损失的，您需要承担损害赔偿责任。</view>
+    <view class="agreement-page__list-item">3. 未经我们许可，请不要擅自使用本服务有关的包括但不限于“《我们时刻》”“《我们时刻》”等在内的任何商标、服务标记、商号、域名、网站名称、公司徽标 (LOGO) 、URL或其他显著品牌特征等，不得将本条款前述标识以单独或结合任何方式展示、使用或申请注册商标、进行域名注册等，也不得实施向他人明示或暗示有权展示、使用、或其他有权处理该些标识的行为。</view>
+    <view class="agreement-page__list-item">4. 我们尊重知识产权及其他权利人的合法权益，并积极采取有效措施保护他人的知识产权等合法权益。基于人工智能的特性，我们无法保证底层算法模型、用户输入内容、输出内容等服务内容完全避免侵犯知识产权的风险。如知识产权等权利人认为本平台侵犯其合法权益的，可以通过本协议所载方式联系我们，我们将在接到您的请求尽快核实处理。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">九、保密条款</view>
+    <view class="agreement-page__list-item">未经我们的许可，内测用户不得向任何第三方披露内测过程中所获知的保密资料包括但不限于我们的资料、虽属他人但我们负有保密义务的信息等，不得将保密材料的部分或全部用于内测以外的其他用途，不得擅自留存我们的保密资料，并在内测结束后，将保密资料原件全部返还给我们并销毁所有复制件。内测用户不得刺探或打听与内测无关的商业秘密。在任何情形下，该条款所规定的保密义务永久有效，不因协议无效、提前终止、解除或不具有操作性而失效。内测用户违反该保密约定，故意、过错或过失泄密的，除应立即采取措施停止泄密行为，减小泄密造成的损失外，应向《我们时刻》赔偿其所造成的全部损失。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">十、商业活动</view>
+    <view class="agreement-page__list-item">1. 您知悉并同意，我们在提供我们的服务过程中，在符合法律法规的前提下，保留以各种方式投放商业性广告（包括广告链接）或其他任何类型的商业信息的权利（包括但不限于在我们平台的任何位置上投放广告，在您上传、传播的内容中投放广告）。在符合法律法规的前提下，我们有权自主决定广告投放的形式、时长、位置、内容而不受任何第三方的干预。</view>
+    <view class="agreement-page__list-item">2. 您理解并同意，我们可以通过短信、邮件、电话、产品消息推送或其他合法方式向您发送商业性广告或其他相关商业信息。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">十一、协议更新与补充</view>
+    <view class="agreement-page__list-item">1. 《我们时刻》有权根据法律、国家标准及业务运营之需要，适时修改本协议。如果本协议发生变更，我们将在《我们时刻》的相关页面中发布公告，该等变更或调整用户协议的行为不视为《我们时刻》违反本协议之约定。如您在本协议修改后继续使用我们提供的服务的，即表示您愿意受修改后协议的约束；如您不同意修改后的协议，请立即停止使用《我们时刻》的服务。</view>
+    <view class="agreement-page__list-item">2. 除本协议以外，我们已经发布的或将来可能发布的有关《我们时刻》向您提供服务的协议、规则、政策、须知等内容，均视为本协议的补充协议，作为本协议不可分割的组成部分，与本协议具有同等法律效力。请您及时关注并阅读前述相关补充协议。相关补充协议的部分或全部条款被认定无效的，不影响其它协议或协议条款的效力。</view>
+    <view class="agreement-page__list-item">3. 本协议项下我们对于用户所有的通知均可通过网页公告、站内信、电子邮件、手机短信或常规的信件传送等方式进行，该等通知于发送之日视为已送达您。</view>
+  </view>
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">十二、意见反馈</view>
+    <view class="agreement-page__list-item">如您对本协议或使用我们的服务过程中有任何问题，包括但不限于咨询、投诉、举报、意见反馈等，我们为您提供多种反馈渠道：</view>
+    <view class="agreement-page__list-item">1. 专设邮箱：386961848@.com</view>
+    <view class="agreement-page__list-item">2. 其他方式：添加客服微信（year2000egg）</view>
+    <view class="agreement-page__list-item">我们将在收到您的反馈并核实您的身份后尽快为您答复。</view>
+  </view>
+
+
+  <view class="agreement-page__section">
+    <view class="agreement-page__section-title">十三、其他</view>
+
+    <view class="agreement-page__list-item">1. 如本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，本协议的其余条款仍应有效且具有约束力，您和《我们时刻》均应尽力使该条款设定的本意得到实现。</view>
+    <view class="agreement-page__list-item">2. 本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律。</view>
+    <view class="agreement-page__list-item">3. 因本协议所引起的用户与《我们时刻》的任何纠纷或争议，双方应尽量友好协商解决；协商不成的，任何一方均可向《我们时刻》所在地有管辖权的人民法院提起诉讼。</view>
+
+    <view class="agreement-page__item-note">【审慎提醒】如您选择点击“同意”本协议，本协议将立即生效，并构成您与《我们时刻》之间有约束力的法律文件。</view>
+  </view>
+
+
+  </view>
+
+
 </view>

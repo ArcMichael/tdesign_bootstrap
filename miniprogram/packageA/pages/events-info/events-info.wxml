@@ -97,7 +97,7 @@
 
     <view class="event-info__footer {{authorization ? '' : 'fixed'}}">
       <view class="event-info__action">
-        <view class="event-info__action-item event-info__action-my">
+        <view class="event-info__action-item event-info__action-my" bind:tap="goMyEvents">
           <image class="event-info__action-icon" src="https://qiniustatic.womenshike.top/icon-event-turn-right.png" mode="heightFix" lazy-load="false" />
           我的活动
         </view>
@@ -107,8 +107,28 @@
           分享
         </view>
       </view>
-      <view class="event-info__action-join">上车（¥79.00）</view>
+      <view class="event-info__action-join" bind:tap="onPayment">上车（¥79.00）</view>
     </view>
   </view>
 
 </view>
+
+<activity-popup 
+  visible="{{showVisible}}"
+  bind:confirm="onConfirm"
+  bind:close="onClose"
+  icon="{{popup.icon}}"
+  buttonText="{{popup.buttonText}}"
+>
+  <view slot="title" class="activity-popup__title-slot">
+    您还没有身份认证
+  </view>
+    <!-- 您已经获得 <text class="activity-popup__highlight">1</text> 次免费参加活动的机会 -->
+  <view slot="subtitle" class="activity-popup__subtitle-slot">
+    不能关注对方，不能报名活动
+  </view>
+
+  <view slot="buttom" class="activity-popup__buttom-slot" bind:tap="goWelcome"> 
+    立即注册
+  </view>
+</activity-popup>

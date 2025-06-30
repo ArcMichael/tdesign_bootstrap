@@ -1,4 +1,4 @@
-import * as navigateHelper from "../../utils/navigateHelper";
+import * as navigateHelper from '../../utils/navigateHelper';
 
 Page({
   data: {
@@ -25,5 +25,8 @@ Page({
 
   async onEditProfile() {
     return navigateHelper.goEditProfile();
+  },
+  async goWelcome() {
+    return navigateHelper.goWelcome();
   },
 });

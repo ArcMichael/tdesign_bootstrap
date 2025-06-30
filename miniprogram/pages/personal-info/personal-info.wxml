@@ -34,7 +34,7 @@
     >
       <view class="label-group">
         <text class="label">性别<text class="disabled"> *<text class="adding">无法修改</text></text></text>
-        <view wx:if="{{ !form.gender }}" class="placeholder">请输入昵称</view>
+        <view wx:if="{{ !form.gender }}" class="placeholder">请选择性别</view>
       </view>
       <view class="label-result">
         <input

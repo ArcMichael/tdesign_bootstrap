@@ -99,7 +99,7 @@ export const getProfession = async (): Promise<Res<DictDataProfession[]>> => {
 // 获取MBTI
 export const getMbti = async (): Promise<Res<DictDataMbti[]>> => {
   const requestConfig: RequestOptions = {
-    url: '/app-api/system/dict-data/type?type=mbit',
+    url: '/app-api/system/dict-data/type?type=mbti',
     method: 'GET',
   };
   return await requestWithRetry(requestConfig);

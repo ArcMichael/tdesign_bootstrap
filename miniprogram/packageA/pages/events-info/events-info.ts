@@ -22,6 +22,11 @@ Page({
       },
     },
     authorization: false,
+    showVisible: false,
+    popup: {
+      icon: 'https://qiniustatic.womenshike.top/icon-action-popup-identify.png',
+      buttonText: '知道了',
+    },
   },
   onChange(e: WechatMiniprogram.CustomEvent<{ current: number }>) {
     const { current } = e.detail;
@@ -31,5 +36,27 @@ Page({
   },
   goAttendeeList() {
     return navigateHelper.goAttendeeList();
+  },
+  goMyEvents() {
+    return navigateHelper.goMyEvents();
+  },
+  onPayment() {
+    this.setData({
+      showVisible: true,
+    });
+  },
+  onClose() {
+    this.setData({
+      showVisible: false,
+    });
+  },
+  async goWelcome() {
+    return navigateHelper.goWelcomeWithRedirect();
+  },
+  onConfirm() {
+    return navigateHelper.goWelcome();
+  },
+  onEventInfo() {
+    return navigateHelper.goEventsInfo();
   },
 });

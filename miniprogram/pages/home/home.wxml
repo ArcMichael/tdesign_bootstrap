@@ -33,7 +33,7 @@
               <view class="activity">
                 <image src="https://qiniustatic.womenshike.top/icon_horm_home.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
                 <view class="act-user">她报名了</view>
-                <view class="act-info">#南山飞盘暴汗局</view>
+                <view class="act-info" bind:tap="onEventInfo">#南山飞盘暴汗局</view>
                 <view class="act-status">活动还可<view class="highlight">报名</view>哦~</view>
               </view>
             </view>
@@ -42,7 +42,7 @@
      </block>
     </swiper>
     <view class="home_active">
-      <view class="home_pink"></view>
+      <view class="home_pink" bind:tap="onPink"></view>
       <view class="home_reject"></view>
     </view>
 </view>
@@ -71,5 +71,8 @@
     <!-- 您已经获得 <text class="activity-popup__highlight">1</text> 次免费参加活动的机会 -->
   <view slot="subtitle" class="activity-popup__subtitle-slot">
     不能关注对方，不能报名活动
+  </view>
+  <view slot="buttom" class="activity-popup__buttom-slot" bind:tap="goWelcome">
+    立即注册
   </view>
 </activity-popup>

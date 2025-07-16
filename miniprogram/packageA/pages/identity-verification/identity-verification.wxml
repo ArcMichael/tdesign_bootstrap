@@ -1,0 +1,48 @@
+<navigation-bar back="{{true}}" color="black">
+  <view slot="center" class="slot-title">实名认证</view>
+</navigation-bar>
+
+<view class="page-wrapper identity-verification">
+  
+  <view class="events-tabs-wrapper">
+    <view class="events-tabs"></view>
+    <view 
+      class="events-btn fl {{config.tab === 1 ? 'action' : ''}}"
+      data-index="1"
+      bindtap="onTabChange">校园卡</view>
+    <view 
+      class="events-btn fr {{config.tab === 0 ? 'action' : ''}}"
+      data-index="0"
+      bindtap="onTabChange">学信网</view>
+  </view>
+
+  <view class="identity-verification-tabs">
+
+    <view class="campus-card-upload-page identity-verification-container {{config.tab === 1 ? 'action' : ''}}">
+      <view class="campus-card-upload-page__header">
+        <view class="campus-card-upload-page__title">上传校园卡</view>
+        <view class="campus-card-upload-page__tip">请确保证件边框完整、字体清晰、亮度均匀</view>
+      </view>
+      <view class="campus-card-upload-page__upload-box">
+        <image class="campus-card-upload-page__upload-image" src="https://qiniustatic.womenshike.top/placeholder-student-tickets-identify.png" mode="widthFix" lazy-load="false" />
+      </view>
+      <view class="campus-card-upload-page__desc">
+        上传校园卡人像面
+      </view>
+    </view>
+
+    <view class="edu-verification-page identity-verification-container {{config.tab === 0 ? 'action' : ''}}">
+      <view class="edu-verification-page__title">请输入学信网编号</view>
+      <input class="edu-verification-page__input" bind:change="onInputChange" value="{{value}}" placeholder="请输入学信网编号" placeholder-style="" placeholder-class="input-placeholder" />
+    </view>
+
+  </view>
+
+</view>
+
+<view 
+  class="identity-verification-submit {{ config.tab === 0 ? 'submitEducation' : 'submitCampusCard' }}"
+  bind:tap="{{ config.tab === 0 ? 'onSubmitEducation' : 'onSubmitCampusCard' }}"
+>
+  提交
+</view>

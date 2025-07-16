@@ -1,4 +1,5 @@
-import { ACCESS_TOKEN_KEY, OPENID_ID_KEY, USER_ID_KEY } from "./constants";
+import { ACCESS_TOKEN_KEY, OPENID_ID_KEY, USER_ID_KEY } from './constants';
+import * as navigateHelper from './navigateHelper';
 
 export interface SocialLogin {
   accessToken: string;
@@ -16,7 +17,7 @@ export function setToken(accessToken: string): void {
   try {
     wx.setStorageSync(ACCESS_TOKEN_KEY, accessToken);
   } catch (e) {
-    console.error("保存 token 到小程序本地缓存失败：", e);
+    console.error('保存 token 到小程序本地缓存失败：', e);
   }
 }
 
@@ -29,7 +30,7 @@ export function getToken(): string | null {
     const token = wx.getStorageSync(ACCESS_TOKEN_KEY);
     return token || null;
   } catch (e) {
-    console.error("从小程序本地缓存读取 token 失败：", e);
+    console.error('从小程序本地缓存读取 token 失败：', e);
     return null;
   }
 }
@@ -42,7 +43,7 @@ export function setUserID(userID: string | number): void {
   try {
     wx.setStorageSync(USER_ID_KEY, userID);
   } catch (e) {
-    console.error("保存 userID 到小程序本地缓存失败：", e);
+    console.error('保存 userID 到小程序本地缓存失败：', e);
   }
 }
 
@@ -55,7 +56,7 @@ export function getUserID(): string | null {
     const UserID = wx.getStorageSync(USER_ID_KEY);
     return UserID || null;
   } catch (e) {
-    console.error("从小程序本地缓存读取 userID 失败：", e);
+    console.error('从小程序本地缓存读取 userID 失败：', e);
     return null;
   }
 }
@@ -68,7 +69,7 @@ export function setOpenID(OpenID: string): void {
   try {
     wx.setStorageSync(OPENID_ID_KEY, OpenID);
   } catch (e) {
-    console.error("保存 OpenID 到小程序本地缓存失败：", e);
+    console.error('保存 OpenID 到小程序本地缓存失败：', e);
   }
 }
 
@@ -81,7 +82,18 @@ export function getOpenID(): string | null {
     const OpenID = wx.getStorageSync(OPENID_ID_KEY);
     return OpenID || null;
   } catch (e) {
-    console.error("从小程序本地缓存读取 OpenID 失败：", e);
+    console.error('从小程序本地缓存读取 OpenID 失败：', e);
     return null;
+  }
+}
+
+export function logOut(): void {
+  try {
+    wx.removeStorageSync(ACCESS_TOKEN_KEY);
+    wx.removeStorageSync(USER_ID_KEY);
+    wx.removeStorageSync(OPENID_ID_KEY);
+    navigateHelper.goWelcomeWithRedirect();
+  } catch (e) {
+    console.error('登出时清除本地缓存失败：', e);
   }
 }

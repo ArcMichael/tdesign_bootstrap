@@ -26,7 +26,8 @@
         "pages/attendee-list/attendee-list",
         "pages/chat/chat",
         "pages/user-agreement/user-agreement",
-        "pages/private-agreement/private-agreement"
+        "pages/private-agreement/private-agreement",
+        "pages/identity-verification/identity-verification"
       ]
     }
   ],

@@ -125,3 +125,9 @@ export const goPrivateAgreement = () => {
     url: `/packageA/pages/private-agreement/private-agreement`,
   });
 };
+
+export const goIdentityVerification = () => {
+  return wx.navigateTo({
+    url: `/packageA/pages/identity-verification/identity-verification`,
+  });
+};

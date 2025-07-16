@@ -5,7 +5,7 @@ import * as navigateHelper from '../../utils/navigateHelper';
 
 Page({
   data: {
-    showVisible: false,
+    showVisible: true,
     position: '通州',
     home: {
       options: {

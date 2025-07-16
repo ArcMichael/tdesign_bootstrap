@@ -1,4 +1,12 @@
-import { DictDataProfession, getProfession, getMbti, DictDataMbti } from '../../utils/api';
+import {
+  DictDataProfession,
+  getProfession,
+  getMbti,
+  DictDataMbti,
+  getSchool,
+  DictDataSchool,
+  getSystemDictDataSchool,
+} from '../../utils/api';
 import * as navigateHelper from '../../utils/navigateHelper';
 
 export interface PickerOption {
@@ -51,9 +59,9 @@ Page({
   },
 
   /** 点击“出生日期”这一行时调用 */
-  showPicker(e: any) {
+  showPicker(events: WechatMiniprogram.CustomEvent<{ field: 'string' }>) {
     // data-field="birthday"，但这里不再走通用 picker，而是调用组件 show()
-    const field = e.currentTarget.dataset.field;
+    const field = events.currentTarget.dataset.field;
     if (field === 'birthday') {
       // 通过 id 拿到 date-picker 实例，然后调用它的 show()
       this.selectComponent('#birthdayPicker').show();
@@ -61,8 +69,8 @@ Page({
   },
 
   /** date-picker 组件选中后触发 */
-  onBirthdayConfirm(e: any) {
-    const ts = e.detail.value;
+  onBirthdayConfirm(events: WechatMiniprogram.CustomEvent<{ value: number }>) {
+    const ts = events.detail.value;
 
     const birthdayOptions = {
       value: new Date(this.__formatDateDisplay(ts)).getTime().toString(),
@@ -107,8 +115,8 @@ Page({
     });
   },
 
-  onLocationChange(e: WechatMiniprogram.CustomEvent<AreaChangeDetail>) {
-    const { text, value } = e.detail;
+  onLocationChange(event: WechatMiniprogram.CustomEvent<AreaChangeDetail>) {
+    const { text, value } = event.detail;
 
     const locationOptions: Option = {
       label: text.join('-'),
@@ -120,13 +128,13 @@ Page({
     });
   },
 
-  onNicknameInput(e: any) {
-    this.setData({ 'form.nickname': e.detail.value });
+  onNicknameInput(event: WechatMiniprogram.CustomEvent<{ value: 'string' }>) {
+    this.setData({ 'form.nickname': event.detail.value });
   },
 
-  onHandlePicker(e: any) {
+  onHandlePicker(event: WechatMiniprogram.CustomEvent<{ dataset: { field: string } }>) {
     const { pickerOptionsMap } = this.data;
-    const field = e.currentTarget.dataset.field as string;
+    const field = event.currentTarget.dataset.field as string;
     const opts = pickerOptionsMap[field];
     if (!opts || opts.length === 0) return;
 
@@ -152,8 +160,8 @@ Page({
     return labels[field] || '';
   },
 
-  onPickerConfirm(e: any) {
-    const { field, selected } = e.detail as { field: string; selected: Option };
+  onPickerConfirm(event: WechatMiniprogram.CustomEvent<{ field: string; selected: Option }>) {
+    const { field, selected } = event.detail;
     console.log('onPickerConfirm', field, selected);
     this.setData({
       [`form.${field}`]: selected,
@@ -168,6 +176,21 @@ Page({
   onPhotoUpload() {
     console.log('nav');
     return navigateHelper.goPhotoUpload();
+  },
+
+  getUserProfile() {
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //     console.log(res);
+    //     var userInfo = res.userInfo;
+    //     var nickName = userInfo.nickName;
+    //     var avatarUrl = userInfo.avatarUrl;
+    //     var gender = userInfo.gender; //性别 0：未知、1：男、2：女
+    //     var province = userInfo.province;
+    //     var city = userInfo.city;
+    //     var country = userInfo.country;
+    //   },
+    // });
   },
 
   async initHeightOptions() {
@@ -218,47 +241,53 @@ Page({
   },
 
   async initSchoolOptions() {
-    const schoolOptions: Option[] = [
-      { label: '清华大学', value: '清华大学' },
-      { label: '北京大学', value: '北京大学' },
-      { label: '中国科学技术大学', value: '中国科学技术大学' },
-      { label: '复旦大学', value: '复旦大学' },
-      { label: '中国人民大学', value: '中国人民大学' },
-      { label: '上海交通大学', value: '上海交通大学' },
-      { label: '南京大学', value: '南京大学' },
-      { label: '同济大学', value: '同济大学' },
-      { label: '浙江大学', value: '浙江大学' },
-      { label: '南开大学', value: '南开大学' },
-      { label: '北京航空航天大学', value: '北京航空航天大学' },
-      { label: '北京师范大学', value: '北京师范大学' },
-      { label: '武汉大学', value: '武汉大学' },
-      { label: '西安交通大学', value: '西安交通大学' },
-      { label: '天津大学', value: '天津大学' },
-      { label: '华中科技大学', value: '华中科技大学' },
-      { label: '北京理工大学', value: '北京理工大学' },
-      { label: '东南大学', value: '东南大学' },
-      { label: '中山大学', value: '中山大学' },
-      { label: '华东师范大学', value: '华东师范大学' },
-      { label: '哈尔滨工业大学', value: '哈尔滨工业大学' },
-      { label: '厦门大学', value: '厦门大学' },
-      { label: '西北工业大学', value: '西北工业大学' },
-      { label: '中南大学', value: '中南大学' },
-      { label: '大连理工大学', value: '大连理工大学' },
-      { label: '四川大学', value: '四川大学' },
-      { label: '电子科技大学', value: '电子科技大学' },
-      { label: '华南理工大学', value: '华南理工大学' },
-      { label: '吉林大学', value: '吉林大学' },
-      { label: '湖南大学', value: '湖南大学' },
-      { label: '重庆大学', value: '重庆大学' },
-      { label: '山东大学', value: '山东大学' },
-      { label: '中国农业大学', value: '中国农业大学' },
-      { label: '中国海洋大学', value: '中国海洋大学' },
-      { label: '中央民族大学', value: '中央民族大学' },
-      { label: '东北大学', value: '东北大学' },
-      { label: '兰州大学', value: '兰州大学' },
-      { label: '西北农林科技大学', value: '西北农林科技大学' },
-      { label: '国防科技大学', value: '国防科技大学' },
-    ];
+    const { data } = (await getSchool()) as { data: DictDataSchool[] };
+
+    const schoolOptions: Option[] = data.map((type) => ({
+      label: type.label,
+      value: type.id.toString(),
+    }));
+    // const schoolOptions: Option[] = [
+    //   { label: '清华大学', value: '清华大学' },
+    //   { label: '北京大学', value: '北京大学' },
+    //   { label: '中国科学技术大学', value: '中国科学技术大学' },
+    //   { label: '复旦大学', value: '复旦大学' },
+    //   { label: '中国人民大学', value: '中国人民大学' },
+    //   { label: '上海交通大学', value: '上海交通大学' },
+    //   { label: '南京大学', value: '南京大学' },
+    //   { label: '同济大学', value: '同济大学' },
+    //   { label: '浙江大学', value: '浙江大学' },
+    //   { label: '南开大学', value: '南开大学' },
+    //   { label: '北京航空航天大学', value: '北京航空航天大学' },
+    //   { label: '北京师范大学', value: '北京师范大学' },
+    //   { label: '武汉大学', value: '武汉大学' },
+    //   { label: '西安交通大学', value: '西安交通大学' },
+    //   { label: '天津大学', value: '天津大学' },
+    //   { label: '华中科技大学', value: '华中科技大学' },
+    //   { label: '北京理工大学', value: '北京理工大学' },
+    //   { label: '东南大学', value: '东南大学' },
+    //   { label: '中山大学', value: '中山大学' },
+    //   { label: '华东师范大学', value: '华东师范大学' },
+    //   { label: '哈尔滨工业大学', value: '哈尔滨工业大学' },
+    //   { label: '厦门大学', value: '厦门大学' },
+    //   { label: '西北工业大学', value: '西北工业大学' },
+    //   { label: '中南大学', value: '中南大学' },
+    //   { label: '大连理工大学', value: '大连理工大学' },
+    //   { label: '四川大学', value: '四川大学' },
+    //   { label: '电子科技大学', value: '电子科技大学' },
+    //   { label: '华南理工大学', value: '华南理工大学' },
+    //   { label: '吉林大学', value: '吉林大学' },
+    //   { label: '湖南大学', value: '湖南大学' },
+    //   { label: '重庆大学', value: '重庆大学' },
+    //   { label: '山东大学', value: '山东大学' },
+    //   { label: '中国农业大学', value: '中国农业大学' },
+    //   { label: '中国海洋大学', value: '中国海洋大学' },
+    //   { label: '中央民族大学', value: '中央民族大学' },
+    //   { label: '东北大学', value: '东北大学' },
+    //   { label: '兰州大学', value: '兰州大学' },
+    //   { label: '西北农林科技大学', value: '西北农林科技大学' },
+    //   { label: '国防科技大学', value: '国防科技大学' },
+    // ];
     this.setData({
       'pickerOptionsMap.school': schoolOptions,
     });

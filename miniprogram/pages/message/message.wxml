@@ -1,11 +1,16 @@
 <navigation-bar back="{{false}}" color="black">
-  <view 
+  <!-- <view 
     slot="left" 
     class="navigation-bar__left" 
   >
   <view class="navigation-bar__text">消息<view class="navigation-bar__bubble"></view></view>
   <view class="navigation-bar__divider" />
-</view>
+</view> -->
+
+  <view slot="center" class="navigation-bar__center">
+    <view class="navigation-bar__text">消息<view class="navigation-bar__bubble"></view></view>
+    <view class="navigation-bar__divider" />
+  </view>
 </navigation-bar>
 
 <view class="page-wrapper message-page">

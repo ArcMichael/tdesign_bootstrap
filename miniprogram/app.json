@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/welcome/welcome",
     "pages/home/home",
     "pages/events/events",
     "pages/message/message",
@@ -8,7 +7,8 @@
     "pages/personal-info/personal-info",
     "pages/photo-upload/photo-upload",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/welcome/welcome"
   ],
   "subPackages": [
     {
@@ -22,7 +22,12 @@
         "pages/settings/settings",
         "pages/my-events/my-events",
         "pages/edit-profile/edit-profile",
-        "pages/edit-private/edit-private"
+        "pages/edit-private/edit-private",
+        "pages/attendee-list/attendee-list",
+        "pages/chat/chat",
+        "pages/user-agreement/user-agreement",
+        "pages/private-agreement/private-agreement",
+        "pages/identity-verification/identity-verification"
       ]
     }
   ],

@@ -1,0 +1,159 @@
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
+
+page {
+  background-image: url(https://qiniustatic.womenshike.top/background_top.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.identity-verification {
+  .px2rpx(margin-top, 5);
+  .padding-sides();
+  align-items: center;
+}
+
+.events-tabs-wrapper {
+  position: relative;
+  .size(195, 34);
+}
+
+.events-tabs {
+  .size(187, 26);
+  .px2rpx(border-radius, 19);
+  background-color: rgba(212, 219, 237, 0.8);
+  mix-blend-mode: luminosity;
+  .padding(4, 4, 4, 4);
+}
+
+.events-btn {
+  position: absolute;
+  .px2rpx(top, 4);
+
+  .size(93, 26);
+  .px2rpx(line-height, 26);
+  .px2rpx(border-radius, 15);
+
+  z-index: 1;
+  .font-group(14, 500);
+  color: #fff;
+  text-align: center;
+
+  &.fl {
+    .px2rpx(left, 4);
+  }
+  &.fr {
+    .px2rpx(right, 4);
+  }
+  &.action {
+    background: linear-gradient(275deg, #a9c5ff 1.61%, #c6d9ff 97.56%);
+  }
+}
+
+.my-events-group {
+  display: flex;
+  flex-direction: column;
+  .padding-sides();
+  .px2rpx(margin-top, 15);
+  .px2rpx(margin-bottom, 15);
+  .px2rpx(gap, 10);
+}
+
+.identity-verification-tabs {
+  display: flex;
+  .padding-sides(20);
+}
+
+.identity-verification-container {
+  display: none;
+  .px2rpx(width, 348);
+}
+
+.identity-verification-container.action {
+  display: block;
+}
+
+.campus-card-upload-page {
+  .px2rpx(margin-top, 28);
+}
+
+.edu-verification-page {
+  .px2rpx(margin-top, 71);
+
+  .edu-verification-page__title {
+    .px2rpx(height, 25);
+    color: var(--4, #212121);
+    .font-group(18, 400);
+  }
+  .edu-verification-page__input {
+    .px2rpx(margin-top, 24.5);
+    .px2rpx(height, 25);
+    .px2rpx(line-height, 25);
+    .padding(14, 33, 14, 33);
+    .card-container();
+
+    .font-group(18, 400);
+  }
+}
+
+.campus-card-upload-page__header {
+  .px2rpx(height, 30);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .campus-card-upload-page__title {
+    color: var(--4, #212121);
+    .font-group(18, 600);
+  }
+  .campus-card-upload-page__tip {
+    color: var(--5, #9196a3);
+    .font-group(12, 400);
+    margin-left: auto;
+  }
+}
+
+.campus-card-upload-page__upload-box {
+  .px2rpx(margin-top, 20);
+  .size(348, 208);
+
+  .campus-card-upload-page__upload-image {
+    .size(348, 208);
+  }
+}
+
+.campus-card-upload-page__desc {
+  .px2rpx(height, 30);
+  .px2rpx(margin-top, 4);
+  color: var(--5, #9196a3);
+  .font-group(14, 500);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.identity-verification-submit {
+  display: flex;
+  color: #fff;
+
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  .px2rpx(bottom, 50);
+  .px2rpx(left, 20);
+  .px2rpx(right, 20);
+
+  .px2rpx(height, 58);
+  // .margin-sides(20);
+  .px2rpx(border-radius, 12);
+  .specially-button-style();
+  .font-group(18, 400);
+}

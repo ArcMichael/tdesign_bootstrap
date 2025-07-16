@@ -1,12 +1,12 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
   height: 100vh;
   display: flex;
   flex-direction: column;
 
-  background-image: url("https://qiniustatic.womenshike.top/background_top.png");
+  background-image: url('https://qiniustatic.womenshike.top/background_top.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
@@ -18,25 +18,24 @@ page {
   flex-direction: column;
 }
 
-.welcome {
+.welcome-page {
   .px2rpx(padding-top, 214);
   .px2rpx(padding-bottom, 21);
 }
 
-.welcome_sign {
+.welcome-page__logo-section {
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .px2rpx(padding-bottom, 248);
 
-  .welcome_logo {
-    .px2rpx(width, 106);
-    .px2rpx(height, 114);
+  .welcome-page__logo {
+    .size(106, 114);
   }
 }
 
-.welcome_function {
+.welcome-page__actions {
   position: fixed;
   .px2rpx(bottom,50);
   left: 0;
@@ -44,13 +43,12 @@ page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  .login {
-    .px2rpx(width, 270);
-    .px2rpx(height, 58);
+  .welcome-page__action--login {
+    .size(270, 58);
 
     .px2rpx(border-radius, 12);
 
-    background: linear-gradient(269deg, #ffaac6 0.6%, #a6c3ff 98.92%);
+    .specially-button-style();
 
     color: #fff;
     text-align: center;
@@ -63,7 +61,7 @@ page {
 
     .px2rpx(margin-bottom,13);
   }
-  .guest_visit {
+  .welcome-page__action--guest {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +72,7 @@ page {
     .px2rpx(margin-bottom,115);
   }
 
-  .agreement {
+  .welcome-page__agreement {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,17 +80,19 @@ page {
     color: var(--4, #212121);
     .font-group(10, 400);
 
-    > image {
-      .px2rpx(width,12.5);
-      .px2rpx(height,12.5);
+    .welcome-page__agreement-icon {
+      .size(12.5, 12.5);
       .px2rpx(margin-right,12);
-      
-      &.checked {
-      }
     }
 
-    .pink {
+    .welcome-page__agreement-link {
       color: var(--1, #fa87ac);
     }
+  }
+
+  .welcome-page__agreement-toggle {
+    display: flex;
+    align-items: center;
+    margin-right: 8rpx;
   }
 }

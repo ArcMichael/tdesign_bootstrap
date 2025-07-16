@@ -8,19 +8,19 @@
       <view class="content">手机号绑定</view>
       <view class="phonenumber_right">135****0505</view>
     </view>
-    <view class="settings-container-item">
+    <view class="settings-container-item" bind:tap="onUserAgreementTap">
       <view class="content">用户协议</view>
       <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     </view>
-    <view class="settings-container-item" bindtap="onSettings">
+    <view class="settings-container-item" bind:tap="onPrivacyAgreementTap">
       <view class="content">隐私协议</view>
       <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     </view>
-    <view class="settings-container-item" bindtap="onSettings">
+    <view class="settings-container-item" bindtap="">
       <view class="content">关于我们</view>
       <image class="arrow_right" src="https://qiniustatic.womenshike.top/icon_arrow_r_card.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
     </view>
-    <view class="settings-container-item" bindtap="onSettings">
+    <view class="settings-container-item" bindtap="">
       <view class="content highlight">注销账号</view>
       <view class="care">
         慎重选择
@@ -30,5 +30,5 @@
   </view>
 </view>
 
-<view class="footer-button">退出登录</view>
+<view class="footer-button" bind:tap="onLogout">退出登录</view>
 

@@ -1,6 +1,6 @@
 // utils/env.ts
 
-type EnvVersion = "develop" | "trial" | "release";
+type EnvVersion = 'develop' | 'trial' | 'release';
 
 interface EnvConfig {
   envVersion: EnvVersion;
@@ -22,21 +22,19 @@ function initEnv(overrideEnv?: EnvVersion): EnvConfig {
 
   // 决定最终的 envVersion：手动传入 > 模块缓存 > 微信 sync 读取
   const finalEnv: EnvVersion =
-    overrideEnv ||
-    _overrideEnv ||
-    (wx.getAccountInfoSync().miniProgram.envVersion as EnvVersion);
+    overrideEnv || _overrideEnv || (wx.getAccountInfoSync().miniProgram.envVersion as EnvVersion);
 
   // 根据环境选择不同的 Host
-  let apiHost = "";
+  let apiHost = '';
   switch (finalEnv) {
-    case "develop":
-      apiHost = "http://8.130.116.253:48080";
+    case 'develop':
+      apiHost = 'http://118.25.194.239:48080';
       break;
-    case "trial":
-      apiHost = "https://www.womenshike.top";
+    case 'trial':
+      apiHost = 'https://www.womenshike.top';
       break;
-    case "release":
-      apiHost = "https://www.womenshike.top";
+    case 'release':
+      apiHost = 'https://www.womenshike.top';
       break;
   }
 

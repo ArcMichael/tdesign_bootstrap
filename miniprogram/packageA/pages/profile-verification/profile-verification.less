@@ -1,5 +1,5 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
   background-image: url(https://qiniustatic.womenshike.top/background_top.png);
@@ -13,15 +13,14 @@ page {
   flex-direction: column;
 }
 
-.verify-group{
+.verify-group {
   display: flex;
   flex-direction: column;
   .px2rpx(gap, 10);
   .padding-sides();
   .px2rpx(margin-bottom,19);
 
-  .verify-card{
-
+  .verify-card {
     .card-container();
 
     .px2rpx(width, 350);
@@ -30,7 +29,7 @@ page {
     display: flex;
     flex-direction: row;
 
-    .card-image{
+    .card-image {
       .px2rpx(width, 86);
       .px2rpx(height, 108);
       display: flex;
@@ -38,24 +37,24 @@ page {
       align-items: center;
       justify-content: center;
     }
-    .card-content{
+    .card-content {
       display: flex;
       flex: 1;
       .padding(19, 19, 19, 0);
       flex-direction: column;
 
-      .card-head{
+      .card-head {
         .px2rpx(height, 30);
         display: flex;
         flex: 1;
         align-items: center;
 
-        .card-title{
+        .card-title {
           color: var(--4, #212121);
           .font-group(16, 600);
         }
 
-        .card-status{
+        .card-status {
           .px2rpx(border-radius, 100);
           margin-left: auto;
           .px2rpx(height, 26);
@@ -67,33 +66,32 @@ page {
 
           .font-group(12, 600);
 
-          &.priamy{
+          &.priamy {
             .status-priamy();
           }
-          &.danger{
+          &.danger {
             .status-danger();
           }
         }
       }
 
-      .card-message{
-        color: #6B6B6B;
+      .card-message {
+        color: #6b6b6b;
         .font-group(12, 400);
         .px2rpx(margin-top, 8);
       }
-
     }
   }
 
-  .biometric .card-image > image{
+  .biometric .card-image > image {
     .px2rpx(width, 45.82);
     .px2rpx(height, 36);
   }
-  .picture .card-image > image{
+  .picture .card-image > image {
     .px2rpx(width, 36);
     .px2rpx(height, 36);
   }
-  .student .card-image > image{
+  .student .card-image > image {
     .px2rpx(width, 40);
     .px2rpx(height, 36);
   }

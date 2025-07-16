@@ -1,5 +1,5 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 .footer-bar {
   position: fixed; /* 固定在底部 */
@@ -9,7 +9,7 @@
   display: flex;
   background-color: #fff; /* 背景色 */
 
-  .tab-item {
+  .tab-item__item {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -18,26 +18,37 @@
     color: #888888; /* 未选中时文字颜色 */
     .px2rpx(padding-top, 14);
     .font-group(24);
+    position: relative;
+
+    .footer-bar__badge-dot {
+      position: absolute;
+      .size(8, 8);
+      background-color: #ff437f;
+      border-radius: 50%;
+      .border-group(1, solid, #FFF);
+      // border: 1px solid #fff;
+      .px2rpx(left, 55);
+    }
   }
 
-  .icon {
+  .footer-bar__icon {
     .px2rpx(width, 24);
     .px2rpx(height, 24);
   }
 
-  .label{
-    color: var(--5, #9196A3);
+  .footer-bar__label {
+    color: var(--5, #9196a3);
     text-align: center;
     .font-group(12,600);
   }
 
-  .tab-item.active {
+  .tab-item__item.footer-bar__item--active {
     color: var(--4, #212121);
     text-align: center;
     .font-group(12,600);
 
-    .label{
-      color: var(--4, #212121);
+    .footer-bar__label {
+      color: #212121;
     }
   }
 }

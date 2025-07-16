@@ -1,12 +1,12 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
   height: 100vh;
   display: flex;
   flex-direction: column;
 
-  background-image: url("https://qiniustatic.womenshike.top/background_top.png");
+  background-image: url('https://qiniustatic.womenshike.top/background_top.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
@@ -47,7 +47,7 @@ page {
 
     .title-head {
       color: var(--4, #212121);
-      .font-group(18, 600)
+      .font-group(18, 600);
     }
 
     .title-remark {
@@ -77,14 +77,13 @@ page {
         .px2rpx(gap, 10);
       }
 
-      >.picture-main {
+      > .picture-main {
         .px2rpx(width, 226);
         .px2rpx(height, 226);
 
         .border-group(2, solid, var(--6, #ccccd4));
 
         .px2rpx(border-radius, 12);
-
 
         display: flex;
         align-items: center;
@@ -102,7 +101,7 @@ page {
 
         text {
           color: #a7a7a7;
-          .font-group(14, 400)
+          .font-group(14, 400);
         }
       }
     }
@@ -168,20 +167,20 @@ page {
       flex-direction: column;
       align-items: center;
 
-      >image {
+      > image {
         .px2rpx(width, 80);
         .px2rpx(height, 80);
       }
 
-      >text {
+      > text {
         color: #212121;
         .font-group(14, 400);
         .px2rpx(margin-top, 6);
       }
 
-      >.error {
+      > .error {
         position: absolute;
-        background: url("https://qiniustatic.womenshike.top/icon_error.png");
+        background: url('https://qiniustatic.womenshike.top/icon_error.png');
         background-repeat: no-repeat;
         background-size: contain;
         .px2rpx(width, 20);
@@ -194,9 +193,8 @@ page {
 }
 
 .form-submit {
-
   .px2rpx(border-radius, 12);
-  background: linear-gradient(269deg, #ffaac6 0.6%, #a6c3ff 98.92%);
+  .specially-button-style();
 
   .font-group(18, 600);
 
@@ -222,12 +220,12 @@ page {
   align-items: center;
   justify-content: center;
 
-  >image {
+  > image {
     .px2rpx(width, 32.432);
     .px2rpx(height, 30);
   }
 
-  >text {
+  > text {
     color: #a7a7a7;
     .font-group(13, 400);
   }

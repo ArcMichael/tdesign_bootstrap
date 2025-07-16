@@ -4,11 +4,40 @@
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false,
-    "skylineRenderEnable": true
+    "skylineRenderEnable": true,
+    "bigPackageSizeSupport": true
   },
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "packageA/pages/identity-verification/identity-verification",
+          "pathName": "packageA/pages/identity-verification/identity-verification",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "packageA/pages/user-agreement/user-agreement",
+          "pathName": "packageA/pages/user-agreement/user-agreement",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/chat/chat",
+          "pathName": "packageA/pages/chat/chat",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/attendee-list/attendee-list",
+          "pathName": "packageA/pages/attendee-list/attendee-list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "packageA/pages/settings/settings",
           "pathName": "packageA/pages/settings/settings",

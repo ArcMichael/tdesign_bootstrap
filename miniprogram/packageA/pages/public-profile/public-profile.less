@@ -1,5 +1,5 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
   background-image: url(https://qiniustatic.womenshike.top/background_top.png);
@@ -11,14 +11,16 @@ page {
   height: 100vh;
   display: flex;
   flex-direction: column;
+
+  --td-popup-bg-color: #f3f3f3;
 }
 
-.public-profile{
+.public-profile {
   .px2rpx(margin-top, 5);
   position: relative;
 }
 
-.swiper{
+.swiper {
   .size(390, 520);
 }
 
@@ -34,7 +36,7 @@ page {
   }
 }
 
-page .wx-swiper-dots{
+page .wx-swiper-dots {
   position: absolute;
   .px2rpx(bottom, 60);
 
@@ -42,15 +44,15 @@ page .wx-swiper-dots{
     .size(38, 4);
     .margin(0, 3, 0, 3);
     .px2rpx(border-radius, 100);
-    background: rgba(255, 255, 255, 0.50);
+    background: rgba(255, 255, 255, 0.5);
 
     &.wx-swiper-dot-active {
-      background-color: #FFF; /* 与 indicator-active-color 保持一致 */
+      background-color: #fff; /* 与 indicator-active-color 保持一致 */
     }
   }
 }
 
-.public-profile-group{
+.profile-card-list {
   .padding-sides();
   display: flex;
   flex-direction: column;
@@ -61,10 +63,192 @@ page .wx-swiper-dots{
   .px2rpx(gap, 10);
   .px2rpx(padding-bottom, 40);
 
-  .public-profile-info{
+  .profile-card {
     .card-container();
-    .px2rpx(height, 218);
+    .px2rpx(height, 190);
+    .padding(14, 20, 14, 20);
     background-color: #fff;
-  }
 
+    &.profile-card__info-container {
+      flex-direction: column;
+    }
+    .profile-card__header {
+      .px2rpx(height, 36);
+      flex-direction: row;
+      display: flex;
+      align-items: center;
+
+      .profile-card__name {
+        color: var(--4, #212121);
+        .font-group(26, 600);
+        .px2rpx(margin-right, 12);
+      }
+
+      .profile-card__badges {
+        display: flex;
+        .px2rpx(gap, 11);
+        .profile-card__badge {
+          &.profile-card__badge--verified {
+            border-radius: 20px;
+            background: var(--2, linear-gradient(275deg, #fce38a 1.61%, #fff3c6 97.56%));
+            justify-content: center;
+            .px2rpx(gap, 3);
+            display: flex;
+            .px2rpx(height, 20);
+            .px2rpx(width, 62);
+
+            display: flex;
+            align-items: center;
+
+            color: var(--5, #9196a3);
+            .font-group(10, 500);
+
+            > image {
+              .px2rpx(width, 10.5);
+              .px2rpx(height, 10.7);
+            }
+          }
+          &.profile-card__badge--education {
+            border-radius: 20px;
+            background: var(--2, linear-gradient(275deg, #c5d8ff 1.61%, #d5e3ff 97.56%));
+            justify-content: center;
+            .px2rpx(gap, 3);
+            display: flex;
+            .px2rpx(height, 20);
+            .px2rpx(width, 62);
+
+            display: flex;
+            align-items: center;
+
+            color: var(--5, #9196a3);
+            .font-group(10, 500);
+
+            > image {
+              .px2rpx(width, 10.5);
+              .px2rpx(height, 10.7);
+            }
+          }
+        }
+      }
+    }
+
+    .profile-card__info {
+      .px2rpx(margin-top, 4);
+      .px2rpx(margin-bottom, 9);
+
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 24rpx;
+      row-gap: 12rpx;
+
+      .profile-card__info-item {
+        display: flex;
+        align-items: center;
+        width: calc(50% - 14rpx); /* 两列布局 */
+        .px2rpx(height, 32);
+        .font-group(14, 400);
+        color: var(--4, #212121);
+
+        image {
+          .px2rpx(width, 16);
+          .px2rpx(margin-right, 12);
+        }
+      }
+    }
+
+    .profile-card__actions {
+      .size(310, 36);
+      .px2rpx(line-height, 36);
+      display: flex;
+      .px2rpx(gap, 10);
+      display: flex;
+      flex-direction: row;
+
+      .profile-card__button {
+        .px2rpx(border-radius, 8);
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+
+        &.profile-card__button--follow {
+          .specially-button-style();
+          .font-group(15, 600);
+          color: #fff;
+        }
+
+        &.profile-card__button--followed {
+          background: #f1f1f1;
+          .font-group(16, 600);
+          > image {
+            .px2rpx(width, 9.61);
+            .padding(0, 4, 0, 4);
+          }
+        }
+        &.profile-card__button--message {
+          background: #f1f1f1;
+          .font-group(16, 600);
+        }
+      }
+    }
+  }
+}
+
+.follow-modal {
+  background: var(--td-bg-color-container);
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  .px2rpx(padding-top, 12);
+  .px2rpx(padding-left, 20);
+  .px2rpx(padding-right, 20);
+
+  .follow-modal__content {
+    .follow-modal__title {
+      flex: 1;
+      text-align: center;
+      color: var(--td-text-color-primary);
+      .px2rpx(height, 30);
+      .px2rpx(line-height, 30);
+      .font-group(20, 500);
+    }
+    .follow-modal__actions {
+      display: flex;
+      flex-direction: column;
+      .px2rpx(gap, 10);
+      .px2rpx(margin-top, 17);
+
+      .follow-modal__button {
+        .px2rpx(height, 60);
+        .px2rpx(line-height, 60);
+        align-self: center;
+        .px2rpx(border-radius, 12);
+        background: #fff;
+        text-align: center;
+        width: 100%;
+        .font-group(18, 500);
+        &.follow-modal__button--primary {
+          color: #212121;
+          &.followed {
+            color: #b1b1b1;
+          }
+        }
+        &.follow-modal__button--danger {
+          color: #d95b4d;
+        }
+      }
+    }
+  }
+}
+
+// 自我描述 & 交友倾向
+.profile-card {
+  .profile-section__title {
+    .margin(6, 0, 10, 0);
+    color: var(--4, #212121);
+    .font-group(18, 600);
+  }
+  .profile-section__content {
+    color: #6b6b6b;
+    .font-group(14, 400);
+  }
 }

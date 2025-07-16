@@ -1,23 +1,22 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
-
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 .slot-left {
   position: relative;
   color: var(--4, #212121);
   text-align: center;
   .px2rpx(padding-bottom, 4);
-  .slot-left-text{
+  .slot-left-text {
     .font-group(18, 500);
     .px2rpx(width, 74);
     .px2rpx(height, 25);
     position: relative;
   }
-  .slot-left-line{
+  .slot-left-line {
     .px2rpx(width, 26);
     .px2rpx(height, 4);
 
-    background: url("https://qiniustatic.womenshike.top/header_title_curve.png");
+    background: url('https://qiniustatic.womenshike.top/header_title_curve.png');
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 100%;
@@ -47,7 +46,7 @@ page {
   .px2rpx(padding-bottom, @safe-bottom-with-footer);
   position: relative;
 
-  .events-group{
+  .events-group {
     display: flex;
     flex-direction: column;
     .padding-sides();

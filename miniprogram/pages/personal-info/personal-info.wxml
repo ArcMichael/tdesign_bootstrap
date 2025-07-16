@@ -11,6 +11,7 @@
     <view 
       class="form-item"
       data-field="nickname"
+      bind:tap="getUserProfile"
     >
       <view class="label-group">
         <view class="label">昵称</view>
@@ -34,7 +35,7 @@
     >
       <view class="label-group">
         <text class="label">性别<text class="disabled"> *<text class="adding">无法修改</text></text></text>
-        <view wx:if="{{ !form.gender }}" class="placeholder">请输入昵称</view>
+        <view wx:if="{{ !form.gender }}" class="placeholder">请选择性别</view>
       </view>
       <view class="label-result">
         <input
@@ -186,9 +187,9 @@
     </view>
 
   </view>
-
-  <view class="form-submit" bindtap="onPhotoUpload">下一步</view>
 </view>
+
+<view class="form-submit" bindtap="onPhotoUpload">下一步</view>
 
 <date-picker
   id="birthdayPicker"

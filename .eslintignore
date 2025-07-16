@@ -1,0 +1,9 @@
+node_modules/
+miniprogram/miniprogram_npm/
+dist/
+*.json
+*.wxml
+*.wxss
+*.less
+*.md
+typings/

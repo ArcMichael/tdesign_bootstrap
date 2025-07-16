@@ -1,4 +1,4 @@
-import { sliderImages } from "./public-profile.config";
+import { friendPref, selfDesc, sliderImages } from "./public-profile.config";
 
 Page({
   data: {
@@ -13,5 +13,27 @@ Page({
       },
       items: sliderImages,
     },
+    isFollowed: false,
+    visible: false,
+    selfDesc,
+    friendPref,
+  },
+  async handlePopup(e: any) {
+    this.setData({ visible: true });
+  },
+  async onVisibleChange(e: any) {
+    this.setData({
+      visible: e.detail.visible,
+    });
+  },
+  async followUser() {
+    this.setData({
+      isFollowed: true,
+    });
+  },
+  async unfollowUser() {
+    this.setData({
+      isFollowed: false,
+    });
   },
 });

@@ -1,18 +1,19 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
-.slot-left {
+.navigation-bar__center {
   position: relative;
   color: var(--4, #212121);
   text-align: center;
   .px2rpx(padding-bottom, 4);
-  .slot-left-text{
+
+  .navigation-bar__text {
     .font-group(18, 500);
     .px2rpx(width, 37);
     .px2rpx(height, 25);
     position: relative;
 
-    .slot-left-bubble{
+    .navigation-bar__bubble {
       .px2rpx(width, 8);
       .px2rpx(height, 8);
       background-color: @bubble-message;
@@ -22,11 +23,11 @@
       .px2rpx(top, 0.5);
     }
   }
-  .slot-left-line{
+  .navigation-bar__divider {
     .px2rpx(width, 26);
     .px2rpx(height, 4);
 
-    background: url("https://qiniustatic.womenshike.top/header_title_curve.png");
+    background: url('https://qiniustatic.womenshike.top/header_title_curve.png');
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 100%;
@@ -50,18 +51,19 @@ page {
   flex-direction: column;
 }
 
-.message {
+.message-page {
   .px2rpx(height, 664);
   .px2rpx(padding-top, 10);
   .px2rpx(padding-bottom, @safe-bottom-with-footer);
   position: relative;
   .padding-sides();
 
-  .message-group{
+  .message-page__group {
     display: flex;
     flex-direction: row;
     .px2rpx(gap, 10);
-    .message-card{
+
+    .message-page__card {
       .size(170, 64);
       .px2rpx(border-radius, 13);
       position: relative;
@@ -69,52 +71,265 @@ page {
       display: flex;
       align-items: center;
 
-      &.system{
-        background: url("https://qiniustatic.womenshike.top/background_bell_message.png"), linear-gradient(275deg, #72A0FF 1.61%, #BCD1FD 97.56%);
+      &.message-page__card--system {
+        background:
+          url('https://qiniustatic.womenshike.top/background_bell_message.png'),
+          linear-gradient(275deg, #72a0ff 1.61%, #bcd1fd 97.56%);
         background-size: cover;
-        > image{
+        .message-page__icon {
           .size(24.0199, 28);
           transform: translateY(2px);
           .px2rpx(margin-right, 8);
         }
-        > .ctx{
+        .message-page__label {
           .size(64, 22);
-          color: #FFF;
+          color: #fff;
           .font-group(16, 600);
         }
-        > .number{
+        .message-page__badge {
           background-color: @m-number-background;
           .size(18, 18);
           border-radius: 100%;
-          color: var(--7, #FFF);
+          color: var(--7, #fff);
           .font-group(10, 400);
           text-align: center;
           .px2rpx(line-height, 18);
           .px2rpx(margin-left, 4);
         }
       }
-      &.social{
-        background: url("https://qiniustatic.womenshike.top/background_social_message.png") no-repeat, linear-gradient(275deg, #FA87AC 1.61%, #FDBED2 97.56%);
+      &.message-page__card--social {
+        background:
+          url('https://qiniustatic.womenshike.top/background_social_message.png') no-repeat,
+          linear-gradient(275deg, #fa87ac 1.61%, #fdbed2 97.56%);
         background-size: cover;
-        > image{
+        .message-page__icon {
           .size(28, 28);
           transform: translateY(2px);
           .px2rpx(margin-right, 8);
         }
-        > .ctx{
+        .message-page__label {
           .size(64, 22);
-          color: #FFF;
+          color: #fff;
           .font-group(16, 600);
         }
-        > .number{
+        .message-page__badge {
           background-color: @m-number-background;
           .size(18, 18);
           border-radius: 100%;
-          color: var(--7, #FFF);
+          color: var(--7, #fff);
           .font-group(10, 400);
           text-align: center;
           .px2rpx(line-height, 18);
           .px2rpx(margin-left, 4);
+        }
+      }
+    }
+  }
+
+  .message-tab__content {
+    .px2rpx(margin-top, 20);
+
+    .message-tab__panel {
+      display: flex;
+      flex-direction: column;
+
+      &.message-tab__panel--social {
+        .message-item {
+          .px2rpx(margin-bottom, 12);
+        }
+      }
+      &.message-tab__panel--system {
+        .system-message-item {
+          .px2rpx(margin-bottom, 20);
+        }
+      }
+    }
+
+    .message-tab__scroll {
+      .px2rpx(height, 580);
+      padding-bottom: calc(env(safe-area-inset-bottom) + 96rpx);
+      overflow-y: scroll;
+    }
+
+    .message-item {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      position: relative;
+      box-shadow: @m-shadow-card;
+
+      .padding(14, 22, 14, 22);
+      .px2rpx(border-radius, 12);
+
+      .message-item__avatar {
+        border-radius: 50%;
+
+        .size(42, 42);
+        .px2rpx(margin-right, 12);
+      }
+
+      .message-item__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .message-item__name {
+          color: var(--4, #212121);
+          .px2rpx(height, 20);
+          .font-group(14, 500);
+        }
+
+        .message-item__preview {
+          color: var(--5, #9196a3);
+          .px2rpx(height, 17);
+          .font-group(12, 400);
+
+          .px2rpx(margin-top, 5);
+        }
+      }
+
+      .message-item__meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        height: 100%;
+
+        .message-item__time {
+          color: var(--5, #9196a3);
+          .font-group(10, 400);
+          .px2rpx(height, 14);
+        }
+        .message-item__badge {
+          margin-top: auto;
+          background-color: #ff5142;
+          color: var(--7, #fff);
+          border-radius: 50%;
+          text-align: center;
+
+          .font-group(10, 400);
+          .size(18, 18);
+          .px2rpx(line-height, 18);
+          .px2rpx(margin-top, 10);
+        }
+      }
+    }
+
+    .system-message-item {
+      display: flex;
+      .px2rpx(width, 307);
+
+      .system-message-item__avatar {
+        border-radius: 50%;
+
+        .size(42, 42);
+        .px2rpx(margin-right, 10);
+      }
+      .system-message-item__main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        box-shadow: @m-shadow-card;
+        .px2rpx(border-radius, 12);
+
+        .system-message-item__text {
+          color: var(--4, #212121);
+          margin-bottom: 8rpx;
+          .padding-sides(15);
+          .px2rpx(margin-top, 5);
+          .font-group(16, 400);
+          .px2rpx(line-height, 24);
+
+          &.system-message-item__text--error {
+            color: #ff5252;
+          }
+
+          .system-message-item__highlight {
+            .padding(0, 5, 0, 5);
+          }
+          .system-message-item__tag {
+            color: #72a0ff;
+            .padding(0, 5, 0, 5);
+            white-space: nowrap;
+          }
+        }
+
+        .system-message-item__reason {
+          color: #ff5252;
+          .padding-sides(15);
+
+          .font-group(12, 400);
+          .px2rpx(line-height, 24);
+        }
+
+        .system-message-item__footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .px2rpx(height, 38);
+          .padding(5, 15, 9, 15);
+          .border-group(1, solid, #FAFAFA);
+          .px2rpx(margin-top, 16);
+
+          .system-message-item__link {
+            color: #72a0ff;
+
+            .px2rpx(height, 24);
+            .px2rpx(line-height, 24);
+            .font-group(16, 400);
+          }
+
+          .system-message-item__time {
+            color: #c1c1c1;
+
+            .px2rpx(height, 24);
+            .px2rpx(line-height, 24);
+            .font-group(12, 400);
+          }
+        }
+
+        .system-message-item__usercard-title {
+          .padding-sides();
+          color: var(--4, #212121);
+          .font-group(16, 600);
+          .px2rpx(line-height, 24);
+        }
+
+        .system-message-item__usercard {
+          .padding-sides(15);
+          display: flex;
+          align-items: flex-start;
+          .px2rpx(margin-top, 15);
+          .system-message-item__user-avatar {
+            .size(42, 42);
+            .px2rpx(margin-right, 10);
+            border-radius: 50%;
+          }
+          .system-message-item__user-info {
+            display: flex;
+            flex-direction: column;
+            .system-message-item__user-name {
+              color: var(--4, #212121);
+              .font-group(16, 600);
+              .px2rpx(line-height, 24);
+            }
+            .system-message-item__user-birthday {
+              color: #b0b0b0;
+              .font-group(12, 400);
+              .px2rpx(line-height, 24);
+            }
+          }
+        }
+        .system-message-item__user-meta {
+          display: flex;
+          justify-content: space-between;
+          .padding-sides(15);
+          .px2rpx(margin-top, 10);
+          text {
+            color: var(--4, #212121);
+            .font-group(14, 400);
+            .px2rpx(line-height, 24);
+          }
         }
       }
     }
@@ -128,8 +343,10 @@ page {
 // font-weight: 600;
 // line-height: normal;
 
+// <view class="message-page__group">
+//   <view class="message-system"></view>
+//   <view class="message-social"></view>
+// </view>
 
-  // <view class="message-group">
-  //   <view class="message-system"></view>
-  //   <view class="message-social"></view>
-  // </view>
+// https://qiniustatic.womenshike.top/icon-message-avatat-systems.png
+// https://qiniustatic.womenshike.top/icon-message-avatar-users.png

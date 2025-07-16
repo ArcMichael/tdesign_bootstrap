@@ -8,19 +8,19 @@ Component({
   properties: {
     extClass: {
       type: String,
-      value: "",
+      value: '',
     },
     title: {
       type: String,
-      value: "",
+      value: '',
     },
     background: {
       type: String,
-      value: "",
+      value: '',
     },
     color: {
       type: String,
-      value: "",
+      value: '',
     },
     back: {
       type: Boolean,
@@ -43,7 +43,7 @@ Component({
       // 显示隐藏导航，隐藏的时候navigation-bar的高度占位还在
       type: Boolean,
       value: true,
-      observer: "_showChange",
+      observer: '_showChange',
     },
     // back为true的时候，返回的页面深度
     delta: {
@@ -55,24 +55,22 @@ Component({
    * 组件的初始数据
    */
   data: {
-    displayStyle: "",
+    displayStyle: '',
   },
   lifetimes: {
     attached() {
       const rect = wx.getMenuButtonBoundingClientRect();
       wx.getSystemInfo({
         success: (res) => {
-          const isAndroid = res.platform === "android";
-          const isDevtools = res.platform === "devtools";
+          const isAndroid = res.platform === 'android';
+          const isDevtools = res.platform === 'devtools';
           this.setData({
             ios: !isAndroid,
-            innerPaddingRight: `padding-right: ${
-              res.windowWidth - rect.left
-            }px`,
+            innerPaddingRight: `padding-right: ${res.windowWidth - rect.left}px`,
             leftWidth: `width: ${res.windowWidth - rect.left}px`,
             safeAreaTop:
               isDevtools || isAndroid
-                ? `height: calc(var(--height) + ${res.safeArea.top}px); padding-top: ${res.safeArea.top}px`
+                ? `height: calc(var(--height) + ${res.safeArea.top || 54}px); padding-top: ${res.safeArea.top || 54}px`
                 : ``,
           });
         },
@@ -85,11 +83,11 @@ Component({
   methods: {
     _showChange(show: boolean) {
       const animated = this.data.animated;
-      let displayStyle = "";
+      let displayStyle = '';
       if (animated) {
-        displayStyle = `opacity: ${show ? "1" : "0"};transition:opacity 0.5s;`;
+        displayStyle = `opacity: ${show ? '1' : '0'};transition:opacity 0.5s;`;
       } else {
-        displayStyle = `display: ${show ? "" : "none"}`;
+        displayStyle = `display: ${show ? '' : 'none'}`;
       }
       this.setData({
         displayStyle,
@@ -102,7 +100,7 @@ Component({
           delta: data.delta,
         });
       }
-      this.triggerEvent("back", { delta: data.delta }, {});
+      this.triggerEvent('back', { delta: data.delta }, {});
     },
   },
 });

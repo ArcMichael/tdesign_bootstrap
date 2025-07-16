@@ -1,4 +1,4 @@
-@import "_variables.less";
+@import '_variables.less';
 
 // @design-width: 390; // 设计稿基准宽度
 // @target-width: 750; // 微信小程序 rpx 参照宽度
@@ -23,7 +23,7 @@
 
 // === border ===
 
-.border-group(@border-width, @border-style: solid, @border-color: #fff ){
+.border-group(@border-width, @border-style: solid, @border-color: #fff ) {
   .px2rpx(border-width, @border-width);
   border-style: @border-style;
   border-color: @border-color;
@@ -31,29 +31,29 @@
 
 // === border-* ===
 
-.border-top(@border-width, @border-style: solid, @border-color: #fff){
+.border-top(@border-width, @border-style: solid, @border-color: #fff) {
   .px2rpx(border-top-width, @border-width);
   border-top-style: @border-style;
   border-top-color: @border-color;
 }
-.border-right(@border-width, @border-style: solid, @border-color: #fff){
+.border-right(@border-width, @border-style: solid, @border-color: #fff) {
   .px2rpx(border-right-width, @border-width);
   border-right-style: @border-style;
   border-right-color: @border-color;
 }
-.border-bottom(@border-width, @border-style: solid, @border-color: #fff){
+.border-bottom(@border-width, @border-style: solid, @border-color: #fff) {
   .px2rpx(border-bottom-width, @border-width);
   border-bottom-style: @border-style;
   border-bottom-color: @border-color;
 }
-.border-left(@border-width, @border-style: solid, @border-color: #fff){
+.border-left(@border-width, @border-style: solid, @border-color: #fff) {
   .px2rpx(border-left-width, @border-width);
   border-left-style: @border-style;
   border-left-color: @border-color;
 }
 
 // === padding ===
-.padding(@top, @right, @bottom, @left){
+.padding(@top, @right, @bottom, @left) {
   .px2rpx(padding-top, @top);
   .px2rpx(padding-right, @right);
   .px2rpx(padding-bottom, @bottom);
@@ -67,7 +67,7 @@
 }
 
 // margin ===
-.margin(@top, @right, @bottom, @left){
+.margin(@top, @right, @bottom, @left) {
   .px2rpx(margin-top, @top);
   .px2rpx(margin-right, @right);
   .px2rpx(margin-bottom, @bottom);
@@ -81,12 +81,12 @@
 }
 
 // === buttom ( background-color, color ) ===
-.status-priamy(){
+.status-priamy() {
   background-color: @v-color-priamy-background;
   color: @v-color-priamy-font;
 }
 
-.status-danger(){
+.status-danger() {
   background-color: @v-color-danger-background;
   color: @v-color-danger-font;
 }
@@ -94,37 +94,67 @@
 // === RETURN ===
 .ellipsis-single(@width) {
   .px2rpx(max-width, @width);
-  overflow: hidden;        
-  white-space: nowrap;     
-  text-overflow: ellipsis; 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 // === BOX { background-color, border-radius, shadow } ===
-.card-container(){
-  fill: #FFF;
+.card-container() {
+  fill: #fff;
   filter: drop-shadow(0px 4px 25px rgba(145, 150, 163, 0.25));
-  background-color: #FFF;
-  .px2rpx(border-radius, 12); 
+  background-color: #fff;
+  .px2rpx(border-radius, 12);
 }
 
 // === TAGS APPROVED { 已认证 √ } ===
-.tags-approved(){
+.tags-approved() {
   border-radius: 20px;
-  background: var(--2, linear-gradient(275deg, #FCE38A 1.61%, #FFF3C6 97.56%));
+  background: var(--2, linear-gradient(275deg, #fce38a 1.61%, #fff3c6 97.56%));
   .px2rpx(height, 20);
   .padding(0, 22, 0, 22);
 
-  color: var(--5, #9196A3);
+  color: var(--5, #9196a3);
   .font-group(10, 500);
 
-  > image{
+  > image {
     .px2rpx(width, 24);
     .px2rpx(height, 25);
   }
 }
 
 // === TAGS SIGNING { 报名中 } ===
-.events-signing(){
+.events-signing() {
   background-color: @e-status-background;
   .px2rpx(border-radius, 4);
+}
+
+// === SPECIALLY BACKGROUND { 支付，关注等渐变按钮 } ===
+.gradient-background(@angle, @start-color, @end-color) {
+  background-image: linear-gradient(@angle, @start-color, @end-color);
+}
+
+.specially-button-style() {
+  .gradient-background(269deg, #FFAAC6 0.6%, #A6C3FF 98.92%);
+}
+
+// === COMPONENTS SLOT { TITLE } ===
+.components-slot-title {
+  color: var(--4, #212121);
+  .font-group(18, 500);
+}
+
+// === MESSAGE CONTAINER { ME, OTHER } ===
+.chat-message--me-card {
+  .px2rpx(border-top-left-radius, 16);
+  .px2rpx(border-top-right-radius, 0);
+  .px2rpx(border-bottom-right-radius, 16);
+  .px2rpx(border-bottom-left-radius, 16);
+}
+
+.chat-message--other-card {
+  .px2rpx(border-top-left-radius, 0);
+  .px2rpx(border-top-right-radius, 16);
+  .px2rpx(border-bottom-right-radius, 16);
+  .px2rpx(border-bottom-left-radius, 16);
 }

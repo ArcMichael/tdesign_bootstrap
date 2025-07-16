@@ -20,7 +20,8 @@
             <upload-file 
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-main"
+              data-field="main"
+              data-position="0"
               bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
@@ -36,10 +37,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-careful"
+              data-field="careful"
+              data-position="1"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_careful.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -55,10 +57,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-confidence"
+              data-field="confidence"
+              data-position="2"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_confidence.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -77,10 +80,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-montain"
+              data-field="montain"
+              data-position="3"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_montain.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -96,10 +100,11 @@
 
           <view class="picture-placeholder">
             <upload-file 
-              remove-btn="{{true}}"
               class="upload-cover" 
               bind:change="onPictureChange"
-              data-field="picture-life"
+              data-field="life"
+              data-position="4"
+              bind:uploadsuccess="onUploadSuccess"
             >
               <view slot="placeholder" class="placeholder-main">
                 <image src="https://qiniustatic.womenshike.top/icon_pic_life.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
@@ -114,17 +119,30 @@
         <view class="picture-public">
 
           <view class="picture-placeholder">
-            <upload-file 
-              remove-btn="{{true}}"
-              class="upload-cover" 
-              bind:change="onPictureChange"
-              data-field="picture-smile"
-            >
-              <view slot="placeholder" class="placeholder-main">
-                <image src="https://qiniustatic.womenshike.top/icon_pic_smile.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />  
-                <text>笑起来的样子</text>
+
+            <block wx:if="{{form.smile && form.smile.url}}">
+              <view class="uploaded-image-wrapper">
+                <image class="uploaded-image" src="{{form.smile.url}}" mode="aspectFill" />
+                <view class="close-icon" bindtap="onRemoveSmile">×</view>
               </view>
-            </upload-file>
+            </block>
+            <block wx:else>
+
+              <upload-file 
+                class="upload-cover" 
+                bind:change="onPictureChange"
+                data-field="smile"
+                data-position="5"
+                bind:uploadsuccess="onUploadSuccess"
+              >
+                <view slot="placeholder" class="placeholder-main">
+                  <image src="https://qiniustatic.womenshike.top/icon_pic_smile.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />  
+                  <text>笑起来的样子</text>
+                </view>
+              </upload-file>
+
+            </block>
+
           </view>
           
         </view>
@@ -164,7 +182,7 @@
       
   </view>
 
-  <view class="form-submit">下一步</view>
+  <view class="form-submit" bindtap="goHome">下一步</view>
 </view>
 
 

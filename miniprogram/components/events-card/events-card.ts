@@ -24,5 +24,8 @@ Component({
     onPublicProfile() {
       return navigateHelper.goPublicProfile();
     },
+    onEventsInfo() {
+      return navigateHelper.goEventsInfo();
+    },
   },
 });

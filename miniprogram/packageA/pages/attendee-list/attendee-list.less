@@ -1,0 +1,69 @@
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
+
+page {
+  background-image: url(https://qiniustatic.womenshike.top/background_top.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.attendee-list {
+  .padding-sides();
+
+  .attendee-list__group {
+    display: flex;
+    flex-direction: column;
+    .px2rpx(gap, 21);
+
+    .attendee-list__card {
+      .px2rpx(height, 410);
+      position: relative;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 43.63%, rgba(0, 0, 0, 0.5) 88.73%);
+      .px2rpx(border-radius, 12);
+
+      .attendee-list__avatar {
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: multiply;
+      }
+
+      .attendee-list__info {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        .px2rpx(gap, 1);
+        .px2rpx(height, 52);
+        .px2rpx(left, 20);
+        .px2rpx(bottom, 22);
+
+        .attendee-list__name {
+          .px2rpx(height, 31);
+          .px2rpx(line-height, 31);
+          color: #fff;
+          .font-group(22, 600);
+        }
+        .attendee-list__school {
+          .px2rpx(height, 20);
+          .px2rpx(line-height, 20);
+          color: #c9c9c9;
+          .font-group(14, 400);
+        }
+      }
+      .attendee-list__like-icon {
+        position: absolute;
+        .size(50, 50);
+        .px2rpx(right, 20);
+        .px2rpx(bottom, 20);
+        .attendee-list__like-image {
+          .size(50, 50);
+        }
+      }
+    }
+  }
+}

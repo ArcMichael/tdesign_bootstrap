@@ -1,4 +1,4 @@
-<view class="events-container">
+<view class="events-container" bindtap="onEventsInfo">
   <view class="header">
     <view class="title">{{ title }}</view>
     <view class="sub-title">
@@ -30,3 +30,4 @@
     </view>
   </view>
 </view>
+

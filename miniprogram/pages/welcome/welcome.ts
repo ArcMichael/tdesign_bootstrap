@@ -1,8 +1,11 @@
-import { fetchLogin } from "../../utils/api";
-import { setToken, setOpenID, setUserID } from "../../utils/auth";
-import * as navigateHelper from "../../utils/navigateHelper";
+import { postLogin } from '../../utils/api';
+import { setToken, setOpenID, setUserID } from '../../utils/auth';
+import * as navigateHelper from '../../utils/navigateHelper';
 
 Page({
+  data: {
+    agreement: true,
+  },
   async onLogin() {
     wx.login({
       success: async (res) => {
@@ -11,7 +14,7 @@ Page({
           const requestConfig = { code: res.code };
 
           try {
-            const response = await fetchLogin(requestConfig);
+            const response = await postLogin(requestConfig);
             if (response.code === 0 && response.data.accessToken) {
               setToken(response.data.accessToken);
             }
@@ -24,16 +27,27 @@ Page({
 
             return navigateHelper.goPersonalInfo();
           } catch (err) {
-            console.error("登录请求失败：", err);
+            console.error('登录请求失败：', err);
           }
         }
+        return navigateHelper.goPersonalInfo();
       },
       fail(err) {
-        console.error("wx.login 调用失败", err);
+        console.error('wx.login 调用失败', err);
+        return navigateHelper.goPersonalInfo();
       },
     });
   },
   goHome() {
     return navigateHelper.goHome();
+  },
+  onAgreementToggle() {
+    this.setData({ agreement: !this.data.agreement });
+  },
+  async onUserAgreementTap() {
+    return navigateHelper.goUserAgreement();
+  },
+  async onPrivacyAgreementTap() {
+    return navigateHelper.goPrivateAgreement();
   },
 });

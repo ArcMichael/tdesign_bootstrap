@@ -1,5 +1,5 @@
-@import "styles/_variables.less";
-@import "styles/_mixins.less";
+@import 'styles/_variables.less';
+@import 'styles/_mixins.less';
 
 page {
   background-image: url(https://qiniustatic.womenshike.top/background_top.png);
@@ -18,25 +18,25 @@ page {
   .padding-sides();
   .px2rpx(margin-top, 5);
 
-  .settings-container{
+  .settings-container {
     display: flex;
     .card-container();
     flex-direction: column;
     .px2rpx(padding-left, 20);
-    .px2rpx(padding-right, 20); 
+    .px2rpx(padding-right, 20);
 
     &.multi {
-      .settings-container-item{
+      .settings-container-item {
         .px2rpx(height, 50);
       }
     }
 
-    &.function{
+    &.function {
       .px2rpx(padding-top, 4);
       .px2rpx(padding-bottom, 4);
     }
 
-    .settings-container-item{
+    .settings-container-item {
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -44,52 +44,52 @@ page {
       .border-bottom(1, solid, #F3F3F3);
       position: relative;
 
-      &:last-child{
+      &:last-child {
         border-bottom: none;
       }
 
-      &.between{
+      &.between {
         justify-content: space-between;
       }
 
-      .icon{
+      .icon {
         .px2rpx(width, 33);
         display: flex;
 
-        image.event{
+        image.event {
           .px2rpx(width, 20.81);
           .px2rpx(height, 17);
         }
-        image.identify{
+        image.identify {
           .px2rpx(width, 20);
           .px2rpx(height, 18);
         }
-        image.csr{
+        image.csr {
           .px2rpx(width, 18.13);
           .px2rpx(height, 18);
         }
-        image.settings{
+        image.settings {
           .px2rpx(width, 16.6);
           .px2rpx(height, 18);
         }
       }
-      .content{
+      .content {
         color: var(--4, #212121);
         .font-group(14, 500);
-        
-        &.highlight{
-          color: #FF8484;
+
+        &.highlight {
+          color: #ff8484;
         }
       }
-      .care{
-        color: #9EA4A9;
+      .care {
+        color: #9ea4a9;
         .font-group(14, 400);
         display: flex;
         margin-left: auto;
         .px2rpx(margin-right, 20);
       }
 
-      .arrow_right{
+      .arrow_right {
         .px2rpx(width, 5);
         .px2rpx(height, 10);
         position: absolute;
@@ -98,15 +98,15 @@ page {
         transform: translateY(-50%);
       }
 
-      .phonenumber_right{
+      .phonenumber_right {
         .font-group(14, 400);
-        color: #9EA4A9;
+        color: #9ea4a9;
       }
     }
-  } 
+  }
 }
 
-.footer-button{
+.footer-button {
   display: flex;
   position: fixed;
   .px2rpx(height, 61);
@@ -116,6 +116,6 @@ page {
   .px2rpx(left, 20);
   .px2rpx(right, 20);
   .font-group(14, 500);
-  color: #FF8383;
+  color: #ff8383;
   justify-content: center;
 }
